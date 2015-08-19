@@ -1,0 +1,4 @@
+name = Webcrt
+core = 7.x
+
+description = SimpleWebRTC.

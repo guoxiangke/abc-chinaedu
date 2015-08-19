@@ -1,0 +1,39 @@
+<?php
+/**
+ * Implements hook_user_login().
+ */
+function edu_soho_user_login(&$edit, $account) {
+	//
+	$orders_og_node = _edu_get_node('order');
+	foreach ($orders_og_node as $key => $node) {
+		// if()
+	}
+}
+
+/**
+ * $type string 
+ * $account uid/obj
+ */
+function _edu_get_node($type,$uid=NULL){
+  if(!isset($uid)){
+    global $user;
+    $uid = $user->uid;
+  }
+  return db_select('node', 'n')
+    ->fields('n',array('nid'))
+    ->condition('type', $type)
+    ->condition('status', 0,'>')
+    ->condition('uid',$uid)
+    ->execute()
+    ->fetchAll();
+}
+
+//get all user or or all nodes!
+function _edu_get_og_content($gid,$entity_type='node'){
+  return db_select('og_membership', 'n')
+    ->fields('n',array('etid'))
+    ->condition('gid', $gid)
+    ->condition('entity_type',$entity_type)
+    ->execute()
+    ->fetchAll();
+}
