@@ -12,8 +12,7 @@ Drupal.behaviors.webrtc = {
 			// create our webrtc connection
 			var webrtc = new SimpleWebRTC({
 					// 'url': 'http://localhost:8888',
-          // 'url': 'http://121.41.79.122',
-          'url': 'http://52.74.139.212:8888',
+          'url': 'http://121.41.79.122',
 			    // the id/element dom element that will hold "our" video
 			    localVideoEl: 'localVideo',
 			    // the id/element dom element that will hold remote videos
