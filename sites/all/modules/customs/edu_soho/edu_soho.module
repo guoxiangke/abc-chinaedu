@@ -1,20 +1,84 @@
 <?php
 /**
- * Implements hook_user_login().
+ * Implements hook_menu().
  */
-function edu_soho_user_login(&$edit, $account) {
-	//
-	$orders_og_node = _edu_get_node('order');
-	foreach ($orders_og_node as $key => $node) {
-		// if()
-	}
+function edu_soho_menu() {
+  $items = array();
+  $items['create/class_record'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => '_ajax_create_class_record',
+    'access callback' => TRUE,
+  );
+  return $items;
 }
+/**
+ * stu申请试听
+ */
+function _ajax_create_class_record(){
+  header('Content-Type: application/json');
+  if (empty($_POST['uid'])) {
+    drupal_exit();
+  }
+  if(!empty($_POST['order_id'])){
+    $type = 'study_record';
+    $uid = $_POST['uid'];
+    $order_id = $_POST['order_id'];
+    
+    //already has a unpushished class order'will not create!!!
+    if(count(_edu_get_node($type,$uid,0))){
+      $data = array('error'=>1);
+      print json_encode($data);
+      drupal_exit();
+    }
+    //check userpoints drupal_goto('buy points');
+    if(userpoints_get_current_points()<=0){      
+      $data = array('error'=>2);
+      print json_encode($data);
+      drupal_exit();
+    }
+    $node = new stdClass(); // We create a new node object
+    $node->type = $type; // Or any other content type you want
+    $node->title = "A student request Class/试听申请";
+    $node->status = 0;
+    $node->language = LANGUAGE_NONE; // Or any language code if Locale module is enabled. More on this below *
+    node_object_prepare($node); // Set some default values.
+    $node->uid = $uid; // Or any id you wish
+    $node->field_student[$node->language][0]['uid'] = $uid;
+    // $node->field_teacher[$node->language][0]['uid'] = $uid;
+    $node->og_group_ref[$node->language][0]['target_id'] = $order_id;
+      // dpm($node);
+    if($node = node_submit($node)) { // Prepare node for saving
+        node_save($node);
+        if($node->nid){
+          $data = array(
+            'nid' => $node->nid,
+          );
+        }else{
+          $data = array(
+            'nid' => 0,
+          );
+        }
+    }
 
+    print json_encode($data);
+  }
+
+  drupal_exit();
+}
+/**
+ * Implements hook_init().
+ */
+function edu_soho_init() {
+  global $user;
+  drupal_add_js(array('currentUser' => $user->uid), 'setting');
+  drupal_add_js(drupal_get_path('module', 'edu_soho').'/js/edu_soho.js');
+  //uid = Drupal.settings.currentUser;
+}
 /**
  * $type string 
  * $account uid/obj
  */
-function _edu_get_node($type,$uid=NULL){
+function _edu_get_node($type,$uid=NULL,$status=1){
   if(!isset($uid)){
     global $user;
     $uid = $user->uid;
@@ -22,7 +86,7 @@ function _edu_get_node($type,$uid=NULL){
   return db_select('node', 'n')
     ->fields('n',array('nid'))
     ->condition('type', $type)
-    ->condition('status', 0,'>')
+    ->condition('status', 1,$status?'=':'<>')
     ->condition('uid',$uid)
     ->execute()
     ->fetchAll();
@@ -36,4 +100,45 @@ function _edu_get_og_content($gid,$entity_type='node'){
     ->condition('entity_type',$entity_type)
     ->execute()
     ->fetchAll();
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function edu_soho_node_view($node, $view_mode, $langcode) {
+  if($node->type == 'study_record' && $node->status==1 && $view_mode='full'){
+    $node->content ['appear'] = array(
+      '#markup' => '<button class="btn btn-default btn-lg" onclick="var iframe = document.getElementById(\'appear\');
+  iframe.src = iframe.src;">'.t('Refresh').'</button><iframe id="appear" src="https://appear.in/abc-chinaedu-'.$node->nid.'" width="700" height="500" frameborder="0"></iframe>',
+      '#weight' => 10,
+      // '#theme' => 'mymodule_my_additional_field',
+    );
+  }
+}
+
+/**
+ * Implements hook_user_insert().
+ * 当新student注册后，自动创建一个“试听”的订单。
+ */
+function edu_soho_user_insert(&$edit, $account, $category) {
+  if(in_array('student', $account->roles)){
+    $type = 'order';
+    $node = new stdClass(); // We create a new node object
+    $node->type = $type; // Or any other content type you want
+    $node->title = "试听";
+    $node->status = 1;
+    $node->language = LANGUAGE_NONE; // Or any language code if Locale module is enabled. More on this below *
+    node_object_prepare($node); // Set some default values.
+    $node->uid = 1; // Or any id you wish
+    $node->field_student[$node->language][0]['uid'] = $account->uid;
+    // $node->field_teacher[$node->language][0]['uid'] = $uid;
+    $node->group_group[$node->language][0]['value'] = 1;
+    //2015-08-29 00:00:00
+    $node->field_due_date[$node->language][0]['value'] = date('Y-m-d H:i:s');
+    $node->field_due_date[$node->language][0]['value2'] = date('Y-m-d H:i:s',time()+86400*31);
+      // dpm($node);
+    if($node = node_submit($node)) { // Prepare node for saving
+      node_save($node);
+    }
+  }
 }

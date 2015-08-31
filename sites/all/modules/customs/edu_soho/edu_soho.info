@@ -2,3 +2,4 @@ name = edusoho
 core = 7.x
 
 description = edusoho.
+dependencies[] = userpoints
