@@ -3,4 +3,3 @@ core = 7.x
 
 description = Custom Cropping For user avatar.
 dependencies[] = jcrop_fapi
-dependencies[] = reg_with_pic
