@@ -1,0 +1,185 @@
+/**
+ * This file should get overwritten if Method 1 is used. If Method 2 is chosen,
+ * remove this comment and start adding your styles to this file.
+ */
+#block-locale-language {
+	float: left;
+}
+nav .secondary{
+	float: right;
+}
+
+.navbar-default .navbar-nav > li{
+	padding: 15px;
+}
+.navbar-default .navbar-nav > li,
+#block-locale-language,
+.navbar-brand{
+	padding-top: 17px;
+}
+#block-locale-language ul {
+	height: 20px;
+	margin: 0;
+	padding: 0;
+}
+#block-locale-language ul li{
+	display: none;
+	overflow: hidden;
+}
+
+#block-locale-language ul li.active{
+	display: block;
+}
+
+#block-locale-language a{
+	color: #000;
+}
+#block-locale-language a:hover{
+	text-decoration: none;
+	cursor: default;
+}
+.footer{
+	margin-top: 50px;
+	padding-top: 50px;
+	text-align: center;
+	color: #777;
+}
+.footer a{
+	color: #9d9d9d;
+}
+.main-container{
+	padding-top: 50px;
+}
+
+#edit-comment-body-und-0-format,
+#edit-body-und-0-format{
+	display: none;
+}
+body{
+	background-color: #fff;
+	color: #333;
+}
+
+header.navbar-fixed-top {
+    background: #fff;
+    -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+
+
+    -moz-transition:background-color .5s ease-in;
+    -webkit-transition:background-color .5s ease-in;
+    -o-transition:background-color .5s ease-in;
+    transition:background-color .5s ease-in;
+}
+header.navbar-default .navbar-nav > li > a {
+	text-shadow: none;
+	color: #4a4a4a;
+}
+.navbar-default .navbar-nav a,
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus{
+	background-color: transparent;
+	padding: 0;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover{
+	color: #000;
+}
+.navbar-default .navbar-nav > .active > a{
+	border-bottom: 1px solid #2196f3;
+}
+
+header.navbar-bigger{
+	background: transparent; 
+}
+header.navbar-smaller{
+	/*background: #fff; */
+}
+header.navbar-bigger .navbar-nav > li > a,
+.navbar-bigger .navbar-nav > .active > a, 
+.navbar-bigger .navbar-nav > .active > a:hover,
+header.navbar-bigger .navbar-nav > li > a:hover,
+.navbar-bigger .navbar-brand,
+.navbar-bigger .navbar-brand:hover, 
+.navbar-bigger .navbar-brand:focus,
+.navbar-bigger #block-locale-language a
+{
+	color: #fff;
+}
+header.navbar-bigger{
+	border: none;
+	-webkit-box-shadow:none;
+}
+
+.wrapper-white {
+    color: #4a4a4a;
+    background: #fff;
+}
+.wrapper-light {
+    color: #f0f7fb;
+    background: #fff;
+}
+.wrapper-dark {
+    color: #fff;
+    background: #566b81
+}
+.mh75{
+	min-height: 75px;
+}
+.dale_text_center{
+	text-align: center;
+}
+/*footer*/
+.footer ul li{
+	list-style: none;
+	text-align: left;
+	padding-bottom: 10px;
+	font-size: 12px;
+	letter-spacing: 1px;
+	font-weight: 100;
+}
+.footer h3{
+	padding-left: 40px;
+  text-align: left;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+}
+.footer .dale-tac{
+	text-align: center;
+
+	font-size: 12px;
+	font-weight: 100;
+}
+.footer .dale-tac h3{
+	font-size:  15px;
+	padding-left: 0;
+	font-weight: bolder;
+}
+
+.footer .dale-tac p{
+	font-size:  14px;
+}
+.footer .first ul,
+.footer .first ul li{
+	padding-left: 0;
+	text-align: center;
+}
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) { 
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) { 
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+
+}
