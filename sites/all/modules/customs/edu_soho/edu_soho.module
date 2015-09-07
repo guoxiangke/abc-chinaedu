@@ -130,11 +130,14 @@ function edu_soho_node_view($node, $view_mode, $langcode) {
     if ($flag && $flag->is_flagged($node->nid)) {
       return;
     }
+    // drupal_get_js(drupal_get_path('module', 'edu_soho').'/js/open_classroom.js','file');
+    $node->content['#attached']['js'][] = drupal_get_path('module', 'edu_soho').'/js/open_classroom.js';
     $node->content ['appear'] = array(
-      '#markup' => '<button class="btn btn-default btn-lg" onclick="var iframe = document.getElementById(\'appear\');
-  iframe.src = iframe.src;">'.t('Refresh').'</button><iframe id="appear" src="https://appear.in/abc-chinaedu-'.$node->nid.'" width="700" height="500" frameborder="0"></iframe>',
+      '#markup' => "<button id='open_classroom' class='btn btn-default btn-lg' data-room='https://appear.in/abc-chinaedu-".$node->nid."' >".t('Open ClassRoom').'</button>',
       '#weight' => 10,
-      // '#theme' => 'mymodule_my_additional_field',
+      //window.open("https://appear.in/abc-china-edu-'.$node->nid.'","winname","directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=400,height=350");
+      // '#theme' => 'mymodule_my_additional_field',//var iframe = document.getElementById(\'appear\');
+  // iframe.src = iframe.src; <iframe id="appear" src="https://appear.in/abc-chinaedu-'.$node->nid.'" width="700" height="500" frameborder="0"></iframe>
     );
   }
 }

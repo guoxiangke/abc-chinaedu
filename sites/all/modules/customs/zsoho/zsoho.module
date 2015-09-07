@@ -26,3 +26,20 @@ function user_edit_access_zsoho($account) {
 	}
   return (($GLOBALS['user']->uid == $account->uid) || user_access('administer users')) && $account->uid > 0;
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function zsoho_form_alter(&$form, &$form_state, $form_id) {
+	if($form_id == 'user_login'){
+		// dpm($form);
+		$form['name']['#title'] = t('Username (Email)');
+		$form['name']['#attributes']['placeholder'] = t('Username (Email)');
+		$form['pass']['#attributes']['placeholder'] = t('Password');
+		$form['actions']['submit']['#attributes']['class'][] = 'btn-primary';
+		$form['actions']['submit']['#attributes']['class'][] = 'btn-lg';
+	}
+	if($form_id == 'user_register_form'){
+		$form['account']['pass']['#weight']= 0;
+	}
+}
