@@ -9,6 +9,13 @@ function edu_soho_menu() {
     'page callback' => '_ajax_create_class_record',
     'access callback' => TRUE,
   );
+  $items['user/dashboard'] = array(
+    'title' => t('Dashboard'),
+    'access callback' => 'user_is_logged_in',
+    'page callback' => 'page_edu_drashboard',
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'main-menu',
+  );
   return $items;
 }
 /**
@@ -110,7 +117,44 @@ function _edu_get_node($type,$uid=NULL,$status=1){
     ->execute()
     ->fetchAll();
 }
+/**
+ * 获取学生/老师的所有订单课程
+ * field_student
+ * field_teacher
+ */
+function edu_get_orders($account,$field='field_student'){
+  $query = new EntityFieldQuery();
+
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'order')
+    ->propertyCondition('status', NODE_PUBLISHED)
+    ->fieldCondition($field, 'uid', $account->uid)
+    ->addMetaData('account', user_load(1)); // Run the query as user 1.
+  $res = $query->execute();
+  if(isset($res['node']))
+    return $res['node'];
+  return array();
+}
+/**
+ * 获取学生/老师的所有课程记录 study_record
+ * field_student
+ * field_teacher
+ */
+function edu_get_records($account,$field='field_student'){
+  $query = new EntityFieldQuery();
+
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'study_record')
+    ->propertyCondition('status', NODE_PUBLISHED)
+    ->fieldCondition($field, 'uid', $account->uid)
+    ->addMetaData('account', user_load(1)); // Run the query as user 1.
+  $res = $query->execute();
+  if(isset($res['node']))
+    return $res['node'];
+  return array();
+}
 //get all user or or all nodes!
+//class=>0
 function _edu_get_og_content($gid,$entity_type='node'){
   return db_select('og_membership', 'n')
     ->fields('n',array('etid'))
@@ -119,7 +163,22 @@ function _edu_get_og_content($gid,$entity_type='node'){
     ->execute()
     ->fetchAll();
 }
-
+/**
+已经完成的课时，即flagged finished class record of one order！
+**/
+function edu_get_finished_class($order_id){
+    $classes = _edu_get_og_content($order_id);
+    $flag = flag_get_flag('mark_finished_class');//teacher
+    $return = array();
+    if ($flag) {
+      foreach ($classes as $key => $node) {
+        if($flag->is_flagged($node->etid)){
+            $return[] = $node->etid;
+        }
+      }
+    }
+    return $return;
+}
 /**
  * Implements hook_node_view().
  */
@@ -157,7 +216,7 @@ function edu_soho_user_insert(&$edit, $account, $category) {
     node_object_prepare($node); // Set some default values.
     $node->uid = 1; // Or any id you wish
     $node->field_student[$node->language][0]['uid'] = $account->uid;
-    $node->field_class_hour[$node->language][0]['value'] = 2;//试听2课时
+    $node->field_class_hour[$node->language][0]['value'] = 1;//试听2课时
     $node->field_teacher[$node->language][0]['uid'] = 4;//default teacher
     $node->group_group[$node->language][0]['value'] = 1;
     //2015-08-29 00:00:00
@@ -206,9 +265,46 @@ function edu_soho_form_alter(&$form, &$form_state, $form_id) {
     $form['og_group_ref']['#attributes']['class'][] = 'hide';
     $form['field_student']['#attributes']['class'][] = 'hide';
     $form['field_teacher']['#attributes']['class'][] = 'hide';
-    $form['og_group_ref']['und'][0]['default']['#default_value'] = $_GET['og_group_ref'];
+    if(isset($_GET['og_group_ref']))
+      $form['og_group_ref']['und'][0]['default']['#default_value'] = $_GET['og_group_ref'];
+    if(isset($_GET['student']))
     $form['field_student']['und'][0]['uid']['#default_value'] = $_GET['student'];
+    if(isset($_GET['teacher']))
     $form['field_teacher']['und'][0]['uid']['#default_value'] = $_GET['teacher'];
     // dpm($form);
+  }
+}
+
+function page_edu_drashboard() {
+  return 'white page!';
+}
+
+
+
+/**
+ * Implements hook_views_pre_execute().
+ */
+
+function edu_soho_views_post_execute(&$view) {
+  if ($view->name == 'nodes' && ($view->current_display=='page_agency_record' || $view->current_display=='page_agency_order')) {
+    // dpm($view);
+    global $user;
+    foreach ($view->result as $key => &$record) {
+      $student_uid = $record->field_field_student[0]['raw']['uid'];
+      if(!isset($students[$student_uid])){
+        // dpm($student_uid);
+        $students[$student_uid] = user_load($student_uid);
+      }
+      $student = $students[$student_uid];
+      if(!isset($student->field_agency[LANGUAGE_NONE][0]['uid']) || $student->field_agency[LANGUAGE_NONE][0]['uid'] != $user->uid){
+        unset($view->result[$key]);
+        // dpm($key);
+      }
+    }
+    // dpm($view->result);
+
+    // for answers ,add wrapper for new ajax answer to fill
+    // add js for comments delete use pop modal.
+    //drupal_add_js(drupal_get_path('module', 'druedu_qa') .'/js/delete_popup_comments.js');
   }
 }
