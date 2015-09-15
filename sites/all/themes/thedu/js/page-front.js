@@ -25,8 +25,9 @@
 			            $("header#navbar").addClass('navbar-bigger');
 			        }
 			    });
+
+			new cbpScroller( document.getElementById( 'cbp-so-scroller' ) );
 	});
-	
 Drupal.behaviors.front = {
   attach: function(context) {    
       $(function() {

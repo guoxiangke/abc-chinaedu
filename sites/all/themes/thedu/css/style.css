@@ -166,6 +166,11 @@ header.navbar-bigger{
 	text-align: center;
 }
 
+#edit-locale,
+.form-item-status,
+.form-item-notify{
+	display: none;
+}
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 
