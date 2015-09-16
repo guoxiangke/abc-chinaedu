@@ -424,21 +424,9 @@ color: #fff;
  #basic-plan>div.body .cta .link:hover {
     text-decoration: underline
 }
-.i-phone:before {
-    content: url(https://en.mention.com/v/nuof0e/bundles/mentionweb/v3/img/phone.svg);
-    vertical-align: middle;
-    padding-right: 7px;
-    width: 13px;
-    height: 13px;
-    position: relative;
-    top: 2px;
-}
-.i-mail:before {
-    content: url(https://en.mention.com/v/nuof0e/bundles/mentionweb/v3/img/mail.png);
-    vertical-align: middle;
-    padding-right: 7px;
-    width: 16px;
-    height: 16px;
+
+.i-mail{
+    margin-left: 10px;
 }
 
 #advanced-features h1{

@@ -33,7 +33,7 @@
 	          <ul class="menu nav navbar-nav secondary" id='menu-btn'>
 	          	<li class="blue-btn">
 	          	<?php
-	            	echo l('课程体系','user/login');
+	            	echo l('课程体系','node/43');
 	            ?>
 	            </li>
 	          	<li class="red-btn"> 

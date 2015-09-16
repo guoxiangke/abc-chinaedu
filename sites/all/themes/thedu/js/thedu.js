@@ -1,5 +1,15 @@
 (function($){
+  $(document).ready(function () {
+    $('#float-consult .fa-wechat').hover(function(){$('#float-consult .qr').toggleClass('hide');},function(){$('#float-consult .qr').toggleClass('hide');});  
+    $(".herobackstretch").each(function() {
+        var $this = $(this), img = $(this).data('img');
+        console.log(img);
+        $this.backstretch(img,
+        {duration: 4000,fade:'normal',centeredX:0});
 
+      });
+  });
+  
 Drupal.behaviors.thedu = {
   attach: function(context) {
   	}

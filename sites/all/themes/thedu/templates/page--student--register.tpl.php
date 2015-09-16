@@ -72,10 +72,10 @@
  *
  * @ingroup themeable
  */
+global $base_url;
 ?> 
 <?php include('special_header.php');?>
-
-<section id="hero1" class="hero main-content wrapper-dark">
+<section id="hero1" data-img="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu'); ?>/img/hero0.jpg" class="hero herobackstretch main-content wrapper-dark text-center">
     <div class="hero-content">
     	<div class="container">
     		<div class="row">
@@ -158,6 +158,7 @@
 		</div>
 	</div>
 </div>
+<?php if(FALSE):?>
 <div class="container">
 
   <header role="banner" id="page-header">
@@ -205,7 +206,7 @@
         <?php print render($page['sidebar_second']); ?>
       </aside>  <!-- /#sidebar-second -->
     <?php endif; ?>
+	</div>
 </div>
-</div>
-
+<?php endif;?>
 <?php include('special_footer.php');?>

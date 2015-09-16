@@ -18,10 +18,13 @@ function thedu_preprocess_page(&$variables) {
 		# code...
 	}
 	if(drupal_is_front_page()){
+		drupal_add_css(drupal_get_path('theme', 'thedu').'/font-awesome/css/font-awesome.min.css',array('group'=>CSS_THEME));
+
 		drupal_add_css(drupal_get_path('theme', 'thedu').'/css/WordsRotating.css', 'file');
 		drupal_add_css(drupal_get_path('theme', 'thedu').'/css/page-front.css',array('group'=>CSS_THEME));
 		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/jquery.backstretch.min.js','file');
 		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/shareTo.js','file');
+		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/header_scroll.js','file');
 		//http://tympanus.net/codrops/2013/07/18/on-scroll-effect-layout/
 		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/contrib/cbpScroller/modernizr.custom.js','file');
 		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/contrib/cbpScroller/classie.js','file');
@@ -31,11 +34,21 @@ function thedu_preprocess_page(&$variables) {
 		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/page-front.js','file');
 		$variables['navbar_classes_array'][] = 'navbar-bigger';
 	}
+	if(isset($variables['node']) && $variables['node']->nid == '43') {
+		drupal_add_css(drupal_get_path('theme', 'thedu').'/font-awesome/css/font-awesome.min.css',array('group'=>CSS_THEME));
+
+		drupal_add_css(drupal_get_path('theme', 'thedu').'/css/page-front.css',array('group'=>CSS_THEME));
+		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/jquery.backstretch.min.js','file');
+		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/shareTo.js','file');
+		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/header_scroll.js','file');
+		$variables['navbar_classes_array'][] = 'navbar-bigger';
+	}
 	if (arg(0) == 'student' && arg(1) == 'register') {
 		drupal_add_css(drupal_get_path('theme', 'thedu').'/css/page-front.css',array('group'=>CSS_THEME));
 		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/jquery.backstretch.min.js','file');
 		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/shareTo.js','file');
-		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/page-front.js','file');
+		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/header_scroll.js','file');
+		// drupal_add_js(drupal_get_path('theme', 'thedu').'/js/page-front.js','file');
 		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/page-user-register.js','file');
 		$variables['navbar_classes_array'][] = 'navbar-bigger';
 	}
@@ -43,20 +56,14 @@ function thedu_preprocess_page(&$variables) {
 		drupal_add_css(drupal_get_path('theme', 'thedu').'/css/page-front.css',array('group'=>CSS_THEME));
 		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/jquery.backstretch.min.js','file');
 		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/shareTo.js','file');
+		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/header_scroll.js','file');
 		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/page-front.js','file');
 		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/page-user-register.js','file');
 		$variables['navbar_classes_array'][] = 'navbar-bigger';
 	}
-	if(isset($variables['node']) && $variables['node']->nid == '43') {
-		drupal_add_css(drupal_get_path('theme', 'thedu').'/css/page-front.css',array('group'=>CSS_THEME));
-		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/jquery.backstretch.min.js','file');
-		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/shareTo.js','file');
-		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/page-front.js','file');
-		$variables['navbar_classes_array'][] = 'navbar-bigger';
-	}
 	if (arg(0) == 'user' && arg(1) == 'dashboard') {
 		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/contrib/jquery.countdown.min.js','file');
-		drupal_add_css(drupal_get_path('theme', 'thedu').'/css/contrib/font-awesome.min.css',array('group'=>CSS_THEME));
+		drupal_add_css(drupal_get_path('theme', 'thedu').'/font-awesome/css/font-awesome.min.css',array('group'=>CSS_THEME));
 		drupal_add_css(drupal_get_path('theme', 'thedu').'/css/contrib/sb-admin-2.css',array('group'=>CSS_THEME));
 		// drupal_add_css(drupal_get_path('theme', 'thedu').'/css/page-front.css',array('group'=>CSS_THEME));
 		// drupal_add_js(drupal_get_path('theme', 'thedu').'/js/jquery.backstretch.min.js','file');

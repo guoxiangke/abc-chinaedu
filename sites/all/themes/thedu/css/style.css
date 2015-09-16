@@ -171,6 +171,30 @@ header.navbar-bigger{
 .form-item-notify{
 	display: none;
 }
+/*float-consult begin*/
+	#float-consult{
+    position: fixed;
+    right: 0;
+    top: 50%;
+    visibility: hidden;
+    z-index: 999;
+	}
+	#float-consult .fa,
+	#float-consult .glyphicon{
+		font-size: 20px;
+	}
+	#float-consult a{
+		color: #333;
+	}
+	#float-consult .btn-consult-default:hover{
+		color: #36a3dc;
+	}
+	#float-consult .qr{
+		top: 155px;
+    position: fixed;
+    right: 35px;
+	}
+/*float-consult begin*/
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 
