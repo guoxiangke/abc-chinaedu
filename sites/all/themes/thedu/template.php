@@ -41,6 +41,8 @@ function thedu_preprocess_page(&$variables) {
 		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/jquery.backstretch.min.js','file');
 		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/shareTo.js','file');
 		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/header_scroll.js','file');
+
+		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/contrib/jquery.videoBG.js','file');
 		$variables['navbar_classes_array'][] = 'navbar-bigger';
 	}
 	if (arg(0) == 'student' && arg(1) == 'register') {

@@ -79,26 +79,7 @@
 
 <!-- Warming Up -->
  
-<!--Video Section-->
-<style type="text/css">
-.jumbotron-bg{
-  max-height: 577px;
-}
-</style> 
-
-</script>
-<!--Video Section Ends Here-->
-
-  <div class="pattern-overlay">
-  
-        <video class="jumbotron-bg jumbotron-video-full">
-            <source src="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu'); ?>/img/15-8-home-campaign-loop.webm">
-            <source src="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu'); ?>/img/15-8-home-campaign-loop.mp4">
-        </video>
-
- 
-  </div>
-<section data-img="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu'); ?>/img/hero0.jpg" class="hero herobackstretch main-content wrapper-dark text-center">
+<section id="videoBG" data-img="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu'); ?>/img/hero0.jpg" class="hero herob2ackstretch main-content wrapper-dark text-center">
 
   <div class="hero-content">  
 
@@ -121,6 +102,22 @@
         </p>
     </div>
 </section>
+
+<!--Video Section-->
+
+</script>
+<!--Video Section Ends Here-->
+  <script type="text/javascript">
+  jQuery('#videoBG').videoBG({
+      mp4:"<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu'); ?>/img/15-8-home-campaign-loop.mp4",
+      // ogv:'assets/tunnel_animation.ogv',
+      webm:"<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu'); ?>/img/15-8-home-campaign-loop.webm",
+      // poster:'assets/tunnel_animation.jpg',
+      scale:true,
+      zIndex:0
+    });
+  </script>
+
 <div class="section-share">
 	<div class="container">
 		<div class="row">
