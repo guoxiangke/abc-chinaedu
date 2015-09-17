@@ -77,8 +77,31 @@
 ?> 
 <?php include('special_header.php');?>
 
-<section id="hero0" data-img="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu'); ?>/img/hero0.jpg" class="hero herobackstretch main-content wrapper-dark text-center">
-    <div class="hero-content">
+<!-- Warming Up -->
+ 
+<!--Video Section-->
+<style type="text/css">
+.jumbotron-bg{
+  max-height: 577px;
+}
+</style> 
+
+</script>
+<!--Video Section Ends Here-->
+
+  <div class="pattern-overlay">
+  
+        <video class="jumbotron-bg jumbotron-video-full">
+            <source src="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu'); ?>/img/15-8-home-campaign-loop.webm">
+            <source src="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu'); ?>/img/15-8-home-campaign-loop.mp4">
+        </video>
+
+ 
+  </div>
+<section data-img="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu'); ?>/img/hero0.jpg" class="hero herobackstretch main-content wrapper-dark text-center">
+
+  <div class="hero-content">  
+
         <h1 class="ng-binding">Learn English online</h1>
         <h2 class="text-light ng-binding">With real teachers in live classes</h2>
         <ul>
