@@ -325,65 +325,65 @@
 
 <!-- advanced-features -->
 <div id="advanced-features">
-      <div class="container">
-        <h1 class="blue-heading">Collaborative Features</h1>
-        <h2>Involve your coworkers in social media monitoring</h2>
-        <section class="row down">
-          <section class="col-md-6">
-            <div class="col-md-2 col-xs-3">
-              <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/mention/share.svg">
-            </div>
-            <div class="col-md-10 col-xs-9">
-              <h4>
-                Share your alerts with your team
-              </h4>
-              <p>
-                Get collaborative on shared alerts with real-time management across devices. mention makes it easy for any size team to stay in the know about their brand.
-              </p>
-            </div>
-          </section>
-          <section class="col-md-6">
-            <div class="col-md-2 col-xs-3">
-              <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/mention/task.svg">
-            </div>
-            <div class="col-md-10 col-xs-9">
-              <h4>
-                Assign Tasks to the right people
-              </h4>
-              <p>
-                Quickly share and react. Send a technical question to your Tech Team, a sales question to your Sales Team, and get everyone in on the Community Management game. 
-              </p>
-            </div>
-          </section>
-          <section class="col-md-6">
-            <div class="col-md-2 col-xs-3">
-              <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/mention/list.svg">
-            </div>
-            <div class="col-md-10 col-xs-9">
-              <h4>
-                Track your team's progress
-              </h4>
-              <p>
-                With Mention's Task List and Activity Feed, you'll never be in the dark when it comes to knowing who's done what. 
-              </p>
-            </div>
-          </section>
-          <section class="col-md-6">
-            <div class="col-md-2 col-xs-3">
-              <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/mention/workflow.svg">
-            </div>
-            <div class="col-md-10 col-xs-9">
-              <h4>
-                Jumpstart your workflow
-              </h4>
-              <p>
-                Work smarter. Easily add new team members, grant access only to those who need it, and speed up your social media presence while protecting your information.
-              </p>
-            </div>
-          </section>
-        </section>
-      </div>
-    </div>
+  <div class="container">
+    <h1 class="blue-heading">Collaborative Features</h1>
+    <h2>Involve your coworkers in social media monitoring</h2>
+    <section class="row down">
+      <section class="col-md-6">
+        <div class="col-md-2 col-xs-3">
+          <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/mention/share.svg">
+        </div>
+        <div class="col-md-10 col-xs-9">
+          <h4>
+            Share your alerts with your team
+          </h4>
+          <p>
+            Get collaborative on shared alerts with real-time management across devices. mention makes it easy for any size team to stay in the know about their brand.
+          </p>
+        </div>
+      </section>
+      <section class="col-md-6">
+        <div class="col-md-2 col-xs-3">
+          <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/mention/task.svg">
+        </div>
+        <div class="col-md-10 col-xs-9">
+          <h4>
+            Assign Tasks to the right people
+          </h4>
+          <p>
+            Quickly share and react. Send a technical question to your Tech Team, a sales question to your Sales Team, and get everyone in on the Community Management game. 
+          </p>
+        </div>
+      </section>
+      <section class="col-md-6">
+        <div class="col-md-2 col-xs-3">
+          <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/mention/list.svg">
+        </div>
+        <div class="col-md-10 col-xs-9">
+          <h4>
+            Track your team's progress
+          </h4>
+          <p>
+            With Mention's Task List and Activity Feed, you'll never be in the dark when it comes to knowing who's done what. 
+          </p>
+        </div>
+      </section>
+      <section class="col-md-6">
+        <div class="col-md-2 col-xs-3">
+          <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/mention/workflow.svg">
+        </div>
+        <div class="col-md-10 col-xs-9">
+          <h4>
+            Jumpstart your workflow
+          </h4>
+          <p>
+            Work smarter. Easily add new team members, grant access only to those who need it, and speed up your social media presence while protecting your information.
+          </p>
+        </div>
+      </section>
+    </section>
+  </div>
+</div>
 <!-- advanced-features -->
 
 <!-- scroll effect begin -->
@@ -443,6 +443,73 @@
 		</article>
 	</section>
 </div>
+
+
+<!-- advanced-features -->
+<div id="advanced-features">
+  <div class="container">
+    <h1 class="blue-heading">Collaborative Features</h1>
+    <h2>WHAT ARE PEOPLE SAYING ABOUT ABC-CHINA?</h2>
+
+		<div id="feature-7" class="row feature">
+		  <div class="social-card twitter col-md-4"><a href="https://twitter.com/ns0n/status/530459592808230912" target="_blank"><div style="background-image:url('http://luxe.com/img/avatar_ns0n.jpg')" class="avatar"></div><br>@ns0n</a><p><a class="tweet-url username" href="https://twitter.com/luxevalet" data-screen-name="luxevalet" target="_blank" rel="nofollow">@luxevalet</a> just dropped off my car with a valet for the first time. Right in the middle of FiDi in SF. so cool!!!</p></div>
+		  <div class="social-card twitter col-md-4"><a href="https://twitter.com/trishymitch/status/526810218949140480" target="_blank"><div style="background-image:url('http://luxe.com/img/avatar_trishymitch.jpg')" class="avatar"></div><br>@trishymitch</a><p>20 min early to appt in SF cuz I didn't have to park! Used Luxe Valet. Need to park in SF? Try them! <a href="http://www.luxe.com" target="_blank" rel="nofollow">http://www.luxe.com</a>  <a href="https://twitter.com/#!/search?q=%23luxevalet" title="#luxevalet" class="tweet-url hashtag" target="_blank" rel="nofollow">#luxevalet</a></p></div>
+		  <div class="social-card twitter col-md-4"><a href="https://twitter.com/rsarver/status/532225376014331906" target="_blank"><div style="background-image:url('http://luxe.com/img/avatar_rsarver.jpg')" class="avatar"></div><br>@rsarver</a><p>I keep hearing more and more good stories about <a class="tweet-url username" href="https://twitter.com/LuxeValet" data-screen-name="LuxeValet" target="_blank" rel="nofollow">@LuxeValet</a>. They're onto something...</p></div>
+		</div>
+		<div id="feature-7" class="row feature">
+			<div class="social-card twitter col-md-4"><a href="https://twitter.com/Raquelschair/status/527896193662476288" target="_blank"><div style="background-image:url('http://luxe.com/img/avatar_Raquelschair.jpg')" class="avatar"></div><br>@Raquelschair</a><p>Just used <a class="tweet-url username" href="https://twitter.com/luxevalet" data-screen-name="luxevalet" target="_blank" rel="nofollow">@luxevalet</a> for the first time and I'm obsessed. That just made my commute into the city a little easier! Love! Check them out!</p></div>
+		  <div class="social-card twitter col-md-4"><a href="https://twitter.com/normanliang/status/527976247650164736" target="_blank"><div style="background-image:url('http://luxe.com/img/avatar_normanliang.jpg')" class="avatar"></div><br>@normanliang</a><p>Thanks <a class="tweet-url username" href="https://twitter.com/luxevalet" data-screen-name="luxevalet" target="_blank" rel="nofollow">@luxevalet</a> for the pickup and dropoff in SF. Great service!</p></div>
+		  <div class="social-card twitter col-md-4"><a href="https://twitter.com/SahilRoyVerma/status/528263832875962368" target="_blank"><div style="background-image:url('http://luxe.com/img/avatar_SahilRoyVerma.jpg')" class="avatar"></div><br>@SahilRoyVerma</a><p><a class="tweet-url username" href="https://twitter.com/luxevalet" data-screen-name="luxevalet" target="_blank" rel="nofollow">@luxevalet</a> is freaking legit. Thanks for making it so easy!</p></div>	  
+		</div>
+  </div>
+</div>
+<style type="text/css">
+	.social-card {
+    display: block;
+    width: 370px;
+    width: 30%;
+    height: 350px;
+    margin: 30px 15px 0;
+    padding: 0;
+    outline: #f6f7f7 solid 2px;
+    float: left;
+    text-align: center
+}
+
+.social-card .avatar {
+    display: inline-block;
+    position: relative;
+    margin: 50px 0 0;
+    width: 90px;
+    height: 90px;
+    background-size: cover;
+    border-radius: 50%
+}
+
+.social-card a,.social-card p,.social-card p a {
+    font: 18px/24px HelveticaNeue-Light,"Helvetica Neue",Verdana,geneva,sans-serif;
+    font-weight: 200
+}
+
+.social-card>a {
+    font-weight: 500;
+    font-size: 16px
+}
+
+.social-card p {
+    position: relative;
+    width: 78%;
+    margin: 24px auto 0
+}
+
+.social-card p a {
+    color: #0096ec;
+    text-transform: none
+}
+.social-card.twitter {
+    background: url(http://luxe.com/img/bg_twitter.png) top left/75px 75px no-repeat #fff;
+}
+</style>
 
 <div id="float-consult" class="float-consult" style="margin-top: -62px; visibility: visible;">
   <div class="btn-group-vertical">

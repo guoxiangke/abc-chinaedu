@@ -74,11 +74,32 @@ function thedu_preprocess_page(&$variables) {
 		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/page-user-my.js','file');
 		drupal_add_js(drupal_get_path('module', 'edu_soho').'/js/open_classroom.js','file');
 	}
-
+	if (arg(0) == 'blog') {
+		drupal_add_css(drupal_get_path('theme', 'thedu').'/css/page-blog.css',array('group'=>CSS_THEME));
+	}
 
   if (isset($variables['node']->type)) {
       $nodetype = $variables['node']->type;
       $variables['theme_hook_suggestions'][] = 'page__' . $nodetype;
   }
 
+}
+
+
+
+function thedu_preprocess_node(&$variables, $hook) {
+  
+  // Add $unpublished variable.
+  $variables['unpublished'] = (!$variables['status']) ? TRUE : FALSE;
+  
+  // Add a class for the view mode.
+  $variables['classes_array'][] = 'view-mode-' . $variables['view_mode']; 
+  
+  //add view mode template files
+  // $variables['theme_hook_suggestions'][] = 'node__' . $variables['view_mode'];
+  // $variables['theme_hook_suggestions'][] = 'node__' . $variables['node']->nid;
+  $variables['theme_hook_suggestions'][] = 'node__' . $variables['type'] . '__' . $variables['view_mode'];
+  
+  //Might need this later.
+  // $variables['title'] = htmlspecialchars_decode($variables['title']);
 }
