@@ -86,12 +86,12 @@ if(isset($node->field_image['und'][0]['fid'])){
 $file = file_load($fid);
 $uri = $file->uri;
 $bg_url = file_create_url($uri);
+$tid = 1;
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 	<div class="library-article-item">
 		<div class="category">
-			<a href="/library/design">Design</a>
-			<a href="/library/user-research">User Research</a>
+			<?php print render($content['field_taxonomy']); ?>
 		</div>
 		<a href="<?php print $node_url; ?>">
 			<div class="library-video-thumbnail right" style="background-image: url(<?php echo $bg_url;?>);">
@@ -106,8 +106,11 @@ $bg_url = file_create_url($uri);
 					?>
 			</p>
 			<p class="by">
-				<span><span class="name"><?php echo $node->name;?></span><span class="title">Design Partner</span></span>
+				<span><span class="name"><?php echo $node->name;?></span>
+				<span class="title">Design Partner</span></span>
+				<?php print render($content['links']); ?>
 			</p>
 		</a>
+		
 	</div>
 </div>

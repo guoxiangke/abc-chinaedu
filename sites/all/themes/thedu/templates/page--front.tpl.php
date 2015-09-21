@@ -79,7 +79,8 @@
 <section id="hero"  data-img="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu'); ?>/img/hero.jpg" class="hero herobackstretch main-content wrapper-dark text-center">
     <div class="hero-content">
         <h1 class="ng-binding">英语在线教育</h1>
-        <h2 class="text-light ng-binding">真人外教互动课堂第一品牌</h2>
+        <h2 class="text-light ng-binding">Your online English course for real life.</h2>
+        <p style="font-size:1.5em;">真人外教互动课堂第一品牌</p>
         <ul>
             <li>
             <?php
@@ -141,28 +142,28 @@
 <div class="section-slide container">
 	<aside class="col-sm-6" role="complementary">
 		<div class="intro">
-			<h3>我们是国际资深语言学校，因此...</h3>
+			<h3>我们是国际资深语言学校，因此我们拥有...</h3>
 			<ul>
-				<li>ABC纯正英语学习系统</li>
+				<li>ABC-ChinaEdu纯正英语学习系统</li>
 				<li>全球认证师资，老师现场互动</li>
 				<li>独家打造少儿英语在线课程体系</li>
 				<li>个性化教材及学习计划，专人跟踪学习进度</li>
-				<li>提供英语能力认证等级证书（证书说明页) from A1 to C2</li>
+				<!-- <li>提供ABC-ChinaEdu英语能力认证等级证书</li> -->
 			</ul>
 		</div>
 		<div class="intro">
-			<h3>拥有20余年远程教育经验，因此...</h3>
+			<h3>拥有20余年远程教育经验，因此我们...</h3>
 			<ul>
-				<li>弹性的学习时间</li>
-				<li>隐私的学习环境</li>
-				<li>专业的学习顾问</li>
+				<li>拥有4000万成功教学案例 + 弹性的学习时间</li>
+				<li>遍及200多个国家 + 自然的学习环境</li>
+				<li>千余位专业外教 + 专业的本地学习顾问</li>
 				<li>无论何时，无论何地，想学就学!</li>
 			</ul>
 		</div>
 	</aside>
 	<section class="col-sm-6">
 		<div class="infoslide">
-			<!-- <img style='' src="http://d1gcwknxgmteff.cloudfront.net/version-2578/images/Main/Frontend/Home/offerings/1.jpg"> -->
+			
 		</div>
 	</section>
 
@@ -199,10 +200,10 @@
               		<li>学习时间1个月</li>
               		<li>赠送课时1节</li>
               	</ul>
-                <p>购买1000点券可学习一个月 20课时/月 注册即送50点券 每上一节课 消费 50点 .</p>
+                <p>购买1000点券,学习时间：一个月 20课时/月 注册即送50点券.</p>
               </div>
               <div class="panel-footer">
-                  <span class="btn btn-success trackedLink" href="http://wpa.qq.com/msgrd?v=3&uin=474054236&site=qq&menu=yes&type=1">点击免费咨询</span>
+                  <a class="btn btn-success addtocart" id="01month" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=474054236&site=qq&menu=yes&type=1">点击免费咨询</a>
               </div>
           </div>
       </div>
@@ -228,10 +229,10 @@
               		<li>学习时间3个月</li>
               		<li>赠送课时3节</li>
               	</ul>
-                <p>购买3000点券可学习3个月 20课时/月 注册即送50点券 每上一节课 消费 50点 .</p>
+                <p>购买3000点券,学习时间：3个月 20课时/月 注册即送50点券.</p>
               </div>
               <div class="panel-footer">
-                  <span class="btn btn-success trackedLink" href="http://wpa.qq.com/msgrd?v=3&uin=474054236&site=qq&menu=yes&type=2">点击免费咨询</span>
+                  <a class="btn btn-success addtocart" id="03month" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=474054236&site=qq&menu=yes&type=2">点击免费咨询</a>
               </div>
           </div>
           <!-- /.col-lg-4 -->
@@ -263,10 +264,10 @@
               		<li>学习时间6个月</li>
               		<li>赠送课时6节</li>
               	</ul>
-              	<p>购买6000点券，学习6个月，送300点 注册即送50点券 每上一节课 消费 50点 .</p>
+              	<p>购买6000点券,学习时间：6个月，送300点；注册即送50点券.</p>
               </div>
               <div class="panel-footer">
-                  <span class="btn btn-success trackedLink" href="http://wpa.qq.com/msgrd?v=3&uin=474054236&site=qq&menu=yes&type=3">点击免费咨询</span>
+                  <a class="btn btn-success addtocart" id="06month" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=474054236&site=qq&menu=yes&type=3">点击免费咨询</a>
               </div>
           </div>
           <!-- /.col-lg-4 -->
@@ -292,10 +293,10 @@
               		<li>学习时间12个月</li>
               		<li>赠送课时40节</li>
               	</ul>
-                  <p>购买10000点券，学习12个月，送2000点 注册即送50点券 每上一节课 消费 50点 .</p>
+                  <p>购买10000点券,学习时间：12个月，送2000点；注册即送50点券.</p>
               </div>
               <div class="panel-footer">
-                  <span class="btn btn-success trackedLink" href="http://wpa.qq.com/msgrd?v=3&uin=474054236&site=qq&menu=yes&type=4">点击免费咨询</span>
+                  <a class="btn btn-success addtocart" id="12month" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=474054236&site=qq&menu=yes&type=4">点击免费咨询</a>
               </div>
           </div>
           <!-- /.col-lg-4 -->
@@ -326,58 +327,57 @@
 <!-- advanced-features -->
 <div id="advanced-features">
   <div class="container">
-    <h1 class="blue-heading">Collaborative Features</h1>
-    <h2>Involve your coworkers in social media monitoring</h2>
-    <section class="row down">
+    <h1 class="blue-heading">我们的服务</h1>
+    <h2>一个全新的快乐和沉浸式英语学习世界</h2>
+    <section class="row down img80">
       <section class="col-md-6">
         <div class="col-md-2 col-xs-3">
-          <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/mention/share.svg">
+          <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/avatar/teens.jpg">
         </div>
         <div class="col-md-10 col-xs-9">
           <h4>
-            Share your alerts with your team
+            <a href="http://www.britishcouncil.org/english">English for kids and teens</a>
           </h4>
-          <p>
-            Get collaborative on shared alerts with real-time management across devices. mention makes it easy for any size team to stay in the know about their brand.
+          <p> Give your child the best start in life with our popular courses and online support for kids and teens. They are specially designed to be fun, interactive and very effective.
           </p>
         </div>
       </section>
       <section class="col-md-6">
         <div class="col-md-2 col-xs-3">
-          <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/mention/task.svg">
+          <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/avatar/student.jpg">
         </div>
         <div class="col-md-10 col-xs-9">
           <h4>
-            Assign Tasks to the right people
+            English for university students
           </h4>
           <p>
-            Quickly share and react. Send a technical question to your Tech Team, a sales question to your Sales Team, and get everyone in on the Community Management game. 
+           Maximise your opportunities with our English and IELTS courses, tests and online resources. We’re uniquely positioned to help you get the grade you need for your education journey.
           </p>
         </div>
       </section>
       <section class="col-md-6">
         <div class="col-md-2 col-xs-3">
-          <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/mention/list.svg">
+          <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/avatar/workplace.jpg">
         </div>
         <div class="col-md-10 col-xs-9">
           <h4>
-            Track your team's progress
+            English for the workplace
           </h4>
           <p>
-            With Mention's Task List and Activity Feed, you'll never be in the dark when it comes to knowing who's done what. 
+            Realise your full potential at work by communicating effectively in the world’s business language. Our targeted approach for business English ensures your learning is focused and relevant.
           </p>
         </div>
       </section>
       <section class="col-md-6">
         <div class="col-md-2 col-xs-3">
-          <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/mention/workflow.svg">
+          <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/avatar/companies.jpg">
         </div>
         <div class="col-md-10 col-xs-9">
           <h4>
-            Jumpstart your workflow
+            English learning solutions for companies
           </h4>
           <p>
-            Work smarter. Easily add new team members, grant access only to those who need it, and speed up your social media presence while protecting your information.
+            Transform your business with our training courses and online learning solutions. With training plans tailored to your exact needs, we’ll help you take your company to the next level.
           </p>
         </div>
       </section>
@@ -390,11 +390,11 @@
 <div id="cbp-so-scroller" class="cbp-so-scroller">
 	<section class="cbp-so-section">
 		<article class="cbp-so-side cbp-so-side-left">
-			<h3>体验更智能的网络</h3>
-			<p><a href="https://www.baidu.com/s?wd=chrome" target="_blank">点击下载</a>使用Chrome浏览时，可以充分利用Google的功能。将Chrome与Google结合使用时，您不仅可以获得相关度更高的查询建议，还可以利用各种Google产品（包括语音搜索和Google即时）的功能。启用Google即时</p>
+			<h3>架构于谷歌浏览器的ABC-ChinaEdu学习系统</h3>
+			<p>使用Chrome浏览时，不仅可以充分利用Google的最先进的浏览器功能。而且ABC-ChinaEdu学习系统就是在Chrome下构建的，让您体验不一样的更智能的网络产品带的学习效果<a href="https://www.baidu.com/s?wd=chrome" target="_blank">下载</a></p>
 		</article>
 		<figure class="cbp-so-side cbp-so-side-right">
-			<img src="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/benefits-5-mobile_2x.png" alt="img01">
+			<a href="https://www.baidu.com/s?wd=chrome" target="_blank"><img src="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/benefits-5-mobile_2x.png" alt="img01"></a>
 		</figure>
 	</section>
 	<section class="cbp-so-section">
@@ -402,14 +402,18 @@
 			<img src="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/industry_hospitality-transportation_solution.jpg" alt="img01">
 		</figure>
 		<article class="cbp-so-side cbp-so-side-right">
-			<h3>Plum caramels</h3>
-			<p>Lollipop powder danish sugar plum caramels liquorice sweet cookie. Gummi bears caramels gummi bears candy canes cheesecake sweet roll icing dragée. Gummies jelly-o tart. Cheesecake unerdwear.com candy canes apple pie halvah chocolate tiramisu.</p>
+			<h3>我们拥有丰富的教学经验</h3>
+			<p>在ABC-ChinaEdu您将会和世界顶尖的英语授课专家一起学习英语。我们已经有75年的教学经验，成功为来自100多个国家的上千万英语学习者，提高他们的英语学习。We’ve been teaching English for more than 75 years and have helped more than 100 million people in 100 different countries improve their English skills and build their confidence.
+
+You can learn English by taking face-to-face lessons in our teaching centres or at home via our online courses and learning tools. And we can demonstrate your progress by providing you with internationally recognised proficiency tests.
+
+Explore our unrivalled range of courses and support to meet your exact learning needs.</p>
 		</article>
 	</section>
 	<section class="cbp-so-section">
 		<article class="cbp-so-side cbp-so-side-left">
-			<h3>Marzipan gingerbread</h3>
-			<p>Soufflé bonbon jelly cotton candy liquorice dessert jelly bear claw candy canes. Pudding halvah bonbon marzipan powder. Marzipan gingerbread sweet jelly.</p>
+			<h3>Learn English with ABC</h3>
+			<p>That’s how we teach English, the best way to learn English online..</p>
 		</article>
 		<figure class="cbp-so-side cbp-so-side-right">
 			<img src="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/icon-write-mac.png" alt="img01">
@@ -420,14 +424,16 @@
 			<img src="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/bg-callrecorder.jpg" alt="img01">
 		</figure>
 		<article class="cbp-so-side cbp-so-side-right">
-			<h3>Carrot cake</h3>
-			<p>Sesame snaps sweet wafer danish. Chupa chups carrot cake icing donut halvah bonbon. Chocolate cake candy marshmallow pudding dessert marzipan jujubes sugar plum.</p>
+			<h3>Learn to speak English with the natural approach</h3>
+			<p>Just like in real life, you will use your mobile to listen, speak, read and write in English: your subconscious will gradually absorb new vocabulary and English expressions and you will make progress without even realizing it!.</p>
 		</article>
 	</section>
 	<section class="cbp-so-section">
 		<article class="cbp-so-side cbp-so-side-left">
-			<h3>Pudding lollipop</h3>
-			<p>Chupa chups pudding lollipop gummi bears gummies cupcake pie. Cookie cotton candy caramels. Oat cake dessert applicake. Sweet roll tiramisu sweet roll sweet roll.</p>
+			<h3>Learn
+				English online
+				for real life</h3>
+			<p>The effective natural method,the pleasure of watching films.</p>
 		</article>
 		<figure class="cbp-so-side cbp-so-side-right">
 			<img src="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/crsample.jpg" alt="img01">
@@ -438,8 +444,8 @@
 			<img src="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/industry_hospitality-transportation_solution.jpg" alt="img01">
 		</figure>
 		<article class="cbp-so-side cbp-so-side-right">
-			<h3>Soufflé bonbon</h3>
-			<p>Cake cotton candy lollipop. Cake croissant cheesecake candy sugar plum icing apple pie wafer. Pie sugar plum tiramisu tiramisu pie fruitcake candy icing. Candy icing gummies gummies cheesecake brownie lemon drops chocolate gingerbread.</p>
+			<h3>Change the way you learn English!</h3>
+			<p>The only app you need to learn how to speak English.</p>
 		</article>
 	</section>
 </div>
@@ -448,18 +454,37 @@
 <!-- advanced-features -->
 <div id="advanced-features">
   <div class="container">
-    <h1 class="blue-heading">Collaborative Features</h1>
+    <h1 class="blue-heading">中国区学员学习感受</h1>
     <h2>WHAT ARE PEOPLE SAYING ABOUT ABC-CHINA?</h2>
 
 		<div id="feature-7" class="row feature">
-		  <div class="social-card twitter col-md-4"><a href="https://twitter.com/ns0n/status/530459592808230912" target="_blank"><div style="background-image:url('http://luxe.com/img/avatar_ns0n.jpg')" class="avatar"></div><br>@ns0n</a><p><a class="tweet-url username" href="https://twitter.com/luxevalet" data-screen-name="luxevalet" target="_blank" rel="nofollow">@luxevalet</a> just dropped off my car with a valet for the first time. Right in the middle of FiDi in SF. so cool!!!</p></div>
-		  <div class="social-card twitter col-md-4"><a href="https://twitter.com/trishymitch/status/526810218949140480" target="_blank"><div style="background-image:url('http://luxe.com/img/avatar_trishymitch.jpg')" class="avatar"></div><br>@trishymitch</a><p>20 min early to appt in SF cuz I didn't have to park! Used Luxe Valet. Need to park in SF? Try them! <a href="http://www.luxe.com" target="_blank" rel="nofollow">http://www.luxe.com</a>  <a href="https://twitter.com/#!/search?q=%23luxevalet" title="#luxevalet" class="tweet-url hashtag" target="_blank" rel="nofollow">#luxevalet</a></p></div>
-		  <div class="social-card twitter col-md-4"><a href="https://twitter.com/rsarver/status/532225376014331906" target="_blank"><div style="background-image:url('http://luxe.com/img/avatar_rsarver.jpg')" class="avatar"></div><br>@rsarver</a><p>I keep hearing more and more good stories about <a class="tweet-url username" href="https://twitter.com/LuxeValet" data-screen-name="LuxeValet" target="_blank" rel="nofollow">@LuxeValet</a>. They're onto something...</p></div>
+		  <div class="social-card twitter col-md-4">
+		  	<a href="https://twitter.com/ns0n/status/530459592808230912" target="_blank">
+		  		<div style="background-image:url('http://luxe.com/img/avatar_ns0n.jpg')" class="avatar"></div><br>@韩佳乐</a>
+		  				<p>本人特别想感谢外教Nice老师，让我找到了说英语的信心，在课堂上不断给我以鼓励，每次上课后都会有详细的学习记录以纠正我的语法及句子错误，我们已经象好朋友一样，无所不谈，她负责任的态度太让我感动了!!!</p></div>
+		  <div class="social-card twitter col-md-4">
+		  	<a href="https://twitter.com/trishymitch/status/526810218949140480" target="_blank">
+		  		<div style="background-image:url('http://luxe.com/img/avatar_trishymitch.jpg')" class="avatar"></div><br>@鲍爱玉</a>
+		  				<p>再次感谢感谢monika老师，从一开始的接触就用英语与我交流，从简单的单词开始接触，让我重新捡回学习英语的信心，在我的学习期间，monika老师会耐心的听我的录音，指出我的问题，非常感谢monika老师！ </p></div>
+		  <div class="social-card twitter col-md-4">
+		  	<a href="https://twitter.com/rsarver/status/532225376014331906" target="_blank">
+		  		<div style="background-image:url('http://luxe.com/img/avatar_rsarver.jpg')" class="avatar"></div><br>@陈然</a>
+		  				<p>你好，我是黄豪妈妈，黄豪很喜欢现在这个男老师，聊的很高兴，谢谢！我觉得他现在语音进步很多了，和老师聊天的话题也多了，学了这么久，看到他进步了，我也很高兴，觉得选对了学校，也很感谢你们。</p></div>
 		</div>
 		<div id="feature-7" class="row feature">
-			<div class="social-card twitter col-md-4"><a href="https://twitter.com/Raquelschair/status/527896193662476288" target="_blank"><div style="background-image:url('http://luxe.com/img/avatar_Raquelschair.jpg')" class="avatar"></div><br>@Raquelschair</a><p>Just used <a class="tweet-url username" href="https://twitter.com/luxevalet" data-screen-name="luxevalet" target="_blank" rel="nofollow">@luxevalet</a> for the first time and I'm obsessed. That just made my commute into the city a little easier! Love! Check them out!</p></div>
-		  <div class="social-card twitter col-md-4"><a href="https://twitter.com/normanliang/status/527976247650164736" target="_blank"><div style="background-image:url('http://luxe.com/img/avatar_normanliang.jpg')" class="avatar"></div><br>@normanliang</a><p>Thanks <a class="tweet-url username" href="https://twitter.com/luxevalet" data-screen-name="luxevalet" target="_blank" rel="nofollow">@luxevalet</a> for the pickup and dropoff in SF. Great service!</p></div>
-		  <div class="social-card twitter col-md-4"><a href="https://twitter.com/SahilRoyVerma/status/528263832875962368" target="_blank"><div style="background-image:url('http://luxe.com/img/avatar_SahilRoyVerma.jpg')" class="avatar"></div><br>@SahilRoyVerma</a><p><a class="tweet-url username" href="https://twitter.com/luxevalet" data-screen-name="luxevalet" target="_blank" rel="nofollow">@luxevalet</a> is freaking legit. Thanks for making it so easy!</p></div>	  
+			<div class="social-card twitter col-md-4">
+				<a href="https://twitter.com/Raquelschair/status/527896193662476288" target="_blank">
+					<div style="background-image:url('http://luxe.com/img/avatar_Raquelschair.jpg')" class="avatar"></div><br>@任嘉宇</a>
+							<p>好的学习方法，的确会带来很不错的学习效果，ABC-ChinaEdu英语外教很有耐心，不仅有步骤一步一步的引导，而且更像朋友一样的分享课程。我的口语也提高了很多，正在学习中，期待。。加油！！！</p></div>
+		  <div class="social-card twitter col-md-4">
+		  	<a href="https://twitter.com/normanliang/status/527976247650164736" target="_blank">
+		  		<div style="background-image:url('http://luxe.com/img/avatar_normanliang.jpg')" class="avatar"></div><br>@陆小丽</a>
+		  				<p>在ABC-ChinaEdu学习以来，我的英语口语和听力有很大的提高，跟外国人交流起来也更自信了，我现在也渐渐也爱上英语了，计划长期在这里学习英语，感谢你们！!</p></div>
+		  <div class="social-card twitter col-md-4">
+		  	<a href="https://twitter.com/SahilRoyVerma/status/528263832875962368" target="_blank">
+		  		<div style="background-image:url('http://luxe.com/img/avatar_SahilRoyVerma.jpg')" class="avatar"></div><br>@黄豪</a>
+		  				<p>我的英语本身就不好，我不知道我选择学习日常口语对于我这样词汇量极少然后语法不懂，单词不懂怎么运用的学员来说选择学习口语对不对，但是，我知道我现在比前更要喜欢英语了。 
+    Ivy老师真的很不错的！</div>	  
 		</div>
   </div>
 </div>
@@ -515,7 +540,7 @@
   <div class="btn-group-vertical">
     <a class="btn btn-consult-default" href="http://wpa.qq.com/msgrd?v=3&uin=474054236&site=qq&menu=yes&type=left"  data-toggle="tooltip" data-placement="left" target="_blank" title="QQ客服" ><span class="fa fa-qq"></span></a>
 		<a class="btn btn-consult-default" title="Skype"  data-toggle="tooltip" data-placement="left"><span class="fa fa-skype"></span></a>
-    <a class="btn btn-consult-default" title="关注微信"><span class="fa fa-wechat"></span></a>
+    <a class="btn btn-consult-default trackedHover" title="关注微信"><span class="fa fa-wechat"></span></a>
 		<a class="btn btn-consult-default" href="http://www.baidu.com/s?wd=chrome" target="_blank" data-toggle="tooltip" data-placement="left" title="Google浏览器支持"><span class="fa fa-chrome"></span></a>
     <a class="btn btn-consult-default" href="tel:13712345678" data-toggle="tooltip" data-placement="left" title="137-1234-5678"><span class="glyphicon glyphicon-earphone"></span></a>
     

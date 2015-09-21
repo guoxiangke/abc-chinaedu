@@ -323,34 +323,32 @@ color: #fff;
 .panel-footer .btn {
   width: 100%;
   letter-spacing: .5em;
+  color: #fff;
+}
+.panel-footer .btn:hover{
+  color: #fff;
 }
 .panel-primary .btn{
-  color: #fff;
   background-color: #337ab7;
   border-color: #337ab7;
 }
 .panel-primary .btn:hover{
-    color: #fff;
     background-color: #286090;
     border-color: #204d74
 }
 .panel-yellow .btn{
   border-color: #f0ad4e;
-  color: #fff;
   background-color: #f0ad4e;
 }
 .panel-yellow .btn:hover{
-  color: #fff;
   background-color: #ec971f;
   border-color: #d58512
 }
 
 .panel-red .btn{
   border-color: #d9534f;
-  color: #fff;
   background-color: #d9534f;}
 .panel-red .btn:hover{
-  color: #fff;
   background-color: #c9302c;
   border-color: #ac2925
 }
@@ -457,6 +455,7 @@ color: #fff;
     font-size: 14px;
     color: #999;
     line-height: 24px;
+    text-align: left;
 }
 .down {
     margin-top: 60px;

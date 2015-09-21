@@ -191,6 +191,27 @@ header.navbar-bigger{
     position: fixed;
     right: 35px;
 	}
+.block-title{
+	font-size: 20px;
+}
+.submitted{
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.submitted:before {
+    content: "\e109";
+}
+.img80 img{
+	max-width: 80px;
+}
+
 /*float-consult begin*/
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */

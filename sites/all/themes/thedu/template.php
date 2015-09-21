@@ -78,11 +78,10 @@ function thedu_preprocess_page(&$variables) {
 		drupal_add_css(drupal_get_path('theme', 'thedu').'/css/page-blog.css',array('group'=>CSS_THEME));
 	}
 
-  if (isset($variables['node']->type)) {
-      $nodetype = $variables['node']->type;
-      $variables['theme_hook_suggestions'][] = 'page__' . $nodetype;
+ if (!empty($variables['node']) && !empty($variables['node']->type)) {
+    $variables['theme_hook_suggestions'][] = 'page__node__' . $variables['node']->type;
+    drupal_add_css(drupal_get_path('theme', 'thedu').'/css/page-blog.css',array('group'=>CSS_THEME));
   }
-
 }
 
 
