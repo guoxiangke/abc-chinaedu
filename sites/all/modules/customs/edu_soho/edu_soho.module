@@ -64,7 +64,8 @@ function _ajax_create_class_record(){
 
     $node = new stdClass(); // We create a new node object
     $node->type = $type; // Or any other content type you want
-    $node->title = "A student request a Class|试听申请";
+    $account = user_load($uid);
+    $node->title = $account->name." request a Class|申请试听";
     $node->status = 0;
     $node->language = LANGUAGE_NONE; // Or any language code if Locale module is enabled. More on this below *
     node_object_prepare($node); // Set some default values.
@@ -133,6 +134,7 @@ function edu_get_orders($account,$field='field_student'){
   $res = $query->execute();
   if(isset($res['node']))
     return $res['node'];
+  // if($field=='field_agency') return views_get_view_result('nodes','page_agency_order');
   return array();
 }
 /**
@@ -151,6 +153,7 @@ function edu_get_records($account,$field='field_student'){
   $res = $query->execute();
   if(isset($res['node']))
     return $res['node'];
+  // if($field=='field_agency') return views_get_view_result('nodes','page_agency_record'); 
   return array();
 }
 //get all user or or all nodes!
@@ -306,5 +309,54 @@ function edu_soho_views_post_execute(&$view) {
     // for answers ,add wrapper for new ajax answer to fill
     // add js for comments delete use pop modal.
     //drupal_add_js(drupal_get_path('module', 'druedu_qa') .'/js/delete_popup_comments.js');
+  }
+}
+
+/**
+ * 获取代理的所有学生
+ */
+function edu_get_agencyusers($account){
+  $query = new EntityFieldQuery();
+
+  $query->entityCondition('entity_type', 'user')
+    ->propertyCondition('status', 1)
+    ->fieldCondition('field_agency', 'uid', $account->uid)
+    ->addMetaData('account', user_load(1)); // Run the query as user 1.
+  $res = $query->execute();
+  if(isset($res['user']))
+    return $res['user'];
+  return array();
+}
+
+
+/**
+ * Act on an object being flagged.
+ *
+ * @param $flag
+ *  The flag object.
+ * @param $entity_id
+ *  The id of the entity the flag is on.
+ * @param $account
+ *  The user account performing the action.
+ * @param $flagging_id
+ *  The flagging entity.
+ * 老师标记课时完成后，给代理加分+1
+ */
+function edu_soho_flag_flag($flag, $entity_id, $account, $flagging) {
+  if($flag->name == 'mark_finished_class'){
+    if(!in_array('teacher', array_values($user->roles))) return;
+    $node = node_load($entity_id);
+    $field_student = $node->field_student[LANGUAGE_NONE][0]['uid'];
+    $account = user_load($field_student);
+    if(isset($account->field_agency[LANGUAGE_NONE][0]['uid'])){
+      $agency_uid = $account->field_agency[LANGUAGE_NONE][0]['uid'];
+      $params = array(
+        'uid' => $agency_uid,
+        'points' => 1,
+        'operation' => 'Insert',
+        'description' => '学生完成课时'.$entity_id,
+      );
+      userpoints_userpointsapi($params);
+    }
   }
 }

@@ -433,7 +433,7 @@
     <img src="http://combo.b.qq.com/store/src/themes/mpPortal/register/images/urCode.png">
   </div>
 </div><!-- float-consult end -->
-
+<?php if(0):?>
 <div class="container">
 
   <header role="banner" id="page-header">
@@ -481,8 +481,9 @@
         <?php print render($page['sidebar_second']); ?>
       </aside>  <!-- /#sidebar-second -->
     <?php endif; ?>
+  </div>
 </div>
-</div>
+<?php endif;?>
 
 <?php include('special_footer.php');?>
 

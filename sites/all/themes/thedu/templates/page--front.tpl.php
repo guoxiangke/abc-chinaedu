@@ -455,86 +455,39 @@ Explore our unrivalled range of courses and support to meet your exact learning 
 <div id="advanced-features">
   <div class="container">
     <h1 class="blue-heading">中国区学员学习感受</h1>
-    <h2>WHAT ARE PEOPLE SAYING ABOUT ABC-CHINA?</h2>
+    <h2>What are people saying about ABC-ChinaEdu?</h2>
 
 		<div id="feature-7" class="row feature">
 		  <div class="social-card twitter col-md-4">
-		  	<a href="https://twitter.com/ns0n/status/530459592808230912" target="_blank">
-		  		<div style="background-image:url('http://luxe.com/img/avatar_ns0n.jpg')" class="avatar"></div><br>@韩佳乐</a>
+		  	<a href="#" target="_blank">
+		  		<div style="background-image:url('http://luxe.com/img/avatar_yuanzhang.jpg')" class="avatar"></div><br>@韩佳乐</a>
 		  				<p>本人特别想感谢外教Nice老师，让我找到了说英语的信心，在课堂上不断给我以鼓励，每次上课后都会有详细的学习记录以纠正我的语法及句子错误，我们已经象好朋友一样，无所不谈，她负责任的态度太让我感动了!!!</p></div>
 		  <div class="social-card twitter col-md-4">
-		  	<a href="https://twitter.com/trishymitch/status/526810218949140480" target="_blank">
+		  	<a href="#" target="_blank">
 		  		<div style="background-image:url('http://luxe.com/img/avatar_trishymitch.jpg')" class="avatar"></div><br>@鲍爱玉</a>
 		  				<p>再次感谢感谢monika老师，从一开始的接触就用英语与我交流，从简单的单词开始接触，让我重新捡回学习英语的信心，在我的学习期间，monika老师会耐心的听我的录音，指出我的问题，非常感谢monika老师！ </p></div>
 		  <div class="social-card twitter col-md-4">
-		  	<a href="https://twitter.com/rsarver/status/532225376014331906" target="_blank">
-		  		<div style="background-image:url('http://luxe.com/img/avatar_rsarver.jpg')" class="avatar"></div><br>@陈然</a>
+		  	<a href="#" target="_blank">
+		  		<div style="background-image:url('http://luxe.com/img/avatar_DocJCContreras.jpg')" class="avatar"></div><br>@陈然</a>
 		  				<p>你好，我是黄豪妈妈，黄豪很喜欢现在这个男老师，聊的很高兴，谢谢！我觉得他现在语音进步很多了，和老师聊天的话题也多了，学了这么久，看到他进步了，我也很高兴，觉得选对了学校，也很感谢你们。</p></div>
 		</div>
 		<div id="feature-7" class="row feature">
 			<div class="social-card twitter col-md-4">
-				<a href="https://twitter.com/Raquelschair/status/527896193662476288" target="_blank">
+				<a href="#" target="_blank">
 					<div style="background-image:url('http://luxe.com/img/avatar_Raquelschair.jpg')" class="avatar"></div><br>@任嘉宇</a>
 							<p>好的学习方法，的确会带来很不错的学习效果，ABC-ChinaEdu英语外教很有耐心，不仅有步骤一步一步的引导，而且更像朋友一样的分享课程。我的口语也提高了很多，正在学习中，期待。。加油！！！</p></div>
 		  <div class="social-card twitter col-md-4">
-		  	<a href="https://twitter.com/normanliang/status/527976247650164736" target="_blank">
+		  	<a href="#" target="_blank">
 		  		<div style="background-image:url('http://luxe.com/img/avatar_normanliang.jpg')" class="avatar"></div><br>@陆小丽</a>
 		  				<p>在ABC-ChinaEdu学习以来，我的英语口语和听力有很大的提高，跟外国人交流起来也更自信了，我现在也渐渐也爱上英语了，计划长期在这里学习英语，感谢你们！!</p></div>
 		  <div class="social-card twitter col-md-4">
-		  	<a href="https://twitter.com/SahilRoyVerma/status/528263832875962368" target="_blank">
+		  	<a href="#" target="_blank">
 		  		<div style="background-image:url('http://luxe.com/img/avatar_SahilRoyVerma.jpg')" class="avatar"></div><br>@黄豪</a>
 		  				<p>我的英语本身就不好，我不知道我选择学习日常口语对于我这样词汇量极少然后语法不懂，单词不懂怎么运用的学员来说选择学习口语对不对，但是，我知道我现在比前更要喜欢英语了。 
     Ivy老师真的很不错的！</div>	  
 		</div>
   </div>
 </div>
-<style type="text/css">
-	.social-card {
-    display: block;
-    width: 370px;
-    width: 30%;
-    height: 350px;
-    margin: 30px 15px 0;
-    padding: 0;
-    outline: #f6f7f7 solid 2px;
-    float: left;
-    text-align: center
-}
-
-.social-card .avatar {
-    display: inline-block;
-    position: relative;
-    margin: 50px 0 0;
-    width: 90px;
-    height: 90px;
-    background-size: cover;
-    border-radius: 50%
-}
-
-.social-card a,.social-card p,.social-card p a {
-    font: 18px/24px HelveticaNeue-Light,"Helvetica Neue",Verdana,geneva,sans-serif;
-    font-weight: 200
-}
-
-.social-card>a {
-    font-weight: 500;
-    font-size: 16px
-}
-
-.social-card p {
-    position: relative;
-    width: 78%;
-    margin: 24px auto 0
-}
-
-.social-card p a {
-    color: #0096ec;
-    text-transform: none
-}
-.social-card.twitter {
-    background: url(http://luxe.com/img/bg_twitter.png) top left/75px 75px no-repeat #fff;
-}
-</style>
 
 <div id="float-consult" class="float-consult" style="margin-top: -62px; visibility: visible;">
   <div class="btn-group-vertical">
@@ -551,6 +504,7 @@ Explore our unrivalled range of courses and support to meet your exact learning 
 </div>
 
 <!-- scroll effect end -->
+<?php if(0):?>
 <div class="container">
 
   <header role="banner" id="page-header">
@@ -598,9 +552,9 @@ Explore our unrivalled range of courses and support to meet your exact learning 
         <?php print render($page['sidebar_second']); ?>
       </aside>  <!-- /#sidebar-second -->
     <?php endif; ?>
+  </div>
 </div>
-</div>
-
+<?php endif;?>
 <?php include('special_footer.php');?>
 
 <?php if(!user_is_logged_in()): ?>

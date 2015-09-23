@@ -5,34 +5,34 @@
         <h3 class="dale-tac">ABC-ChinaEdu</h3>
         <p>了解更多请致电?<br>4008 517 517</p>
         <ul style='padding'>
-          <li>© 2015 ABC-ChinaEdu .</li>
+          <li>©2015 ABC-ChinaEdu.</li>
         </ul>
       </section>
 			<section class="col-sm-3">
 				<h3>ABC-ChinaEdu</h3>
 				<ul>
-					<li>课程体系</li>
-					<li>How it works</li>
-					<li>隐私策略</li>
-					<li>服务条款</li>
+					<li><?php echo l('课程体系','node/43');?></li>
+					<li>运作方式</li>
+					<li><?php echo l('隐私策略','node/67');?></li>
+					<li><?php echo l('服务条款','node/68');?></li>
 				</ul>
 			</section>
 			<section class="col-sm-3">
 				<h3>Other links</h3>
 				<ul>
-					<li>联系我们</li>
-					<li>关于我们</li>
-					<li>代理合作</li>
-					<li>加入我们</li>
+					<li><?php echo l('联系我们','student/register');?></li>
+					<li><?php echo l('关于我们','teacher/register');?></li>
+					<li><?php echo l('代理合作','agency/register');?></li>
+					<li><?php echo l('加入我们','node/69');?></li>
 				</ul>
 			</section>
 			<section class="col-sm-3">
-				<h3>用户登陆</h3>
+				<h3>User links</h3>
 				<ul>
-					<li>我是学生</li>
-					<li>Teacher</li>
-					<li>代理登陆</li>
-					<li>关注我们</li>
+					<li><?php echo l('点击登陆','user/login');?></li>
+					<li><?php echo l('我是学生','student/register');?></li>
+					<li><?php echo l('Teacher','teacher/register');?></li>
+					<li><?php echo l('代理合作','agency/register');?></li>
 				</ul>
 			</section>
 		</div>

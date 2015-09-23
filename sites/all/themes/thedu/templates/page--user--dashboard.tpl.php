@@ -251,28 +251,26 @@ if(in_array('teacher', array_values($user->roles))){
   <div class="row">
   <?php if($role == 'agency'):?>
     <div class="col-lg-3 col-md-6">
-        <div class="panel panel-red">
+          <div class="panel panel-red">
+            <a id='noopen_classroom' href="<?php echo url('create/student')?>">
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-xs-3">
-                    	<i class="glyphicon glyphicon-facetime-video fa-5x"></i>
+                    	<i class="fa fa-users fa-5x"></i>
                     </div>
                     <div class="col-xs-9 text-right">
                         <div class="huge">
-                        	
-                        	 <span id="noclock"><?php echo count($class_time_begin);?></span>
-                        	
+                        	 <span id="noclock"><?php echo count(edu_get_agencyusers($user));?></span>
                         </div>
-                        <div <?php if($role=='student') echo 'id="elapsed"'?>><?php echo t('Your Coming Classes');?></div>
+                        <div>学生总计</div>
                     </div>
                 </div>
             </div>
-            <a data-room='<?php if($study_record_nid) echo "https://appear.in/abc-chinaedu-".$study_record_nid;?>'  id='open_classroom' href="#<?php if($study_record_nid) echo $study_record_nid;?>">
-                <div class="panel-footer">
-                    <span class="pull-left">点击上课</span>
-                    <span class="pull-right"><i class="glyphicon glyphicon-circle-arrow-right"></i></span>
-                    <div class="clearfix"></div>
-                </div>
+            <div class="panel-footer">
+                <span class="pull-left">添加学生</span>
+                <span class="pull-right"><i class="glyphicon glyphicon-circle-arrow-right"></i></span>
+                <div class="clearfix"></div>
+            </div>
             </a>
         </div>
     </div>
@@ -332,6 +330,9 @@ if(in_array('teacher', array_values($user->roles))){
         </div>
     </div>
   <?php endif;?>
+  <?php if($role == 'agency'):?>
+
+  <?php else:?>
     <div class="col-lg-3 col-md-6">
         <div class="panel panel-green">
             <div class="panel-heading">
@@ -340,7 +341,8 @@ if(in_array('teacher', array_values($user->roles))){
                         <i class="glyphicon glyphicon-blackboard fa-5x"></i>
                     </div>
                     <div class="col-xs-9 text-right">
-                        <div class="huge"><?php echo count(edu_get_records($user,'field_'.$role));?></div>
+                        <div class="huge"><?php
+                        echo count(edu_get_records($user,'field_'.$role));?></div>
                         <div><?php echo t('Your Records');?></div>
                     </div>
                 </div>
@@ -376,6 +378,7 @@ if(in_array('teacher', array_values($user->roles))){
             </a>
         </div>
     </div>
+  <?php endif;?>
     <div class="col-lg-3 col-md-6">
         <div class="panel panel-primary">
             <div class="panel-heading">

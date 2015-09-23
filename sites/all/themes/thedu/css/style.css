@@ -2,15 +2,16 @@
  * This file should get overwritten if Method 1 is used. If Method 2 is chosen,
  * remove this comment and start adding your styles to this file.
  */
-#block-locale-language {
-	float: left;
-}
 nav .secondary{
 	float: right;
 }
 
 .navbar-default .navbar-nav > li{
 	padding: 15px;
+}
+/*
+#block-locale-language {
+	float: left;
 }
 .navbar-default .navbar-nav > li,
 #block-locale-language,
@@ -37,7 +38,7 @@ nav .secondary{
 #block-locale-language a:hover{
 	text-decoration: none;
 	cursor: default;
-}
+}*/
 .footer{
 	margin-top: 50px;
 	padding-top: 50px;
@@ -135,6 +136,11 @@ header.navbar-bigger{
 	font-size: 12px;
 	letter-spacing: 1px;
 	font-weight: 100;
+	padding-left: 10px;
+}
+.footer ul li a,
+.footer ul li a:hover{
+	color: #fff;
 }
 .footer h3{
 	padding-left: 40px;

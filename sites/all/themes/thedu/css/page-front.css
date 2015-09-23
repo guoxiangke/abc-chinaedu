@@ -460,3 +460,51 @@ color: #fff;
 .down {
     margin-top: 60px;
 }
+
+
+
+  .social-card {
+    display: block;
+    width: 370px;
+    width: 30%;
+    height: 350px;
+    margin: 30px 15px 0;
+    padding: 0;
+    outline: #f6f7f7 solid 2px;
+    float: left;
+    text-align: center
+}
+
+.social-card .avatar {
+    display: inline-block;
+    position: relative;
+    margin: 50px 0 0;
+    width: 90px;
+    height: 90px;
+    background-size: cover;
+    border-radius: 50%
+}
+
+.social-card a,.social-card p,.social-card p a {
+    font: 18px/24px HelveticaNeue-Light,"Helvetica Neue",Verdana,geneva,sans-serif;
+    font-weight: 200
+}
+
+.social-card>a {
+    font-weight: 500;
+    font-size: 16px
+}
+
+.social-card p {
+    position: relative;
+    width: 78%;
+    margin: 24px auto 0
+}
+
+.social-card p a {
+    color: #0096ec;
+    text-transform: none
+}
+.social-card.twitter {
+    background: url(../img/avatar/weibo.png) 25px 25px/30px 30px no-repeat #fff;
+}
