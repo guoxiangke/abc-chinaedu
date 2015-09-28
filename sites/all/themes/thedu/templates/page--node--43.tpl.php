@@ -86,19 +86,20 @@
         <h1 class="ng-binding">Learn English online</h1>
         <h2 class="text-light ng-binding">With real teachers in live classes</h2>
         <ul>
-            <li>
+            <!-- <li>
                 <a widest="callToAction" class="btn btn-course-full btn-lg ng-binding" href="/english/courses"  >
                     SEE COURSES
                 </a>
-            </li>
+            </li> -->
             <li>
                 <a widest="callToAction" class="btn btn-trial-full btn-lg ng-binding" href="/english/trial-class/tcb" >
-                    BOOK A TRIAL CLASS
+                    预约课程
                 </a>
             </li>
         </ul>
         <p>
-            <a class="how-it-works underline-white ng-binding" ui-sref="lingoda.main.section.howItWorks" onclick="dataLayer.push({'event': 'button-how_it_works-click'});" href="/english/how-it-works">See how it works</a>
+            <a class="how-it-works underline-white"   href="#advanced-features">为何我们能做得到</a><br>
+            <a class="how-it-works"  style="font-size:30px;"  href="#advanced-features">↓</a>
         </p>
     </div>
 </section>
@@ -123,7 +124,7 @@
 		<div class="row">
 			<div class="col-sm-12 dale_text_center">
 					<div class="share-wrap">
-							<span>Share Us</span>
+							<span>分享学习体验</span>
 	            <ul>
 	                <li class="sinaWeibo tips" title="分享到新浪微博"></li>
 	                <li class="weixin tips" title="分享到微信"></li>
@@ -131,7 +132,7 @@
 	                <li class="douban tips" title="分享到豆瓣"></li>
 	                <li class="renren tips" title="分享到人人"></li>
 	            </ul>
-							<span>As seen ON</span>
+							<span>成功企业</span>
 							<img   width="619" height="38" alt="" src="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu'); ?>/img/seen.png">
 	        </div>
 	        <hr>
@@ -145,7 +146,7 @@
 <!-- advanced-features -->
 <div id="advanced-features">
       <div class="container">
-        <h1 class="blue-heading">Analytics and Advanced Features</h1>
+        <h1 class="blue-heading">选择我们的理由</h1>
         <h2>Analyze and share off your media wizardry!</h2>
         <section class="row down">
           <section class="col-md-6 col-xs-12">
@@ -154,10 +155,10 @@
             </div>
             <div class="col-md-10 col-xs-9">
               <h4>
-                Visualize your online presence
+                学会用自然的方法说英语
               </h4>
               <p>
-                Get a snapshot of your mentions by source, language, and over a selected period of time. Compare yourself to your competitors by viewing multiple alert statistics at once.
+                就像在现实生活中，你会用你的手机来听，说，读，写一样：你的潜意识会逐渐的吸收新的词汇并自然的表达出来！。
               </p>
             </div>
           </section>
@@ -167,10 +168,10 @@
             </div>
             <div class="col-md-10 col-xs-9">
               <h4>
-                Get more signal, less noise
+                在现实生活中学习
               </h4>
               <p>
-                Get rid of the noise coming from spam, or from people with the same name as you. Easily find important mentions and quickly get their tone.
+                有效的自然方法，鼓励开口，鼓励在不断练习与犯错中进步，轻松自然交流。
               </p>
             </div>
           </section>
@@ -182,7 +183,7 @@
             </div>
             <div class="col-md-10 col-xs-9">
               <h4>
-                Put your data to good use
+                ABC-China学校提供最优秀的外籍老师。
               </h4>
               <p>
                 Get a snapshot of your mentions by source, language, and over a selected period of time. Generate reports and export data to compare yourself with your competitors.
@@ -195,10 +196,10 @@
             </div>
             <div class="col-md-10 col-xs-9">
               <h4>
-                Benefit from unlimited history
+                无限制问题随时咨询
               </h4>
               <p>
-                With a Mention Growth or Company account, you'll always have access to your alert's history for as long as you keep the alert. Dive back into the past to analyze a peak, measure your success.
+                每当你有问题时！你可以在一天中的任何时间都问你喜欢的问题。
               </p>
             </div>
           </section>
@@ -213,10 +214,10 @@
             </div>
             <div class="col-md-10 col-xs-9">
               <h4>
-                Share your alerts with your team
+                黄金地段
               </h4>
               <p>
-                Get collaborative on shared alerts with real-time management across devices. mention makes it easy for any size team to stay in the know about their brand.
+                我们处在文化氛围极度浓厚的五道口；被清华、北大、体大、地大、北语、北林、农大、北科、矿大、石油、北航，供莘莘学子暂时娱乐的“操场”；是一个文化部落；是聚集来自100多个不同国家人民的小地球村。
               </p>
             </div>
           </section>

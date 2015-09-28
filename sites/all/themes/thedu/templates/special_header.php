@@ -31,16 +31,20 @@
           <?php endif; ?>
 	        <?php if (!user_is_logged_in()): ?> 
 	          <ul class="menu nav navbar-nav secondary" id='menu-btn'>
+              <?php if(!(arg(0)=='node' && arg(1)=='43')):?>
 	          	<li class="blue-btn">
 	          	<?php
 	            	echo l('课程体系','node/43');
 	            ?>
 	            </li>
+              <?php endif;?>
+              <?php if(!(arg(0)=='student' && arg(1)=='register')):?>
 	          	<li class="red-btn"> 
 	          	<?php
 	            	echo l('立刻体验','student/register');
 	            ?>
 	            </li>
+              <?php endif;?>
 	          </ul>
           <?php endif; ?>
           <?php if (!empty($secondary_nav)): ?>

@@ -216,8 +216,18 @@ header.navbar-bigger{
 }
 .img80 img{
 	max-width: 80px;
+  opacity: 0.9;
+   background: #eee;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 1;
 }
-
+.img80 img:hover{
+	  opacity: 1;
+}
 /*float-consult begin*/
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */

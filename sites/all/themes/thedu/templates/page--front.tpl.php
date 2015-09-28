@@ -131,7 +131,7 @@
 	                <li class="douban tips" title="分享到豆瓣"></li>
 	                <li class="renren tips" title="分享到人人"></li>
 	            </ul>
-							<span>合作企业</span>
+							<span>成功企业</span>
 							<img   width="619" height="38" alt="" src="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/seen.png">
 	        </div>
 	        <hr>
@@ -336,10 +336,9 @@
         </div>
         <div class="col-md-10 col-xs-9">
           <h4>
-            <a href="http://www.britishcouncil.org/english">English for kids and teens</a>
+            <a href="http://www.britishcouncil.org/english">儿童及青少年英语</a>
           </h4>
-          <p> Give your child the best start in life with our popular courses and online support for kids and teens. They are specially designed to be fun, interactive and very effective.
-          </p>
+          <p>通过我们的在线课程，让你的孩子在英语中有最好的开始，所有的课程专门为孩子设计的，乐趣，互动而且有效。</p>
         </div>
       </section>
       <section class="col-md-6">
@@ -347,11 +346,9 @@
           <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/avatar/student.jpg">
         </div>
         <div class="col-md-10 col-xs-9">
-          <h4>
-            English for university students
-          </h4>
+          <h4>在校生英语</h4>
           <p>
-           Maximise your opportunities with our English and IELTS courses, tests and online resources. We’re uniquely positioned to help you get the grade you need for your education journey.
+           最大限度地提高您在学校的成绩，敢开口机会。我们有独特的定位，以帮助您获得您所需要的所有课程体系的等级。
           </p>
         </div>
       </section>
@@ -361,10 +358,10 @@
         </div>
         <div class="col-md-10 col-xs-9">
           <h4>
-            English for the workplace
+            职场专业英语
           </h4>
           <p>
-            Realise your full potential at work by communicating effectively in the world’s business language. Our targeted approach for business English ensures your learning is focused and relevant.
+            在全世界的商务语言中有效地沟通，充分发挥你的潜力。我们的商务英语有独特的学习方法，确保您的学习是实战性的运用。
           </p>
         </div>
       </section>
@@ -374,10 +371,10 @@
         </div>
         <div class="col-md-10 col-xs-9">
           <h4>
-            English learning solutions for companies
+            企业英语培训
           </h4>
           <p>
-            Transform your business with our training courses and online learning solutions. With training plans tailored to your exact needs, we’ll help you take your company to the next level.
+            为企业提供专属主题讲堂，根据企业需求开设课程，由资深外教顾问讲解，富有启发与趣味，学员能从讲堂中获得最全面、最实用的内容，全面提高公司整体文化氛围。
           </p>
         </div>
       </section>
@@ -403,17 +400,13 @@
 		</figure>
 		<article class="cbp-so-side cbp-so-side-right">
 			<h3>我们拥有丰富的教学经验</h3>
-			<p>在ABC-ChinaEdu您将会和世界顶尖的英语授课专家一起学习英语。我们已经有75年的教学经验，成功为来自100多个国家的上千万英语学习者，提高他们的英语学习。We’ve been teaching English for more than 75 years and have helped more than 100 million people in 100 different countries improve their English skills and build their confidence.
-
-You can learn English by taking face-to-face lessons in our teaching centres or at home via our online courses and learning tools. And we can demonstrate your progress by providing you with internationally recognised proficiency tests.
-
-Explore our unrivalled range of courses and support to meet your exact learning needs.</p>
+			<p>在ABC-ChinaEdu您将会和世界顶尖的英语授课专家一起学习英语。我们已经有75年的教学经验，成功为来自100多个国家的上千万英语学习者，提高提高他们的英语技能和帮助他们建立信心。你可以通过我们的在线课程和教学软件在家里通过视频或者电话方式来学习英语。我们可以通过为您提供国际认可的能力测试来证明您的进步完全满足您的个性化学习需求。</p>
 		</article>
 	</section>
 	<section class="cbp-so-section">
 		<article class="cbp-so-side cbp-so-side-left">
-			<h3>Learn English with ABC</h3>
-			<p>That’s how we teach English, the best way to learn English online..</p>
+			<h3>在ABC-China学英语</h3>
+			<p>这就是我们的教学方式，网络视频随时随地学英语。</p>
 		</article>
 		<figure class="cbp-so-side cbp-so-side-right">
 			<img src="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/icon-write-mac.png" alt="img01">
@@ -424,16 +417,14 @@ Explore our unrivalled range of courses and support to meet your exact learning 
 			<img src="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/bg-callrecorder.jpg" alt="img01">
 		</figure>
 		<article class="cbp-so-side cbp-so-side-right">
-			<h3>Learn to speak English with the natural approach</h3>
-			<p>Just like in real life, you will use your mobile to listen, speak, read and write in English: your subconscious will gradually absorb new vocabulary and English expressions and you will make progress without even realizing it!.</p>
+			<h3>学会用自然的方法说英语</h3>
+			<p>就像在现实生活中，你会用你的手机来听，说，读，写一样：你的潜意识会逐渐的吸收新的词汇并自然的表达出来！。</p>
 		</article>
 	</section>
 	<section class="cbp-so-section">
 		<article class="cbp-so-side cbp-so-side-left">
-			<h3>Learn
-				English online
-				for real life</h3>
-			<p>The effective natural method,the pleasure of watching films.</p>
+			<h3>在现实生活中学习</h3>
+			<p>有效的自然方法，鼓励开口，鼓励在不断练习与犯错中进步，轻松自然交流。</p>
 		</article>
 		<figure class="cbp-so-side cbp-so-side-right">
 			<img src="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/crsample.jpg" alt="img01">
@@ -444,8 +435,8 @@ Explore our unrivalled range of courses and support to meet your exact learning 
 			<img src="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/industry_hospitality-transportation_solution.jpg" alt="img01">
 		</figure>
 		<article class="cbp-so-side cbp-so-side-right">
-			<h3>Change the way you learn English!</h3>
-			<p>The only app you need to learn how to speak English.</p>
+			<h3>改变你学习英语的方式！</h3>
+			<p>24小时随时上课 在家灵活轻松无限制。</p>
 		</article>
 	</section>
 </div>

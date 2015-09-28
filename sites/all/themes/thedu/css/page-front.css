@@ -450,16 +450,21 @@ color: #fff;
   line-height: 16px;
   font-weight: 600;    
   color: #333;
+  margin-top: 0;
 }
 #advanced-features p{
     font-size: 14px;
     color: #999;
-    line-height: 24px;
+    line-height: 20px;
     text-align: left;
 }
 .down {
     margin-top: 60px;
 }
+.down .col-md-6{
+  margin-bottom: 30px;
+}
+
 
 
 
@@ -507,4 +512,8 @@ color: #fff;
 }
 .social-card.twitter {
     background: url(../img/avatar/weibo.png) 25px 25px/30px 30px no-repeat #fff;
+    opacity: 0.8;
+}
+.social-card.twitter:hover{
+  opacity: 1;
 }

@@ -150,7 +150,7 @@ global $base_url;
 	                <li class="douban tips" title="分享到豆瓣"></li>
 	                <li class="renren tips" title="分享到人人"></li>
 	            </ul>
-							<span>合作企业</span>
+							<span>成功企业</span>
 							<img   width="619" height="38" alt="" src="http://localhost/~dale.guo/projects/sohoedu/sites/all/themes/thedu/img/seen.png">
 	        </div>
 	        <hr>
