@@ -72,6 +72,8 @@
  *
  * @ingroup themeable
  */
+ global $base_url; 
+ global $debug
 ?>
 <header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
   <div class="container mh75">
@@ -124,12 +126,11 @@
     <?php endif; ?>
   </div>
 </header>
-<section id="hero1" class="hero main-content wrapper-dark">
+<section id="hero"  data-img="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu'); ?>/img/hero.jpg" class="hero herobackstretch main-content wrapper-dark">
     <div class="hero-content">
     	<div class="container">
     		<div class="row">
     			<div class="col-sm-4 col-sm-offset-8">
-    				<?php print $messages; ?>
     				<?php print render($page['content']); ?>
     			</div>
     		</div>
@@ -179,13 +180,14 @@
 				<!-- <p class="rw-sentence-IE">Wow you can learn English!</p> -->
 
 
-        <p>
+        <!-- <p>
             <a class="how-it-works underline-white" href="/english/how-it-works">
              这样学习英语一定行！
 						</a>
-        </p>
+        </p> -->
     </div>
 </section>
+<?php print $messages; ?>
 <div class="section-share">
 	<div class="container">
 		<div class="row">
@@ -207,6 +209,7 @@
 		</div>
 	</div>
 </div>
+<?php if($debug):?>
 <div class="container">
 
   <header role="banner" id="page-header">
@@ -236,7 +239,7 @@
         <h1 class="page-header"><?php print $title; ?></h1>
       <?php endif; ?>
       <?php print render($title_suffix); ?>
-      <?php print $messages; ?>
+      
       <?php if (!empty($tabs)): ?>
         <?php print render($tabs); ?>
       <?php endif; ?>
@@ -254,6 +257,7 @@
         <?php print render($page['sidebar_second']); ?>
       </aside>  <!-- /#sidebar-second -->
     <?php endif; ?>
+  </div>
 </div>
-</div>
+<?php endif;?>
 <?php include('special_footer.php');?>

@@ -43,15 +43,15 @@ function trackHoverIntent(selector, time) {
 		    Drupal.settings.pathToTheme.pathToTheme + "/img/tmp/3.jpg"    
 		  ],
 			{duration: 4000,fade:'normal',centeredX:0});
-
-			new cbpScroller( document.getElementById( 'cbp-so-scroller' ) );
+      if($('#cbp-so-scroller').length != 0)
+			 new cbpScroller( document.getElementById( 'cbp-so-scroller' ) );
 
 			var delay=1500, setTimeoutConst;
 			$('.trackedHover').hover(function(){
 	         setTimeoutConst = setTimeout(function(){
 	            //do something
 	            dataLayer.push({'event':'hover','eventLabel':'dataToPush'});
-	            alert('hover!');
+	            
 	         }, delay);
 
 	      },function(){clearTimeout(setTimeoutConst );});

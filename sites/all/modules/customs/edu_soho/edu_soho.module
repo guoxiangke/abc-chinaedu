@@ -100,6 +100,7 @@ function edu_soho_init() {
   drupal_add_js(array('currentUser' => $user->uid), 'setting');
   drupal_add_js(drupal_get_path('module', 'edu_soho').'/js/edu_soho.js');
   //uid = Drupal.settings.currentUser;
+  $GLOBALS['debug'] = FALSE;
 }
 /**
  * $type string 
@@ -266,8 +267,8 @@ function edu_soho_node_access($node, $op, $account) {
 function edu_soho_form_alter(&$form, &$form_state, $form_id) {
   if($form_id == 'study_record_node_form'){
     $form['og_group_ref']['#attributes']['class'][] = 'hide';
-    $form['field_student']['#attributes']['class'][] = 'hide';
-    $form['field_teacher']['#attributes']['class'][] = 'hide';
+    // $form['field_student']['#attributes']['class'][] = 'hide';
+    // $form['field_teacher']['#attributes']['class'][] = 'hide';
     if(isset($_GET['og_group_ref']))
       $form['og_group_ref']['und'][0]['default']['#default_value'] = $_GET['og_group_ref'];
     if(isset($_GET['student']))

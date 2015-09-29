@@ -188,10 +188,8 @@ if(in_array('teacher', array_values($user->roles))){
     <?php endif; ?>
   </div>
 </header>
-
 <div class="main-container container">
-
-
+<?php if($debug):?>
   <header role="banner" id="page-header">
     <?php if (!empty($site_slogan)): ?>
       <p class="lead"><?php print $site_slogan; ?></p>
@@ -240,6 +238,7 @@ if(in_array('teacher', array_values($user->roles))){
     <?php endif; ?>
 
   </div>
+<?php endif;?>
 <!-- begin -->
   <div class="row">
       <div class="col-lg-12">
@@ -316,7 +315,7 @@ if(in_array('teacher', array_values($user->roles))){
                         <div class="huge">
                         	 <span class="clock1" data-countqdown = ""></span>
                         </div>
-                        <div <?php if($role=='student') echo 'id="2elapsed"'?>>申请上课</div>
+                        <div <?php if($role=='student') echo 'id="2elapsed"'?>>即将上课</div>
                     </div>
                 </div>
             </div>

@@ -130,11 +130,11 @@ global $base_url;
 				<!-- <p class="rw-sentence-IE">Wow you can learn English!</p> -->
 
 
-        <p>
+        <!-- <p>
             <a class="how-it-works underline-white" href="/english/how-it-works">
              这样学习英语一定行！
 						</a>
-        </p>
+        </p> -->
     </div>
 </section>
 <div class="section-share">
