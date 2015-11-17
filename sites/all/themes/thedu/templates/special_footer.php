@@ -8,7 +8,7 @@
           <li>©2015 ABC-ChinaEdu.</li>
         </ul>
       </section>
-			<section class="col-sm-3">
+			<section class="col-sm-3 visible-lg">
 				<h3>ABC-ChinaEdu</h3>
 				<ul>
 					<li><?php echo l('课程体系','node/43');?></li>
@@ -17,7 +17,7 @@
 					<li><?php echo l('服务条款','node/68');?></li>
 				</ul>
 			</section>
-			<section class="col-sm-3">
+			<section class="col-sm-3 visible-lg">
 				<h3>Other links</h3>
 				<ul>
 					<li><?php echo l('联系我们','student/register');?></li>
@@ -26,7 +26,7 @@
 					<li><?php echo l('加入我们','node/69');?></li>
 				</ul>
 			</section>
-			<section class="col-sm-3">
+			<section class="col-sm-3 visible-lg">
 				<h3>User links</h3>
 				<ul>
 					<li><?php echo l('点击登陆','user/login');?></li>

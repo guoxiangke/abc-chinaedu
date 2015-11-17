@@ -423,9 +423,6 @@ color: #fff;
     text-decoration: underline
 }
 
-.i-mail{
-    margin-left: 10px;
-}
 
 #advanced-features h1{
   text-align: center;
@@ -467,16 +464,11 @@ color: #fff;
 
 
 
-
-  .social-card {
+.social-card {
     display: block;
-    width: 370px;
-    width: 30%;
     height: 350px;
-    margin: 30px 15px 0;
+    margin-top: 30px;
     padding: 0;
-    outline: #f6f7f7 solid 2px;
-    float: left;
     text-align: center
 }
 
@@ -488,6 +480,11 @@ color: #fff;
     height: 90px;
     background-size: cover;
     border-radius: 50%
+}
+.social-card .twitter{
+  border: #f6f7f7 solid 2px;
+  height: 100%;
+  margin: 0 15px;
 }
 
 .social-card a,.social-card p,.social-card p a {
@@ -516,4 +513,35 @@ color: #fff;
 }
 .social-card.twitter:hover{
   opacity: 1;
+}
+#basic-plan .body{
+  line-height: 20px;
+}
+#basic-plan .body .spr40{
+  padding-right: 40px;
+}
+#advanced-features a,
+#advanced-features a:hover,
+#advanced-features a:focus,
+#advanced-features a:visited{
+  color: #333;
+}
+@media only screen and (max-width : 768px) {
+  .hero h1{
+    font-size: 4em;
+  }
+  .hero li{
+    margin-left: auto;
+  }
+
+  #basic-plan span.i-phone{
+    display: block;
+  }
+  .navbar-collapse{
+    background-color: #fff;
+  }
+  header.navbar-bigger .navbar-nav > li > a,
+  header.navbar-bigger .navbar-nav > li > a.active{
+    color: #333;
+  }
 }

@@ -161,7 +161,7 @@
 			</ul>
 		</div>
 	</aside>
-	<section class="col-sm-6">
+	<section class="col-sm-6 visible-lg">
 		<div class="infoslide">
 			
 		</div>
@@ -170,158 +170,26 @@
 </div>
 
 <div class="section">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-      	<div class="priceheader">
-      		<h2>我们提供多种套餐供您选择</h2>
-      	</div>
-      </div>
-    </div>
-		<div class="row">
-			<div class="col-lg-3">
-          <div class="panel panel-primary">
-              <div class="panel-heading">
-                <p class="plan-title">
-                  <span class="plan-name">初级套餐</span>
-                  <br>
-                  <span>
-                    <span class="the-price">
-                      <span class="number">1000</span>
-                    </span>
-                    <span class="month byMonth"><span class="glyphicon glyphicon-tint"></span></span>
-                  </span>
-                </p>
-              </div>
-              <div class="panel-body">
-              	<ul>
-              		<li>赠送点券<span class="badge">50点</span></li>
-              		<li>获得点券1050点</li>
-              		<li>学习时间1个月</li>
-              		<li>赠送课时1节</li>
-              	</ul>
-                <p>购买1000点券,学习时间：一个月 20课时/月 注册即送50点券.</p>
-              </div>
-              <div class="panel-footer">
-                  <a class="btn btn-success addtocart" id="01month" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=474054236&site=qq&menu=yes&type=1">点击免费咨询</a>
-              </div>
-          </div>
-      </div>
-      <div class="col-lg-3">
-          <div class="panel panel-green">
-              <div class="panel-heading">
-                  <p class="plan-title">
-                  <span class="plan-name">成长套餐</span>
-                  <br>
-                  <span>
-                    <span class="the-price">
-                      <span class="number">3000</span>
-                    </span>
-                    <span class="month byMonth"><span class="glyphicon glyphicon-tint"></span></span>
-                  </span>
-                </p>
-              </div>
-              <div class="panel-body">
-                  
-              	<ul>
-              		<li>赠送点券<span class="badge">150点</span></li>
-              		<li>获得点券3300点</li>
-              		<li>学习时间3个月</li>
-              		<li>赠送课时3节</li>
-              	</ul>
-                <p>购买3000点券,学习时间：3个月 20课时/月 注册即送50点券.</p>
-              </div>
-              <div class="panel-footer">
-                  <a class="btn btn-success addtocart" id="03month" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=474054236&site=qq&menu=yes&type=2">点击免费咨询</a>
-              </div>
-          </div>
-          <!-- /.col-lg-4 -->
-      </div>
-      <div class="col-lg-3">
-          <div class="panel panel-yellow">
-              <div class="panel-heading price-corner">
-              		<i class="corner">
-                    <i class='priceciblcok'></i>
-                    <p class="price-corner-p">
-                      热 销 hot
-                    </p>
-                  </i>
-                  <p class="plan-title">
-                  <span class="plan-name">提升套餐</span>
-                  <br>
-                  <span>
-                    <span class="the-price">
-                      <span class="number">6000</span>
-                    </span>
-                    <span class="month byMonth"><span class="glyphicon glyphicon-tint"></span></span>
-                  </span>
-                </p>
-              </div>
-              <div class="panel-body">
-                  <ul>
-              		<li>赠送点券<span class="badge">300点</span></li>
-              		<li>获得点券6300点</li>
-              		<li>学习时间6个月</li>
-              		<li>赠送课时6节</li>
-              	</ul>
-              	<p>购买6000点券,学习时间：6个月，送300点；注册即送50点券.</p>
-              </div>
-              <div class="panel-footer">
-                  <a class="btn btn-success addtocart" id="06month" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=474054236&site=qq&menu=yes&type=3">点击免费咨询</a>
-              </div>
-          </div>
-          <!-- /.col-lg-4 -->
-      </div>
-      <div class="col-lg-3">
-          <div class="panel panel-red">
-              <div class="panel-heading">
-                  <p class="plan-title">
-                  <span class="plan-name">高级套餐</span>
-                  <br>
-                  <span>
-                    <span class="the-price">
-                      <span class="number">10000</span>
-                    </span>
-                    <span class="month byMonth"><span class="glyphicon glyphicon-tint"></span></span>
-                  </span>
-                </p>
-              </div>
-              <div class="panel-body">
-                  <ul>
-              		<li>赠送点券<span class="badge">2000点</span></li>
-              		<li>获得点券12000点</li>
-              		<li>学习时间12个月</li>
-              		<li>赠送课时40节</li>
-              	</ul>
-                  <p>购买10000点券,学习时间：12个月，送2000点；注册即送50点券.</p>
-              </div>
-              <div class="panel-footer">
-                  <a class="btn btn-success addtocart" id="12month" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=474054236&site=qq&menu=yes&type=4">点击免费咨询</a>
-              </div>
-          </div>
-          <!-- /.col-lg-4 -->
-      </div>
-
-		</div>
-		<div class="row">
-        <div id="basic-plan">
-          <div class="title">
-            <p>私人定制</p>
-          </div>
-          <div class="body">
-					  <span style="margin-right:170px;">企业培训?&nbsp;国际学校?&nbsp;国际交流?</span>
-					  <span class="i-phone">
-					  	<span class="glyphicon glyphicon-earphone"></span>
-					    <a href="tel:+86 (010) 568-9834">+86 (010) 568-9834</a>
-					  </span>
-					  <span class="i-mail">
-					  	<span class="fa fa-send-o"></span>
-					    <a href="mailto:sales@abc-chinaedu.com">sales@abc-chinaedu.com</a>
-					  </span>
-					</div>
+  <div class="container">
+    <div class="row">
+      <div id="basic-plan">
+        <div class="title">
+          <p>私人定制</p>
+        </div>
+        <div class="body">
+          <span class="spr40">企业培训?&nbsp;国际学校?&nbsp;国际交流?欢迎垂询～</span>
+          <span class="i-phone spr40">
+            <span class="glyphicon glyphicon-earphone"></span>
+            <a href="tel:+86 (010) 568-9834">+86 (010) 568-9834</a>
+          </span>
+          <span class="i-mail spr40">
+            <span class="fa fa-send-o"></span>
+            <a href="mailto:sales@abc-chinaedu.com">sales@abc-chinaedu.com</a>
+          </span>
         </div>
       </div>
-	</div>
+    </div>
+  </div>
 </div>
 
 <!-- advanced-features -->
@@ -331,115 +199,65 @@
     <h2>一个全新的快乐和沉浸式英语学习世界</h2>
     <section class="row down img80">
       <section class="col-md-6">
-        <div class="col-md-2 col-xs-3">
-          <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/avatar/teens.jpg">
-        </div>
-        <div class="col-md-10 col-xs-9">
-          <h4>
-            <a href="http://www.britishcouncil.org/english">儿童及青少年英语</a>
-          </h4>
-          <p>通过我们的在线课程，让你的孩子在英语中有最好的开始，所有的课程专门为孩子设计的，乐趣，互动而且有效。</p>
-        </div>
+        <a href="http://www.britishcouncil.org/english">
+          <div class="col-md-2 col-xs-3">
+            <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/avatar/teens.jpg">
+          </div>
+          <div class="col-md-10 col-xs-9">
+            <h4>
+              儿童及青少年英语
+            </h4>
+            <p>通过我们的在线课程，让你的孩子在英语中有最好的开始，所有的课程专门为孩子设计的，乐趣，互动而且有效。</p>
+          </div>
+        </a>
       </section>
       <section class="col-md-6">
-        <div class="col-md-2 col-xs-3">
-          <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/avatar/student.jpg">
-        </div>
-        <div class="col-md-10 col-xs-9">
-          <h4>在校生英语</h4>
-          <p>
-           最大限度地提高您在学校的成绩，敢开口机会。我们有独特的定位，以帮助您获得您所需要的所有课程体系的等级。
-          </p>
-        </div>
+        <a href="http://www.britishcouncil.org/english">
+          <div class="col-md-2 col-xs-3">
+            <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/avatar/student.jpg">
+          </div>
+          <div class="col-md-10 col-xs-9">
+            <h4>在校生英语</h4>
+            <p>
+             最大限度地提高您在学校的成绩，敢开口机会。我们有独特的定位，以帮助您获得您所需要的所有课程体系的等级。
+            </p>
+          </div>
+        </a>
       </section>
       <section class="col-md-6">
-        <div class="col-md-2 col-xs-3">
-          <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/avatar/workplace.jpg">
-        </div>
-        <div class="col-md-10 col-xs-9">
-          <h4>
-            职场专业英语
-          </h4>
-          <p>
-            在全世界的商务语言中有效地沟通，充分发挥你的潜力。我们的商务英语有独特的学习方法，确保您的学习是实战性的运用。
-          </p>
-        </div>
+        <a href="http://www.britishcouncil.org/english">
+          <div class="col-md-2 col-xs-3">
+            <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/avatar/workplace.jpg">
+          </div>
+          <div class="col-md-10 col-xs-9">
+            <h4>
+              职场专业英语
+            </h4>
+            <p>
+              在全世界的商务语言中有效地沟通，充分发挥你的潜力。我们的商务英语有独特的学习方法，确保您的学习是实战性的运用。
+            </p>
+          </div>
+        </a>
       </section>
       <section class="col-md-6">
-        <div class="col-md-2 col-xs-3">
-          <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/avatar/companies.jpg">
-        </div>
-        <div class="col-md-10 col-xs-9">
-          <h4>
-            企业英语培训
-          </h4>
-          <p>
-            为企业提供专属主题讲堂，根据企业需求开设课程，由资深外教顾问讲解，富有启发与趣味，学员能从讲堂中获得最全面、最实用的内容，全面提高公司整体文化氛围。
-          </p>
-        </div>
+        <a href="http://www.britishcouncil.org/english">
+          <div class="col-md-2 col-xs-3">
+            <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/avatar/companies.jpg">
+          </div>
+          <div class="col-md-10 col-xs-9">
+            <h4>
+              企业英语培训
+            </h4>
+            <p>
+              为企业提供专属主题讲堂，根据企业需求开设课程，由资深外教顾问讲解，富有启发与趣味，学员能从讲堂中获得最全面、最实用的内容，全面提高公司整体文化氛围。
+            </p>
+          </div>
+        </a>
       </section>
     </section>
   </div>
 </div>
 <!-- advanced-features -->
-
-<!-- scroll effect begin -->
-<div id="cbp-so-scroller" class="cbp-so-scroller">
-	<section class="cbp-so-section">
-		<article class="cbp-so-side cbp-so-side-left">
-			<h3>架构于谷歌浏览器的ABC-ChinaEdu学习系统</h3>
-			<p>使用Chrome浏览时，不仅可以充分利用Google的最先进的浏览器功能。而且ABC-ChinaEdu学习系统就是在Chrome下构建的，让您体验不一样的更智能的网络产品带的学习效果<a href="https://www.baidu.com/s?wd=chrome" target="_blank">下载</a></p>
-		</article>
-		<figure class="cbp-so-side cbp-so-side-right">
-			<a href="https://www.baidu.com/s?wd=chrome" target="_blank"><img src="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/benefits-5-mobile_2x.png" alt="img01"></a>
-		</figure>
-	</section>
-	<section class="cbp-so-section">
-		<figure class="cbp-so-side cbp-so-side-left">
-			<img src="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/industry_hospitality-transportation_solution.jpg" alt="img01">
-		</figure>
-		<article class="cbp-so-side cbp-so-side-right">
-			<h3>我们拥有丰富的教学经验</h3>
-			<p>在ABC-ChinaEdu您将会和世界顶尖的英语授课专家一起学习英语。我们已经有75年的教学经验，成功为来自100多个国家的上千万英语学习者，提高提高他们的英语技能和帮助他们建立信心。你可以通过我们的在线课程和教学软件在家里通过视频或者电话方式来学习英语。我们可以通过为您提供国际认可的能力测试来证明您的进步完全满足您的个性化学习需求。</p>
-		</article>
-	</section>
-	<section class="cbp-so-section">
-		<article class="cbp-so-side cbp-so-side-left">
-			<h3>在ABC-China学英语</h3>
-			<p>这就是我们的教学方式，网络视频随时随地学英语。</p>
-		</article>
-		<figure class="cbp-so-side cbp-so-side-right">
-			<img src="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/icon-write-mac.png" alt="img01">
-		</figure>
-	</section>
-	<section class="cbp-so-section">
-		<figure class="cbp-so-side cbp-so-side-left">
-			<img src="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/bg-callrecorder.jpg" alt="img01">
-		</figure>
-		<article class="cbp-so-side cbp-so-side-right">
-			<h3>学会用自然的方法说英语</h3>
-			<p>就像在现实生活中，你会用你的手机来听，说，读，写一样：你的潜意识会逐渐的吸收新的词汇并自然的表达出来！。</p>
-		</article>
-	</section>
-	<section class="cbp-so-section">
-		<article class="cbp-so-side cbp-so-side-left">
-			<h3>在现实生活中学习</h3>
-			<p>有效的自然方法，鼓励开口，鼓励在不断练习与犯错中进步，轻松自然交流。</p>
-		</article>
-		<figure class="cbp-so-side cbp-so-side-right">
-			<img src="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/crsample.jpg" alt="img01">
-		</figure>
-	</section>
-	<section class="cbp-so-section">
-		<figure class="cbp-so-side cbp-so-side-left">
-			<img src="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/industry_hospitality-transportation_solution.jpg" alt="img01">
-		</figure>
-		<article class="cbp-so-side cbp-so-side-right">
-			<h3>改变你学习英语的方式！</h3>
-			<p>24小时随时上课 在家灵活轻松无限制。</p>
-		</article>
-	</section>
-</div>
 
 
 <!-- advanced-features -->
@@ -450,49 +268,63 @@
 
 		<div id="feature-7" class="row feature">
 		  <div class="social-card twitter col-md-4">
-		  	<a href="#" target="_blank">
-		  		<div style="background-image:url('http://luxe.com/img/avatar_yuanzhang.jpg')" class="avatar"></div><br>@韩佳乐</a>
-		  				<p>本人特别想感谢外教Nice老师，让我找到了说英语的信心，在课堂上不断给我以鼓励，每次上课后都会有详细的学习记录以纠正我的语法及句子错误，我们已经象好朋友一样，无所不谈，她负责任的态度太让我感动了!!!</p></div>
+        <div class="twitter">
+  		  	<a href="#" target="_blank">
+  		  		<div style="background-image:url('<?php echo drupal_get_path('theme', 'thedu');?>/img/comments/22.jpg')" class="avatar">
+            </div>
+            <br>@韩佳乐
+          </a>
+  		  	<p>本人特别想感谢外教Nice老师，让我找到了说英语的信心，在课堂上不断给我以鼓励，每次上课后都会有详细的学习记录以纠正我的语法及句子错误，我们已经象好朋友一样，无所不谈，她负责任的态度太让我感动了!!!</p>
+        </div>
+      </div>
 		  <div class="social-card twitter col-md-4">
-		  	<a href="#" target="_blank">
-		  		<div style="background-image:url('http://luxe.com/img/avatar_trishymitch.jpg')" class="avatar"></div><br>@鲍爱玉</a>
-		  				<p>再次感谢感谢monika老师，从一开始的接触就用英语与我交流，从简单的单词开始接触，让我重新捡回学习英语的信心，在我的学习期间，monika老师会耐心的听我的录音，指出我的问题，非常感谢monika老师！ </p></div>
+        <div class="twitter">
+		  	  <a href="#" target="_blank">
+		  		<div style="background-image:url('<?php echo drupal_get_path('theme', 'thedu');?>/img/comments/31.jpg')" class="avatar"></div><br>@鲍爱玉</a>
+		  				<p>再次感谢感谢monika老师，从一开始的接触就用英语与我交流，从简单的单词开始接触，让我重新捡回学习英语的信心，在我的学习期间，monika老师会耐心的听我的录音，指出我的问题，非常感谢monika老师！ </p>
+          </div>
+        </div>
 		  <div class="social-card twitter col-md-4">
-		  	<a href="#" target="_blank">
-		  		<div style="background-image:url('http://luxe.com/img/avatar_DocJCContreras.jpg')" class="avatar"></div><br>@陈然</a>
-		  				<p>你好，我是黄豪妈妈，黄豪很喜欢现在这个男老师，聊的很高兴，谢谢！我觉得他现在语音进步很多了，和老师聊天的话题也多了，学了这么久，看到他进步了，我也很高兴，觉得选对了学校，也很感谢你们。</p></div>
+        <div class="twitter">
+		  	  <a href="#" target="_blank">
+		  		<div style="background-image:url('<?php echo drupal_get_path('theme', 'thedu');?>/img/comments/22.jpg')" class="avatar"></div><br>@陈然</a>
+		  			<p>你好，我是黄豪妈妈，黄豪很喜欢现在这个男老师，聊的很高兴，谢谢！我觉得他现在语音进步很多了，和老师聊天的话题也多了，学了这么久，看到他进步了，我也很高兴，觉得选对了学校，也很感谢你们。</p>
+          </div>
+        </div>
 		</div>
 		<div id="feature-7" class="row feature">
 			<div class="social-card twitter col-md-4">
-				<a href="#" target="_blank">
-					<div style="background-image:url('http://luxe.com/img/avatar_Raquelschair.jpg')" class="avatar"></div><br>@任嘉宇</a>
-							<p>好的学习方法，的确会带来很不错的学习效果，ABC-ChinaEdu英语外教很有耐心，不仅有步骤一步一步的引导，而且更像朋友一样的分享课程。我的口语也提高了很多，正在学习中，期待。。加油！！！</p></div>
+        <div class="twitter">
+				  <a href="#" target="_blank">
+					<div style="background-image:url('<?php echo drupal_get_path('theme', 'thedu');?>/img/comments/31.jpg')" class="avatar"></div><br>@任嘉宇</a>
+						<p>好的学习方法，的确会带来很不错的学习效果，ABC-ChinaEdu英语外教很有耐心，不仅有步骤一步一步的引导，而且更像朋友一样的分享课程。我的口语也提高了很多，正在学习中，期待。。加油！！！</p>
+          </div>
+        </div>
 		  <div class="social-card twitter col-md-4">
-		  	<a href="#" target="_blank">
-		  		<div style="background-image:url('http://luxe.com/img/avatar_normanliang.jpg')" class="avatar"></div><br>@陆小丽</a>
-		  				<p>在ABC-ChinaEdu学习以来，我的英语口语和听力有很大的提高，跟外国人交流起来也更自信了，我现在也渐渐也爱上英语了，计划长期在这里学习英语，感谢你们！!</p></div>
+        <div class="twitter">
+		  	  <a href="#" target="_blank">
+		  		<div style="background-image:url('<?php echo drupal_get_path('theme', 'thedu');?>/img/comments/22.jpg')" class="avatar"></div><br>@陆小丽</a>
+		  				<p>在ABC-ChinaEdu学习以来，我的英语口语和听力有很大的提高，跟外国人交流起来也更自信了，我现在也渐渐也爱上英语了，计划长期在这里学习英语，感谢你们！!</p>
+          </div>
+      </div>
 		  <div class="social-card twitter col-md-4">
-		  	<a href="#" target="_blank">
-		  		<div style="background-image:url('http://luxe.com/img/avatar_SahilRoyVerma.jpg')" class="avatar"></div><br>@黄豪</a>
-		  				<p>我的英语本身就不好，我不知道我选择学习日常口语对于我这样词汇量极少然后语法不懂，单词不懂怎么运用的学员来说选择学习口语对不对，但是，我知道我现在比前更要喜欢英语了。 
-    Ivy老师真的很不错的！</div>	  
+        <div class="twitter">
+  		  	<a href="#" target="_blank">
+    		  	<div style="background-image:url('<?php echo drupal_get_path('theme', 'thedu');?>/img/comments/31.jpg')" class="avatar"></div><br>@黄豪</a>
+    		  	 <p>我的英语本身就不好，我不知道我选择学习日常口语对于我这样词汇量极少然后语法不懂，单词不懂怎么运用的学员来说选择学习口语对不对，但是，我知道我现在比前更要喜欢英语了。 
+        Ivy老师真的很不错的！
+        </div>
+      </div>
 		</div>
   </div>
 </div>
 
-<div id="float-consult" class="float-consult" style="margin-top: -62px; visibility: visible;">
-  <div class="btn-group-vertical">
-    <a class="btn btn-consult-default" href="http://wpa.qq.com/msgrd?v=3&uin=474054236&site=qq&menu=yes&type=left"  data-toggle="tooltip" data-placement="left" target="_blank" title="QQ客服" ><span class="fa fa-qq"></span></a>
-		<a class="btn btn-consult-default" title="Skype"  data-toggle="tooltip" data-placement="left"><span class="fa fa-skype"></span></a>
-    <a class="btn btn-consult-default trackedHover" title="关注微信"><span class="fa fa-wechat"></span></a>
-		<a class="btn btn-consult-default" href="http://www.baidu.com/s?wd=chrome" target="_blank" data-toggle="tooltip" data-placement="left" title="Google浏览器支持"><span class="fa fa-chrome"></span></a>
-    <a class="btn btn-consult-default" href="tel:13712345678" data-toggle="tooltip" data-placement="left" title="137-1234-5678"><span class="glyphicon glyphicon-earphone"></span></a>
-    
-  </div>
-  <div class="qr hide">
-  	<img src="http://combo.b.qq.com/store/src/themes/mpPortal/register/images/urCode.png">
-  </div>
+
+<div class="section">
+  <?php include('price.php');?>
 </div>
+<?php include('float-consult.php');?>
+
 
 <!-- scroll effect end -->
 <?php if(0):?>

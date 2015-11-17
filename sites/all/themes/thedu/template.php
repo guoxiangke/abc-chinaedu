@@ -26,10 +26,10 @@ function thedu_preprocess_page(&$variables) {
 		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/shareTo.js','file');
 		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/header_scroll.js','file');
 		//http://tympanus.net/codrops/2013/07/18/on-scroll-effect-layout/
-		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/contrib/cbpScroller/modernizr.custom.js','file');
-		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/contrib/cbpScroller/classie.js','file');
-		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/contrib/cbpScroller/cbpScroller.js','file');
-		drupal_add_css(drupal_get_path('theme', 'thedu').'/js/contrib/cbpScroller/component.css','file');
+		// drupal_add_js(drupal_get_path('theme', 'thedu').'/js/contrib/cbpScroller/modernizr.custom.js','file');
+		// drupal_add_js(drupal_get_path('theme', 'thedu').'/js/contrib/cbpScroller/classie.js','file');
+		// drupal_add_js(drupal_get_path('theme', 'thedu').'/js/contrib/cbpScroller/cbpScroller.js','file');
+		// drupal_add_css(drupal_get_path('theme', 'thedu').'/js/contrib/cbpScroller/component.css','file');
 
 		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/page-front.js','file');
 		$variables['navbar_classes_array'][] = 'navbar-bigger';
