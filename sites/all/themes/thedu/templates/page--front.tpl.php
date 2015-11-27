@@ -76,7 +76,7 @@
 ?>
 <?php include('special_header.php');?>
 
-<section id="hero"  data-img="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu'); ?>/img/hero.jpg" class="hero herobackstretch main-content wrapper-dark text-center">
+<section id="hero"  data-img="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu'); ?>/img/hero0.jpg" class="hero herobackstretch main-content wrapper-dark text-center">
     <div class="hero-content">
         <h1 class="ng-binding">英语在线教育</h1>
         <h2 class="text-light ng-binding">Your online English course for real life.</h2>
