@@ -228,6 +228,13 @@ header.navbar-bigger{
 .img80 img:hover{
 	  opacity: 1;
 }
+/*dev*/
+#block-devel-switch-user {
+	background-color: black;
+}
+/*dev*/
+
+
 /*float-consult begin*/
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */

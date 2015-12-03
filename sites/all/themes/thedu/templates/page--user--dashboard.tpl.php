@@ -189,7 +189,7 @@ if(in_array('teacher', array_values($user->roles))){
   </div>
 </header>
 <div class="main-container container">
-<?php if($debug):?>
+<?php if(1):?>
   <header role="banner" id="page-header">
     <?php if (!empty($site_slogan)): ?>
       <p class="lead"><?php print $site_slogan; ?></p>
@@ -401,6 +401,14 @@ if(in_array('teacher', array_values($user->roles))){
         </div>
     </div>
 	</div> <!-- end -->
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">上课日历</div>
+    <div class="panel-body">
+      <?php print views_embed_view('order_calendar', 'block_1'); ?>
+    </div>
+  </div>
+
 	<div class="panel panel-primary">
 	  <div class="panel-heading"><?php echo t('Your Records');?></div>
 	  <div class="panel-body">

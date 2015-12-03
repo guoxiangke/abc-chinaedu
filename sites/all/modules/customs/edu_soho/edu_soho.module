@@ -100,7 +100,7 @@ function edu_soho_init() {
   drupal_add_js(array('currentUser' => $user->uid), 'setting');
   drupal_add_js(drupal_get_path('module', 'edu_soho').'/js/edu_soho.js');
   //uid = Drupal.settings.currentUser;
-  $GLOBALS['debug'] = FALSE;
+  $GLOBALS['DEBUG'] = TRUE;
 }
 /**
  * $type string 
@@ -277,6 +277,12 @@ function edu_soho_form_alter(&$form, &$form_state, $form_id) {
     $form['field_teacher']['und'][0]['uid']['#default_value'] = $_GET['teacher'];
     // dpm($form);
   }
+  if ($form_id == 'order_node_form') {
+    dpm($form);
+    $form['options']['promote']['#title'] = '订单未完成';
+    $form['options']['sticky']['#title'] = '订单未作废';
+  }
+  
 }
 
 function page_edu_drashboard() {
@@ -359,5 +365,107 @@ function edu_soho_flag_flag($flag, $entity_id, $account, $flagging) {
       );
       userpoints_userpointsapi($params);
     }
+  }
+}
+
+function get_active_order_id($uid){//uid = 3 orderId = 88
+  $type = 'order';
+  $query = db_select('field_data_field_student', 'f');
+  $query->join('node', 'n', 'n.nid = f.entity_id');
+  
+  $query->fields('f',array('revision_id'));
+  $query->condition('f.field_student_uid', $uid);
+  //@see hook_form_alter!
+  $query->condition('n.status', '1');
+  $query->condition('n.promote', '1');
+  $query->condition('n.sticky', '1');
+  $query->range(0,1);
+  
+  $orderId = $query->execute()->fetchField();
+  return $orderId;
+}
+
+// foreach ($order_users as $key => $orders) {
+//   $order_nid = $order->revision_id;
+//   $student_uid = $order->field_student_uid;
+// }
+function get_all_users_has_order(){
+  $type = 'order';
+  $query = db_select('field_data_field_student', 'f');
+  $query->join('node', 'n', 'n.nid = f.entity_id');
+  
+  $query->fields('f',array('revision_id','field_student_uid'));
+  //@see hook_form_alter!
+  $query->condition('n.status', '1');
+  $query->condition('n.promote', '1');
+  $query->condition('n.sticky', '1');
+  // $query->range(0,1);
+  return $query->execute()->fetchAll();
+}
+
+
+function auto_create_class_record($uid,$order_id){
+    // $uid = 3;//foreach student have active orderID uids!
+    //每个user 有且仅有一个活跃orderID
+    // $order_id = get_active_order_id($uid);
+    $type = 'study_record';
+  //2.if no class record today for this user!
+    $donext = FALSE;
+    $results = db_select('node', 'n')
+    ->fields('n',array('nid','created'))
+    ->condition('type', $type)
+    ->condition('status', '1')
+    ->condition('uid',$uid)
+    ->range(0,1)//LIMIT to 2 records
+    ->execute()
+    ->fetchAll();
+    if($results){
+      return;//今天已经有一个课时存在了！！！
+    }
+  //1.check order date plan: if has this date(today)
+    $order_node = node_load($order_id);
+    $dates = $order_node->field_class_date_plan[LANGUAGE_NONE];
+    date_default_timezone_set('Asia/Shanghai');
+    $donext = FALSE;
+    foreach ($dates as $key => $value) {
+      if(substr($value['value'], 0,10) == date('Y-m-d')){
+        //setTRUE
+        $donext = TRUE;
+        $field_class_time = $value;
+        break;
+      }
+      continue;
+    }
+
+    if($donext){
+      $node = new stdClass(); // We create a new node object
+      $node->type = $type; // Or any other content type you want
+      // $account = user_load($uid);
+      $node->title = $uid." request a Class|申请试听";
+      $node->status = 1;
+      $node->language = LANGUAGE_NONE; // Or any language code if Locale module is enabled. More on this below *
+      node_object_prepare($node); // Set some default values.
+      $node->uid = $uid;
+      $node->field_student[$node->language][0]['uid'] = $uid;
+      $node->field_teacher[$node->language][0]['uid'] = 4;//default teacher
+      $node->field_class_time[$node->language][0]= $field_class_time;
+      $node->og_group_ref[$node->language][0]['target_id'] = $order_id;
+        // dpm($node);
+      if($node = node_submit($node)) { // Prepare node for saving
+        node_save($node);
+        watchdog('edu_soho', 'Auto create class record for uid = '.$uid, array(), WATCHDOG_NOTICE, 'link');
+      }
+    }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function edu_soho_cron() {
+  $order_users = get_all_users_has_order();
+  foreach ($order_users as $key => $order) {
+    $order_nid = $order->revision_id;
+    $student_uid = $order->field_student_uid;
+    auto_create_class_record($student_uid,$order_nid);
   }
 }
