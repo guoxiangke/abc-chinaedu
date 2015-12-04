@@ -229,6 +229,7 @@ if(in_array('teacher', array_values($user->roles))){
       <?php endif; ?>
       <?php print render($page['content']); ?>
       test!!!
+      render_node 准备上课！指导！
     </section>
 
     <?php if (!empty($page['sidebar_second'])): ?>
@@ -346,7 +347,7 @@ if(in_array('teacher', array_values($user->roles))){
                     </div>
                 </div>
             </div>
-            <a href="#">
+            <a href="#records">
                 <div class="panel-footer">
                     <span class="pull-left"><?php echo t('View Details');?></span>
                     <span class="pull-right"><i class="glyphicon glyphicon-circle-arrow-right"></i></span>
@@ -368,7 +369,7 @@ if(in_array('teacher', array_values($user->roles))){
                     </div>
                 </div>
             </div>
-            <a href="#">
+            <a href="#bought">
                 <div class="panel-footer">
                     <span class="pull-left"><?php echo t('View Details');?></span>
                     <span class="pull-right"><i class="glyphicon glyphicon-circle-arrow-right"></i></span>
@@ -391,7 +392,7 @@ if(in_array('teacher', array_values($user->roles))){
                     </div>
                 </div>
             </div>
-            <a href="#">
+            <a href="#points">
                 <div class="panel-footer">
                     <span class="pull-left"><?php echo t('View Details');?></span>
                     <span class="pull-right"><i class="glyphicon glyphicon-circle-arrow-right"></i></span>
@@ -409,7 +410,7 @@ if(in_array('teacher', array_values($user->roles))){
     </div>
   </div>
 
-	<div class="panel panel-primary">
+	<div class="panel panel-primary" id="records">
 	  <div class="panel-heading"><?php echo t('Your Records');?></div>
 	  <div class="panel-body">
 	    <p>上课记录，您上的每一节课都会在里体现，清晰明了！</p>
@@ -418,7 +419,7 @@ if(in_array('teacher', array_values($user->roles))){
 	</div>
 
 
-	<div class="panel panel-info">
+	<div class="panel panel-info" id="bought">
 	  <div class="panel-heading"><?php echo t('Your Orders');?></div>
 	  <div class="panel-body">
 	    <p>您的课程记录，每一次报课！</p>
@@ -426,7 +427,7 @@ if(in_array('teacher', array_values($user->roles))){
 		<?php print views_embed_view('nodes', 'page_'.$role.'_order'); ?>
 	</div>
 
-	<div class="panel panel-primary">
+	<div class="panel panel-primary" id="points">
 	  <div class="panel-heading"><?php echo t('Your Points');?></div>
 	  <div class="panel-body">
 	    <p>您的几分点卡记录！</p>
