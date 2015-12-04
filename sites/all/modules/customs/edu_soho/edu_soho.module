@@ -486,3 +486,10 @@ function edu_soho_cron() {
     auto_create_class_record($student_uid,$order_nid);
   }
 }
+
+/**
+ * Implements hook_node_update().
+ */
+function edu_soho_node_update($node) {
+  drupal_goto('orders');
+}
