@@ -365,7 +365,7 @@ if(in_array('teacher', array_values($user->roles))){
                     </div>
                     <div class="col-xs-9 text-right">
                         <div class="huge"><?php echo count(edu_get_orders($user,'field_'.$role));?></div>
-                        <div><?php echo t('Your Orders');?></div>
+                        <div><?php echo t('Your Courses');?></div>
                     </div>
                 </div>
             </div>
@@ -406,7 +406,7 @@ if(in_array('teacher', array_values($user->roles))){
   <div class="panel panel-primary">
     <div class="panel-heading">上课日历</div>
     <div class="panel-body">
-      <?php print views_embed_view('order_calendar', 'block_1'); ?>
+      <?php print views_embed_view('order_calendar', 'block_'.$role); ?>
     </div>
   </div>
 
@@ -420,7 +420,7 @@ if(in_array('teacher', array_values($user->roles))){
 
 
 	<div class="panel panel-info" id="bought">
-	  <div class="panel-heading"><?php echo t('Your Orders');?></div>
+	  <div class="panel-heading"><?php echo t('Your Courses');?></div>
 	  <div class="panel-body">
 	    <p>您的课程记录，每一次报课！</p>
 	  </div>
@@ -444,7 +444,7 @@ if(in_array('teacher', array_values($user->roles))){
 <footer class="footer container">
   <?php print render($page['footer']); ?>
 </footer>
-<?php if($role == 'student'): ?>
+<?php if(0&&$role == 'student'): ?>
 <!-- begin olark code -->
 <script data-cfasync="false" type='text/javascript'>/*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){
 f[z]=function(){
