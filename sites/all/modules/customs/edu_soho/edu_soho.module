@@ -143,14 +143,30 @@ function edu_get_orders($account,$field='field_student'){
  * field_student
  * field_teacher
  */
-function edu_get_records($account,$field='field_student'){
-  $query = new EntityFieldQuery();
-
+function edu_get_records($account,$field='field_student',$created=NULL){
+  if(is_object($account)) $account = $account->uid;
+  
+  //https://www.drupal.org/project/efq_extra_field
+  //http://drupal.stackexchange.com/questions/80889/get-fields-out-of-an-entity-returned-by-entityfieldquery
+  // $query = new EntityFieldQuery();
+  $query = new EntityFieldQueryExtraFields();
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'study_record')
     ->propertyCondition('status', NODE_PUBLISHED)
-    ->fieldCondition($field, 'uid', $account->uid)
+    ->fieldCondition($field, 'uid', $account)
+    // ->addExtraField('', 'created','created','node')
+    ->addExtraField('field_class_time', 'value','begin')
+    ->addExtraField('field_class_time', 'value2','end')
     ->addMetaData('account', user_load(1)); // Run the query as user 1.
+  if($created){
+    $form = strtotime(date('Y-m-d',$created).' 00:00:00');
+    $to = strtotime(date('Y-m-d',$created).' 23:59:59');
+    $query->propertyCondition('created',  array($form, $to), 'BETWEEN');
+    // $query->range(0,1);
+  }
+  // ->addExtraField('field_duration', 'value', 'value')
+  // $query->addExtraField('created', 'created', 'created','node');
+
   $res = $query->execute();
   if(isset($res['node']))
     return $res['node'];
