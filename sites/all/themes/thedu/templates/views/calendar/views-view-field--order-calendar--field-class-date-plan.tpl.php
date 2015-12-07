@@ -35,7 +35,7 @@ $tip = '';
 //从上课记录中获取 实际上课时间：field_class_time_value
 $records = edu_get_records($account,$field='field_student',$class_begin);
 if($records){
-	$nid = 0;
+	$nid = 1;
 	foreach ($records as $key => $record) {
 		$nid = $key;
 		$temp_begin = strtotime($record->extraFields->field_class_time_begin.' UTC+8');
@@ -43,7 +43,7 @@ if($records){
 		$class_end = date('H:i',strtotime($record->extraFields->field_class_time_end.' UTC+8'));
 		break;
 	}
-	$tip .= '<span data-pclass="cc-done"></span>已完成： <a href="'.url('node/'.$nid).'">'.$class_begin.'-'.$class_end.'</span></a><br/>';
+	$tip .= '<span data-pclass="cc-done"></span>'.t('Finished').'： <a href="'.url('node/'.$nid).'">'.$class_begin.'-'.$class_end.'</span></a><br/>';
 	// echo $tip;
 	// return;
 }
@@ -57,18 +57,23 @@ $b = date('Y-m-d',$temp_begin);
 if($now>$temp_begin && "$t" != "$b"){
 	$tip .= '<span data-pclass="cc-done"></span>';
 	echo $tip;
-	print '计划时间：'.preg_replace('/\d+\/\d+\/\d+ - /', '', $output); 
+	print t('Plan time').'：'.preg_replace('/\d+\/\d+\/\d+ - /', '', $output); 
 	return;
 }else{
-	$tip .= '<span data-pclass="cc-coming">计划时间：</span>';
+	$tip .= '<span data-pclass="cc-coming">'.t('Plan time').'：</span>';
 }
 
-if("$t" == "$b"){
+if("$t" == "$b" ){
+	if(!isset($nid)) {
+		$nid = 1;
+		$class_begin = date('H:i',$class_begin);
+		$class_end = date('H:i',$class_end);
+	}
 	// get 当天的记录节点！
 	//从上课记录中获取 实际上课时间
-	$tip = '<a href="'.url('node/'.$nid).'"><span data-pclass="cc-today">今日上课 </span>'.$class_begin.'</a><br/>';
+	$tip = '<a href="'.url('node/'.$nid).'"><span data-pclass="cc-today">'.t('Today Class').'：</span>'.$class_begin.'</a><br/>';
 	if($now>=$temp_begin+25*60){
-		$tip = '<a href="'.url('node/'.$nid).'"><span data-pclass="cc-done">今日上课 </span>'.$class_begin.'-'.$class_end .'</a><br/>';
+		$tip = '<a href="'.url('node/'.$nid).'"><span data-pclass="cc-done">'.t('Today Class').'：</span>'.$class_begin.'-'.$class_end .'</a><br/>';
 	}
 	echo $tip; return;
 }else{

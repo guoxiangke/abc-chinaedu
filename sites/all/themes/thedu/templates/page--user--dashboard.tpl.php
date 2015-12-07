@@ -248,7 +248,7 @@ if(in_array('teacher', array_values($user->roles))){
       <div class="col-lg-12">
           <h5 class="page-header"><?php echo l(t('>>Setting Up Audio'),'node/1');?></h5>
       </div>
-      <!-- /.col-lg-12上课前预备音频设置 -->
+      <!-- /.col-lg-12 -->
   </div>
 
   <div class="row">

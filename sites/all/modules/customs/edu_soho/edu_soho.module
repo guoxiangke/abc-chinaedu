@@ -472,7 +472,7 @@ function auto_create_class_record($uid,$order_id){
       node_object_prepare($node); // Set some default values.
       $node->uid = $uid;
       $node->field_student[$node->language][0]['uid'] = $uid;
-      $node->field_teacher[$node->language][0]['uid'] = 4;//default teacher
+      $node->field_teacher[$node->language][0]['uid'] = $order_node->field_teacher[$node->language][0]['uid'];
       $node->field_class_time[$node->language][0]= $field_class_time;
       $node->og_group_ref[$node->language][0]['target_id'] = $order_id;
         // dpm($node);
