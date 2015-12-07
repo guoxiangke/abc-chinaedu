@@ -73,6 +73,8 @@
  * @ingroup themeable
  */
 global $user;
+if(!user_is_logged_in()) return 'no access';
+
 $role = 'agency';
 if(in_array('student', array_values($user->roles))){
 	$role = 'student';
@@ -108,6 +110,7 @@ if(in_array('teacher', array_values($user->roles))){
       }else{
       	//get start time!!! cut down!!!
       	$study_record_node = node_load($nid);
+        // dpm($study_record_node->field_class_time[LANGUAGE_NONE][0]['value']);
       	$class_time_begin[$nid] = strtotime($study_record_node->field_class_time[LANGUAGE_NONE][0]['value'])+8*3600;
       	$count ++;
       }
@@ -189,7 +192,7 @@ if(in_array('teacher', array_values($user->roles))){
   </div>
 </header>
 <div class="main-container container">
-<?php if(1):?>
+<?php if(0):?>
   <header role="banner" id="page-header">
     <?php if (!empty($site_slogan)): ?>
       <p class="lead"><?php print $site_slogan; ?></p>
@@ -228,8 +231,7 @@ if(in_array('teacher', array_values($user->roles))){
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
       <?php print render($page['content']); ?>
-      test!!!
-      render_node 准备上课！指导！
+      
     </section>
 
     <?php if (!empty($page['sidebar_second'])): ?>
@@ -240,12 +242,13 @@ if(in_array('teacher', array_values($user->roles))){
 
   </div>
 <?php endif;?>
+<a href="#"></a>
 <!-- begin -->
   <div class="row">
       <div class="col-lg-12">
-          <h1 class="page-header">Dashboard</h1>
+          <h5 class="page-header"><?php echo l(t('>>Setting Up Audio'),'node/1');?></h5>
       </div>
-      <!-- /.col-lg-12 -->
+      <!-- /.col-lg-12上课前预备音频设置 -->
   </div>
 
   <div class="row">
@@ -413,7 +416,7 @@ if(in_array('teacher', array_values($user->roles))){
 	<div class="panel panel-primary" id="records">
 	  <div class="panel-heading"><?php echo t('Your Records');?></div>
 	  <div class="panel-body">
-	    <p>上课记录，您上的每一节课都会在里体现，清晰明了！</p>
+	    <!-- <p>上课记录，您上的每一节课都会在里体现，清晰明了！</p> -->
 	  </div>
 		<?php print views_embed_view('nodes', 'page_'.$role.'_record'); ?>
 	</div>
@@ -422,7 +425,7 @@ if(in_array('teacher', array_values($user->roles))){
 	<div class="panel panel-info" id="bought">
 	  <div class="panel-heading"><?php echo t('Your Courses');?></div>
 	  <div class="panel-body">
-	    <p>您的课程记录，每一次报课！</p>
+	    <!-- <p>您的课程记录，每一次报课！</p> -->
 	  </div>
 		<?php print views_embed_view('nodes', 'page_'.$role.'_order'); ?>
 	</div>
@@ -430,7 +433,7 @@ if(in_array('teacher', array_values($user->roles))){
 	<div class="panel panel-primary" id="points">
 	  <div class="panel-heading"><?php echo t('Your Points');?></div>
 	  <div class="panel-body">
-	    <p>您的几分点卡记录！</p>
+	    <!-- <p>您的几分点卡记录！</p> -->
 	  </div>
 		<?php 
 			require_once(drupal_get_path('module', 'userpoints').'/userpoints.pages.inc');

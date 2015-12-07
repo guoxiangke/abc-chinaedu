@@ -9,6 +9,13 @@ nav .secondary{
 .navbar-default .navbar-nav > li{
 	padding: 15px;
 }
+#order-node-form .weekly .form-type-checkboxes .form-type-checkbox{
+	float: none;
+  margin-right: 50px;
+}
+#order-node-form .form-type-checkbox{
+	margin-left: 20px
+}
 /*
 #block-locale-language {
 	float: left;
@@ -232,6 +239,13 @@ header.navbar-bigger{
 #block-devel-switch-user {
 	background-color: black;
 }
+
+#edit-field-class-delay {
+	display: none;
+}
+#points{
+	display: none;
+}
 /*dev*/
 
 .calendar-calendar .month-view .full td.single-day div.monthview, 
@@ -241,32 +255,35 @@ header.navbar-bigger{
 }
 
 .calendar-calendar .month-view .full td.single-day div.monthview.cc-done, 
-.calendar-calendar .month-view .full td.single-day div.monthview.cc-done a, 
-.calendar-calendar .week-view .full td.single-day div.weekview.cc-done,
-.calendar-calendar .month-view .full td.single-day div.weekview.cc-done a,
-.calendar-calendar .day-view .full td.single-day div.dayview.cc-done,
-.calendar-calendar .day-view .full td.single-day div.dayview.cc-done a{
+.calendar-calendar .month-view .full td.single-day div.monthview.cc-done a,
+.calendar-calendar .week-view .full div.single-day div.weekview.cc-done,
+.calendar-calendar .week-view .full div.single-day div.weekview.cc-done a,
+.calendar-calendar .day-view .full div.single-day div.dayview.cc-done,
+.calendar-calendar .day-view .full div.single-day div.dayview.cc-done a{
 	color:#fff;
   background-color:#3d8b3d;
 }
+
+
 .calendar-calendar .month-view .full td.single-day div.monthview.cc-today, 
-.calendar-calendar .month-view .full td.single-day div.monthview.cc-today a, 
-.calendar-calendar .week-view .full td.single-day div.weekview.cc-today,
-.calendar-calendar .month-view .full td.single-day div.weekview.cc-today a,
-.calendar-calendar .day-view .full td.single-day div.dayview.cc-today,
-.calendar-calendar .day-view .full td.single-day div.dayview.cc-today a{
+.calendar-calendar .month-view .full td.single-day div.monthview.cc-today a,
+.calendar-calendar .week-view .full div.single-day div.weekview.cc-today,
+.calendar-calendar .week-view .full div.single-day div.weekview.cc-today a,
+.calendar-calendar .day-view .full div.single-day div.dayview.cc-today,
+.calendar-calendar .day-view .full div.single-day div.dayview.cc-today a{
 	color:#fff;
   background-color:red;
 }
 .calendar-calendar .month-view .full td.single-day div.monthview.cc-coming, 
-.calendar-calendar .month-view .full td.single-day div.monthview.cc-coming a, 
-.calendar-calendar .week-view .full td.single-day div.weekview.cc-coming,
-.calendar-calendar .month-view .full td.single-day div.weekview.cc-coming a,
-.calendar-calendar .day-view .full td.single-day div.dayview.cc-coming,
-.calendar-calendar .day-view .full td.single-day div.dayview.cc-coming a{
+.calendar-calendar .month-view .full td.single-day div.monthview.cc-coming a,
+.calendar-calendar .week-view .full div.single-day div.weekview.cc-coming,
+.calendar-calendar .week-view .full div.single-day div.weekview.cc-coming a,
+.calendar-calendar .day-view .full div.single-day div.dayview.cc-coming,
+.calendar-calendar .day-view .full div.single-day div.dayview.cc-coming a{
 	color:#fff;
   background-color:#d9534f;
 }
+ 
 
 .calendar-calendar .month-view .full td.date-box.today,
 .calendar-calendar .month-view .full tr td.multi-day.ends-today,

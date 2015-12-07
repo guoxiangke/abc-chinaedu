@@ -24,6 +24,7 @@ function edu_soho_menu() {
 function edu_soho_admin_paths_alter(&$paths) {
   $paths['node/add/study-record'] = FALSE;
   $paths['node/add/order'] = FALSE;
+  $paths['node/%/edit'] = FALSE;
 }
 /**
  * stu申请试听
@@ -433,11 +434,18 @@ function auto_create_class_record($uid,$order_id){
     ->condition('type', $type)
     ->condition('status', '1')
     ->condition('uid',$uid)
+    ->orderBy('created', 'DESC')//ORDER BY created
     ->range(0,1)//LIMIT to 2 records
     ->execute()
     ->fetchAll();
     if($results){
-      return;//今天已经有一个课时存在了！！！
+      $t = date('Y-m-d');
+      $b = date('Y-m-d',$results[0]->created);
+      if("$t" == "$b"){
+        watchdog('auto_create_class_record', '今天已经有一个课时存在了！！！', array(), WATCHDOG_NOTICE, 'link');
+        return;
+      }
+      //今天已经有一个课时存在了！！！
     }
   //1.check order date plan: if has this date(today)
     $order_node = node_load($order_id);
@@ -477,6 +485,10 @@ function auto_create_class_record($uid,$order_id){
 
 /**
  * Implements hook_cron().
+ https://api.drupal.org/api/drupal/modules!system!system.queue.inc/group/queue/7
+ http://www.tuicool.com/articles/fQfYNj
+ http://getlevelten.com/blog/randall-knutson/cron-queues-processing-large-amounts-data-cron
+ http://jenkins-ci.org/
  */
 function edu_soho_cron() {
   $order_users = get_all_users_has_order();
