@@ -442,7 +442,7 @@ function auto_create_class_record($uid,$order_id){
       $t = date('Y-m-d');
       $b = date('Y-m-d',$results[0]->created);
       if("$t" == "$b"){
-        watchdog('auto_create_class_record', '今天已经有一个课时存在了！！！', array(), WATCHDOG_NOTICE, 'link');
+        // watchdog('auto_cr eate_class_record', '今天已经有一个课时存在了！！！', array(), WATCHDOG_NOTICE, 'link');
         return;
       }
       //今天已经有一个课时存在了！！！

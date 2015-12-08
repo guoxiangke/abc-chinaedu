@@ -409,7 +409,7 @@ if(in_array('teacher', array_values($user->roles))){
   <div class="panel panel-primary">
     <div class="panel-heading">上课日历</div>
     <div class="panel-body">
-      <?php print views_embed_view('order_calendar', 'block_'.$role); ?>
+      <?php print views_embed_view('calendar', 'block_'.$role); ?>
     </div>
   </div>
 

@@ -27,9 +27,9 @@ $account = $row->field_field_student[0]['raw']['uid'];
 // $account = $row->field_field_teacher[0]['raw']['uid'];
 //从自动创建的节点中获取 理论上课时间：field_class_date_plan
 
-$class_begin = strtotime($row->field_data_field_class_date_plan_field_class_date_plan_value.' UTC+8');//	
+$class_begin = strtotime($row->field_data_field_plan_class_field_plan_class_value.' UTC+8');//	
 $temp_begin = $class_begin;
-$class_end = strtotime($row->field_data_field_class_date_plan_field_class_date_plan_value_1.' UTC+8');//2015-12-01 07:00:00
+$class_end = strtotime($row->field_data_field_plan_class_field_plan_class_value2.' UTC+8');//2015-12-01 07:00:00
 $tip = '';
 // get 那日当天的记录节点！
 //从上课记录中获取 实际上课时间：field_class_time_value

@@ -75,7 +75,7 @@ function thedu_preprocess_page(&$variables) {
 		drupal_add_js(drupal_get_path('module', 'edu_soho').'/js/open_classroom.js','file');
 		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/calendar-custom.js','file');
 	}
-	if(arg(0) == 'calendar-node-field-class-date-plan'){
+	if(arg(0) == 'calendar'){
 		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/calendar-custom.js','file');
 	}
 	if (arg(0) == 'blog') {
