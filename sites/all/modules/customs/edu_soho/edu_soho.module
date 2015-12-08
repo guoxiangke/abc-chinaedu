@@ -449,7 +449,7 @@ function auto_create_class_record($uid,$order_id){
     }
   //1.check order date plan: if has this date(today)
     $order_node = node_load($order_id);
-    $dates = $order_node->field_class_date_plan[LANGUAGE_NONE];
+    $dates = $order_node->field_plan_class[LANGUAGE_NONE];
     date_default_timezone_set('Asia/Shanghai');
     $donext = FALSE;
     foreach ($dates as $key => $value) {
