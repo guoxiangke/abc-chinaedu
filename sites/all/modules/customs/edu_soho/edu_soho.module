@@ -506,15 +506,16 @@ function auto_create_class_record($uid,$order_id){
       $node->status = 1;
       $node->language = LANGUAGE_NONE; // Or any language code if Locale module is enabled. More on this below *
       node_object_prepare($node); // Set some default values.
-      $node->uid = $uid;
+      $field_teacher_uid = $order_node->field_teacher[$node->language][0]['uid'];
+      $node->uid = $field_teacher_uid;
       $node->field_student[$node->language][0]['uid'] = $uid;
-      $node->field_teacher[$node->language][0]['uid'] = $order_node->field_teacher[$node->language][0]['uid'];
+      $node->field_teacher[$node->language][0]['uid'] = $field_teacher_uid;
       $node->field_class_time[$node->language][0]= $field_class_time;
       $node->og_group_ref[$node->language][0]['target_id'] = $order_id;
         // dpm($node);
       if($node = node_submit($node)) { // Prepare node for saving
         node_save($node);
-        watchdog('edu_soho', 'Auto create class record for uid = '.$uid, array(), WATCHDOG_NOTICE, 'link');
+        watchdog('edu_soho', 'Auto create class record'.$node->nid.' for uid = '.$uid, array(), WATCHDOG_NOTICE, 'link');
       }
     }
 }
@@ -539,5 +540,5 @@ function edu_soho_cron() {
  * Implements hook_node_update().
  */
 function edu_soho_node_update($node) {
-  // drupal_goto('orders');
+  drupal_goto('orders');
 }
