@@ -296,8 +296,7 @@ function edu_soho_form_alter(&$form, &$form_state, $form_id) {
     // dpm($form);
   }
   if ($form_id == 'order_node_form') {
-    
-    array_unshift($form['#validate'], 'order_node_form_date_validate');
+    // array_unshift($form['#validate'], 'order_node_form_date_validate');
     $form['options']['promote']['#title'] = '订单未完成';
     $form['options']['sticky']['#title'] = '订单未作废';
     // dpm($form);
@@ -305,10 +304,6 @@ function edu_soho_form_alter(&$form, &$form_state, $form_id) {
   
 }
 
-function order_node_form_date_validate($form, &$form_state) {
-  // dpm($form_state);
-  // form_set_error('mail', t('Your email could not be changed'));
-}
 function page_edu_drashboard() {
   return 'white page!';
 }
@@ -334,18 +329,6 @@ function edu_soho_field_widget_form_alter(&$element, &$form_state, $context) {
 }
 
 function _edu_soho_date_repeat_field_widget_validate($element, &$form_state){
-  // from delay rrule => list date!!
-    // 1.get deplay element!
-  //   $element == ??
-  //   $item = drupal_array_get_nested_value($form_state['values'], $element['#parents'], $input_exists);
-  //   $input = drupal_array_get_nested_value($form_state['input'], $element['#parents'], $input_exists);
-    
-  //   $field = field_widget_field($element, $form_state);
-    
-  //   $rrule_values = date_repeat_merge($input['rrule'], $element['rrule']);
-  //   $rrule = $item['rrule'];
-  //   $value = date_repeat_build_dates($rrule, $rrule_values, $field, $item);
-  // add to expection of plan rule!!
   $delay_dates = $form_state['values']['field_class_delay'][LANGUAGE_NONE];
   $delay_date_exrule = '';
   foreach ($delay_dates as $key => $delay_date) {
@@ -355,44 +338,11 @@ function _edu_soho_date_repeat_field_widget_validate($element, &$form_state){
       $delay_date_exrule .= date('Ymd', strtotime($delay_date['value'].' UTC+8')-86400).'T160000Z';
     }
   }
-  // dpm($element);
-  // dpm();
   $delay_date_exrule = 'EXDATE:'.$delay_date_exrule;
-  
-  // if (empty($field['settings']['repeat'])) {
-  //   return;
-  // }
-
-  // $field_name = $element['#field_name'];//field_plan_class
-  // $delta = $element['#delta'];
-  // $langcode = $element['#language'];
-
-  // // If the widget has been hidden by #access, the RRULE will still be in its
-  // // original string form here. Nothing to process.
-  // if (date_hidden_element($element)) {
-
-  //   // If this was a hidden repeating date, we lost all the repeating values in the widget processing.
-  //   // Add them back here if that happened since we are skipping the re-creation of those values.
-  //   if (!empty($form_state['storage']['date_items'][$field_name])) {
-  //     array_pop($element['#parents']);
-  //     form_set_value($element, $form_state['storage']['date_items'][$field_name][$langcode], $form_state);
-  //   }
-  //   return;
-  // }
-
-  // module_load_include('inc', 'date_repeat', 'date_repeat_form');
-  // $instance = field_widget_instance($element, $form_state);
-
-  // // Here 'values' returns an array of input values, which includes the original RRULE, as a string.
-  // // and 'input' returns an array of the form elements created by the repeating date widget, with
-  // // RRULE values as an array of the selected elements and their chosen values.
-  // $item = drupal_array_get_nested_value($form_state['values'], $element['#parents'], $input_exists);
-  // $item['rrule'];
   $rrule = $form_state['values']['field_plan_class'][LANGUAGE_NONE][0]['rrule'];
   $rrule = explode("\n", $rrule);
   $rrule = $rrule['0']."\n".$delay_date_exrule;
   $form_state['values']['field_plan_class'][LANGUAGE_NONE][0]['rrule'] = $rrule;
-  dpm($form_state,'422');
 }
 
 /**
