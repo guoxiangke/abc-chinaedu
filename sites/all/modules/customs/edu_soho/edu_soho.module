@@ -464,7 +464,6 @@ function auto_create_class_record($uid,$order_id){
     // $order_id = get_active_order_id($uid);
     $type = 'study_record';
   //2.if no class record today for this user!
-    $donext = FALSE;
     $results = db_select('node', 'n')
     ->fields('n',array('nid','created'))
     ->condition('type', $type)
@@ -486,7 +485,6 @@ function auto_create_class_record($uid,$order_id){
   //1.check order date plan: if has this date(today)
     $order_node = node_load($order_id);
     $dates = $order_node->field_plan_class[LANGUAGE_NONE];
-    date_default_timezone_set('Asia/Shanghai');
     $donext = FALSE;
     foreach ($dates as $key => $value) {
       if(substr($value['value'], 0,10) == date('Y-m-d')){
@@ -507,7 +505,7 @@ function auto_create_class_record($uid,$order_id){
       $node->language = LANGUAGE_NONE; // Or any language code if Locale module is enabled. More on this below *
       node_object_prepare($node); // Set some default values.
       $field_teacher_uid = $order_node->field_teacher[$node->language][0]['uid'];
-      $node->uid = $field_teacher_uid;
+      $node->uid = $uid;
       $node->field_student[$node->language][0]['uid'] = $uid;
       $node->field_teacher[$node->language][0]['uid'] = $field_teacher_uid;
       $node->field_class_time[$node->language][0]= $field_class_time;
@@ -515,7 +513,7 @@ function auto_create_class_record($uid,$order_id){
         // dpm($node);
       if($node = node_submit($node)) { // Prepare node for saving
         node_save($node);
-        watchdog('edu_soho', 'Auto create class record'.$node->nid.' for uid = '.$uid, array(), WATCHDOG_NOTICE, 'link');
+        watchdog('edu_soho', 'Auto create class record '.$node->nid.' for uid = '.$uid, array(), WATCHDOG_NOTICE, 'link');
       }
     }
 }
