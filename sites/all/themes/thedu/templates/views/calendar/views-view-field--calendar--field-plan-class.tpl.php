@@ -23,6 +23,10 @@
  */
 //该学生uid
 // dpm($row);
+if(!isset($row->field_field_student[0]['raw']['uid'])){
+	echo $output;
+	return;
+}
 $account = $row->field_field_student[0]['raw']['uid'];
 // $account = $row->field_field_teacher[0]['raw']['uid'];
 //从自动创建的节点中获取 理论上课时间：field_class_date_plan

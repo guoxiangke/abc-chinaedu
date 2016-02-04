@@ -100,6 +100,7 @@ function edu_soho_init() {
   global $user;
   drupal_add_js(array('currentUser' => $user->uid), 'setting');
   drupal_add_js(drupal_get_path('module', 'edu_soho').'/js/edu_soho.js');
+  // drupal_add_css(drupal_get_path('module', 'edu_soho').'/css/edu_soho.css');
   //uid = Drupal.settings.currentUser;
   $GLOBALS['DEBUG'] = TRUE;
 }
