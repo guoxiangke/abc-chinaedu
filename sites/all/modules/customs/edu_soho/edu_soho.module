@@ -38,7 +38,7 @@ function _ajax_create_class_record(){
     $type = 'study_record';
     $uid = $_POST['uid'];
     $order_id = $_POST['order_id'];
-    
+
     //already has a unpushished class order'will not create!!!
     if(count(_edu_get_node($type,$uid,0))){
       $data = array('error'=>1);
@@ -47,7 +47,7 @@ function _ajax_create_class_record(){
       drupal_exit();
     }
     //check userpoints drupal_goto('buy points');
-    if(userpoints_get_current_points()<=0){      
+    if(userpoints_get_current_points()<=0){
       $data = array('error'=>2);
       //'您点卡不足，请充值后申请！！'
       print json_encode($data);
@@ -105,7 +105,7 @@ function edu_soho_init() {
   $GLOBALS['DEBUG'] = TRUE;
 }
 /**
- * $type string 
+ * $type string
  * $account uid/obj
  */
 function _edu_get_node($type,$uid=NULL,$status=1){
@@ -147,7 +147,7 @@ function edu_get_orders($account,$field='field_student'){
  */
 function edu_get_records($account,$field='field_student',$created=NULL){
   if(is_object($account)) $account = $account->uid;
-  
+
   //https://www.drupal.org/project/efq_extra_field
   //http://drupal.stackexchange.com/questions/80889/get-fields-out-of-an-entity-returned-by-entityfieldquery
   // $query = new EntityFieldQuery();
@@ -172,7 +172,7 @@ function edu_get_records($account,$field='field_student',$created=NULL){
   $res = $query->execute();
   if(isset($res['node']))
     return $res['node'];
-  // if($field=='field_agency') return views_get_view_result('nodes','page_agency_record'); 
+  // if($field=='field_agency') return views_get_view_result('nodes','page_agency_record');
   return array();
 }
 //get all user or or all nodes!
@@ -302,7 +302,7 @@ function edu_soho_form_alter(&$form, &$form_state, $form_id) {
     $form['options']['sticky']['#title'] = '订单未作废';
     // dpm($form);
   }
-  
+
 }
 
 function page_edu_drashboard() {
@@ -333,10 +333,12 @@ function _edu_soho_date_repeat_field_widget_validate($element, &$form_state){
   $delay_dates = $form_state['values']['field_class_delay'][LANGUAGE_NONE];
   $delay_date_exrule = '';
   foreach ($delay_dates as $key => $delay_date) {
-    if($key != count($delay_dates) -1){
-      $delay_date_exrule .= date('Ymd', strtotime($delay_date['value'].' UTC+8')-86400).'T160000Z,';
-    }else{
-      $delay_date_exrule .= date('Ymd', strtotime($delay_date['value'].' UTC+8')-86400).'T160000Z';
+    if(isset($delay_date['value'])){
+      if($key != count($delay_dates) -1){
+        $delay_date_exrule .= date('Ymd', strtotime($delay_date['value'].' UTC+8')-86400).'T160000Z,';
+      }else{
+        $delay_date_exrule .= date('Ymd', strtotime($delay_date['value'].' UTC+8')-86400).'T160000Z';
+      }
     }
   }
   $delay_date_exrule = 'EXDATE:'.$delay_date_exrule;
@@ -427,7 +429,7 @@ function get_active_order_id($uid){//uid = 3 orderId = 88
   $type = 'order';
   $query = db_select('field_data_field_student', 'f');
   $query->join('node', 'n', 'n.nid = f.entity_id');
-  
+
   $query->fields('f',array('revision_id'));
   $query->condition('f.field_student_uid', $uid);
   //@see hook_form_alter!
@@ -435,7 +437,7 @@ function get_active_order_id($uid){//uid = 3 orderId = 88
   $query->condition('n.promote', '1');
   $query->condition('n.sticky', '1');
   $query->range(0,1);
-  
+
   $orderId = $query->execute()->fetchField();
   return $orderId;
 }
@@ -448,7 +450,7 @@ function get_all_users_has_order(){
   $type = 'order';
   $query = db_select('field_data_field_student', 'f');
   $query->join('node', 'n', 'n.nid = f.entity_id');
-  
+
   $query->fields('f',array('revision_id','field_student_uid'));
   //@see hook_form_alter!
   $query->condition('n.status', '1');
@@ -539,5 +541,5 @@ function edu_soho_cron() {
  * Implements hook_node_update().
  */
 function edu_soho_node_update($node) {
-  drupal_goto('orders');
+  drupal_goto('allorders');
 }
