@@ -278,8 +278,10 @@ function date_repeat_rrule_description($rrule, $format = 'D M d Y') {
     $values = array();
     foreach ($exceptions as $exception) {
       $except = date_ical_date($exception, 'UTC');
-      date_timezone_set($except, date_default_timezone_object());
-      $values[] = date_format_date($except, 'custom', $format);
+      if($except){
+        date_timezone_set($except, date_default_timezone_object());
+        $values[] = date_format_date($except, 'custom', $format);
+      }
     }
     $description['!except'] = trim(t('!repeats_every_interval except !except_dates', array('!repeats_every_interval ' => '', '!except_dates' => implode(', ', $values))));
   }

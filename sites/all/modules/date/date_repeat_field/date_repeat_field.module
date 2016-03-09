@@ -469,7 +469,8 @@ function date_repeat_build_dates($rrule = NULL, $rrule_values = NULL, $field, $i
   $exceptions = array();
   foreach ($parsed_exceptions as $exception) {
     $date = date_ical_date($exception, $timezone);
-    $exceptions[] = date_format($date, 'Y-m-d');
+    if($date)
+      $exceptions[] = date_format($date, 'Y-m-d');
   }
 
   $parsed_rdates = (array) $parts[2];
