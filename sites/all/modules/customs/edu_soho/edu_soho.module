@@ -304,7 +304,6 @@ function edu_soho_form_alter(&$form, &$form_state, $form_id) {
     $form['field_student']['und'][0]['uid']['#default_value'] = $_GET['student'];
     if(isset($_GET['teacher']))
     $form['field_teacher']['und'][0]['uid']['#default_value'] = $_GET['teacher'];
-    dpm($form);
     global $user;
     if(in_array('teacher', array_values($user->roles))){
       if($form['#node']->field_teacher[LANGUAGE_NONE][0]['uid'] == $user->uid){
