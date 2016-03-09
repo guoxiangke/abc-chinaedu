@@ -180,7 +180,7 @@
           <span class="spr40">企业培训?&nbsp;国际学校?&nbsp;国际交流?欢迎垂询～</span>
           <span class="i-phone spr40">
             <span class="glyphicon glyphicon-earphone"></span>
-            <a href="tel:+86 (010) 568-9834">+86 (010) 568-9834</a>
+            <a href="tel:+86 (010) 568-9834">(+86)-010-568-9834</a>
           </span>
           <span class="i-mail spr40">
             <span class="fa fa-send-o"></span>

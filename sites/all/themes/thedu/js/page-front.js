@@ -58,9 +58,7 @@ function trackHoverIntent(selector, time) {
 
 	});
 	Drupal.behaviors.front = {
-	  attach: function(context) {    
-	      $(function() {
-				});
+	  attach: function(context) { 
 	  }
 	}	
 })(jQuery);
