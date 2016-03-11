@@ -128,16 +128,19 @@
         <div id="playlist" style="display: none;"></div>
     </div>
     <script type="text/javascript">
-        var playlist = [
-                {
-                    title: '<?php echo $node->title;?>',
-                    artist: '',
-                    album: '',
-                    cover:'',
-                    mp3: '<?php echo $url;?>',
-                    ogg: ''
-                }
-            ];
+    <?php
+      foreach ($node->field_file[LANGUAGE_NONE] as $key => $value) {
+        $js_radio['title'] = 'Class Record-'.($key+1);
+        $js_radio['artist'] = '';
+        $js_radio['album'] = '';
+        $js_radio['cover'] = '';
+        $js_radio['mp3'] = file_create_url($node->field_file[LANGUAGE_NONE][$key]['uri']);;
+        $js_radio['ogg'] = '';
+        $js_radios[]= $js_radio;
+      }
+      $playlist = json_encode($js_radios);
+    ?>
+        var playlist = <?php echo $playlist;?>;
         var autoplay = false;
     </script>
 
