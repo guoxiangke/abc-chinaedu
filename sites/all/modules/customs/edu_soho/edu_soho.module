@@ -427,6 +427,7 @@ function edu_get_agencyusers($account){
  */
 function edu_soho_flag_flag($flag, $entity_id, $account, $flagging) {
   if($flag->name == 'mark_finished_class'){
+    global $user;
     if(!in_array('teacher', array_values($user->roles))) return;
     $node = node_load($entity_id);
     $field_student = $node->field_student[LANGUAGE_NONE][0]['uid'];
