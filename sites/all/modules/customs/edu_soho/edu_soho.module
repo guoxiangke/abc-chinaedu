@@ -144,6 +144,7 @@ function edu_get_orders($account,$field='field_student'){
  * 获取学生/老师的所有课程记录 study_record
  * field_student
  * field_teacher
+ * TODO: By Order ID!!!
  */
 function edu_get_records($account,$field='field_student',$created=NULL){
   if(is_object($account)) $account = $account->uid;
@@ -518,8 +519,7 @@ function auto_create_class_record($uid,$order_id){
       }
       continue;
     }
-
-    if($donext){
+    if($donext && date('H') >= date('H',strtotime($field_class_time['value'].' '.$field_class_time['timezone_db']))){//如果在同一个小时内，则生成！必须提前1小时请假。否则会自动生成classrecord！
       $node = new stdClass(); // We create a new node object
       $node->type = $type; // Or any other content type you want
       // $account = user_load($uid);
