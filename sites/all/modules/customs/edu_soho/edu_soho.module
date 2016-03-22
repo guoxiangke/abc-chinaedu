@@ -568,7 +568,8 @@ function edu_soho_node_update($node) {
  * Implements hook_user_presave().
  */
 function edu_soho_user_presave(&$edit, $account, $category) {
-  if(strpos($account->email,'@qq.com')==false){
+  if(isset($edit['status'])&&$edit['status']!=$account->status) return;
+  if(strpos($account->mail,'@qq.com')==false || (isset($edit['mail']) && strpos($edit['mail'],'@qq.com')==false)){
     $account->status=0;
     $edit['status']=0;
   }
