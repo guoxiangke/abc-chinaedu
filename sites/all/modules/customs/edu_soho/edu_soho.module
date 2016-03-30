@@ -472,7 +472,7 @@ function get_all_users_has_order(){
   $query = db_select('field_data_field_student', 'f');
   $query->join('node', 'n', 'n.nid = f.entity_id');
 
-  $query->fields('f',array('revision_id','field_student_uid'));
+  $query->fields('f',array('entity_id','field_student_uid'));
   //@see hook_form_alter!
   $query->condition('n.status', '1');
   $query->condition('n.promote', '1');
@@ -551,7 +551,7 @@ function auto_create_class_record($uid,$order_id){
 function edu_soho_cron() {
   $order_users = get_all_users_has_order();
   foreach ($order_users as $key => $order) {
-    $order_nid = $order->revision_id;
+    $order_nid = $order->entity_id;
     $student_uid = $order->field_student_uid;
     auto_create_class_record($student_uid,$order_nid);
   }
