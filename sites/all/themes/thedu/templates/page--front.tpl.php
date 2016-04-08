@@ -274,21 +274,21 @@
             </div>
             <br>@李伟
           </a>
-  		  	<p>本人特别想感谢外教Nice老师，让我找到了说英语的信心，在课堂上不断给我以鼓励，每次上课后都会有详细的学习记录以纠正我的语法及句子错误，我们已经象好朋友一样，无所不谈，她负责任的态度太让我感动了!!!</p>
+  		  	<p>I am on the accounting side and needed a lot of help getting the system to work the way we wanted it to....my customer service support person was AAA! I highly recommend this service.</p>
         </div>
       </div>
 		  <div class="social-card twitter col-md-4">
         <div class="twitter">
 		  	  <a href="#" target="_blank">
 		  		<div style="background-image:url('<?php echo drupal_get_path('theme', 'thedu');?>/img/comments/31.jpg')" class="avatar"></div><br>@张靓</a>
-		  				<p>再次感谢感谢monika老师，从一开始的接触就用英语与我交流，从简单的单词开始接触，让我重新捡回学习英语的信心，在我的学习期间，monika老师会耐心的听我的录音，指出我的问题，非常感谢monika老师！ </p>
+		  				<p>I am on the accounting side and needed a lot of help getting the system to work the way we wanted it to....my customer service support person was AAA! I highly recommend this service. </p>
           </div>
         </div>
 		  <div class="social-card twitter col-md-4">
         <div class="twitter">
 		  	  <a href="#" target="_blank">
 		  		<div style="background-image:url('<?php echo drupal_get_path('theme', 'thedu');?>/img/comments/22.jpg')" class="avatar"></div><br>@徐浩然</a>
-		  			<p>你好，我是黄豪妈妈，黄豪很喜欢现在这个男老师，聊的很高兴，谢谢！我觉得他现在语音进步很多了，和老师聊天的话题也多了，学了这么久，看到他进步了，我也很高兴，觉得选对了学校，也很感谢你们。</p>
+		  			<p>I am on the accounting side and needed a lot of help getting the system to work the way we wanted it to....my customer service support person was AAA! I highly recommend this service.</p>
           </div>
         </div>
 		</div>
@@ -297,22 +297,21 @@
         <div class="twitter">
 				  <a href="#" target="_blank">
 					<div style="background-image:url('<?php echo drupal_get_path('theme', 'thedu');?>/img/comments/31.jpg')" class="avatar"></div><br>@赵宇</a>
-						<p>好的学习方法，的确会带来很不错的学习效果，ABC-ChinaEdu英语外教很有耐心，不仅有步骤一步一步的引导，而且更像朋友一样的分享课程。我的口语也提高了很多，正在学习中，期待。。加油！！！</p>
+						<p>I am on the accounting side and needed a lot of help getting the system to work the way we wanted it to....my customer service support person was AAA! I highly recommend this service.</p>
           </div>
         </div>
 		  <div class="social-card twitter col-md-4">
         <div class="twitter">
 		  	  <a href="#" target="_blank">
 		  		<div style="background-image:url('<?php echo drupal_get_path('theme', 'thedu');?>/img/comments/22.jpg')" class="avatar"></div><br>@张丽</a>
-		  				<p>在ABC-ChinaEdu学习以来，我的英语口语和听力有很大的提高，跟外国人交流起来也更自信了，我现在也渐渐也爱上英语了，计划长期在这里学习英语，感谢你们！!</p>
+		  				<p>I am on the accounting side and needed a lot of help getting the system to work the way we wanted it to....my customer service support person was AAA! I highly recommend this service.</p>
           </div>
       </div>
 		  <div class="social-card twitter col-md-4">
         <div class="twitter">
   		  	<a href="#" target="_blank">
     		  	<div style="background-image:url('<?php echo drupal_get_path('theme', 'thedu');?>/img/comments/31.jpg')" class="avatar"></div><br>@黄珊</a>
-    		  	 <p>我的英语本身就不好，我不知道我选择学习日常口语对于我这样词汇量极少然后语法不懂，单词不懂怎么运用的学员来说选择学习口语对不对，但是，我知道我现在比前更要喜欢英语了。
-        Ivy老师真的很不错的！
+    		  	 <p>I am on the accounting side and needed a lot of help getting the system to work the way we wanted it to....my customer service support person was AAA! I highly recommend this service.</p>
         </div>
       </div>
 		</div>
