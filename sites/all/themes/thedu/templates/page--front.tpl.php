@@ -259,62 +259,17 @@
 </div>
 <!-- advanced-features -->
 
-
 <!-- advanced-features -->
 <div id="advanced-features">
   <div class="container">
-    <h1 class="blue-heading">中国区学员学习感受</h1>
+  <?php $my_block = module_invoke('views', 'block_view', 'promotion-block');?>
+    <h1 class="blue-heading"><?php print render($my_block['subject']);?></h1>
     <h2>What are people saying about ABC-ChinaEdu?</h2>
-
-		<div id="feature-7" class="row feature">
-		  <div class="social-card twitter col-md-4">
-        <div class="twitter">
-  		  	<a href="#" target="_blank">
-  		  		<div style="background-image:url('<?php echo drupal_get_path('theme', 'thedu');?>/img/comments/22.jpg')" class="avatar">
-            </div>
-            <br>@李伟
-          </a>
-  		  	<p>I am on the accounting side and needed a lot of help getting the system to work the way we wanted it to....my customer service support person was AAA! I highly recommend this service.</p>
-        </div>
-      </div>
-		  <div class="social-card twitter col-md-4">
-        <div class="twitter">
-		  	  <a href="#" target="_blank">
-		  		<div style="background-image:url('<?php echo drupal_get_path('theme', 'thedu');?>/img/comments/31.jpg')" class="avatar"></div><br>@张靓</a>
-		  				<p>I am on the accounting side and needed a lot of help getting the system to work the way we wanted it to....my customer service support person was AAA! I highly recommend this service. </p>
-          </div>
-        </div>
-		  <div class="social-card twitter col-md-4">
-        <div class="twitter">
-		  	  <a href="#" target="_blank">
-		  		<div style="background-image:url('<?php echo drupal_get_path('theme', 'thedu');?>/img/comments/22.jpg')" class="avatar"></div><br>@徐浩然</a>
-		  			<p>I am on the accounting side and needed a lot of help getting the system to work the way we wanted it to....my customer service support person was AAA! I highly recommend this service.</p>
-          </div>
-        </div>
-		</div>
-		<div id="feature-7" class="row feature">
-			<div class="social-card twitter col-md-4">
-        <div class="twitter">
-				  <a href="#" target="_blank">
-					<div style="background-image:url('<?php echo drupal_get_path('theme', 'thedu');?>/img/comments/31.jpg')" class="avatar"></div><br>@赵宇</a>
-						<p>I am on the accounting side and needed a lot of help getting the system to work the way we wanted it to....my customer service support person was AAA! I highly recommend this service.</p>
-          </div>
-        </div>
-		  <div class="social-card twitter col-md-4">
-        <div class="twitter">
-		  	  <a href="#" target="_blank">
-		  		<div style="background-image:url('<?php echo drupal_get_path('theme', 'thedu');?>/img/comments/22.jpg')" class="avatar"></div><br>@张丽</a>
-		  				<p>I am on the accounting side and needed a lot of help getting the system to work the way we wanted it to....my customer service support person was AAA! I highly recommend this service.</p>
-          </div>
-      </div>
-		  <div class="social-card twitter col-md-4">
-        <div class="twitter">
-  		  	<a href="#" target="_blank">
-    		  	<div style="background-image:url('<?php echo drupal_get_path('theme', 'thedu');?>/img/comments/31.jpg')" class="avatar"></div><br>@黄珊</a>
-    		  	 <p>I am on the accounting side and needed a lot of help getting the system to work the way we wanted it to....my customer service support person was AAA! I highly recommend this service.</p>
-        </div>
-      </div>
-		</div>
+    <?php
+      $my_block = module_invoke('views', 'block_view', 'promotion-block');
+      print render($my_block['content']);
+    ?>
+    </div>
   </div>
 </div>
 
