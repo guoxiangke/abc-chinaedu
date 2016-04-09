@@ -20,14 +20,15 @@
 <style type="text/css">
   .view-promotion .views-row .twitter{
     display: block;
-    height: 350px;
+    height: 400px;
     margin-top: 30px;
     padding: 0;
     text-align: center;
     border: #f6f7f7 solid 2px;
+    overflow: hidden;
   }
   .view-promotion .row .views-field-body{
-    width: 78%;
+    width: 80%;
     margin: 24px auto 0;
   }
   .view-promotion .row .user-picture img{
