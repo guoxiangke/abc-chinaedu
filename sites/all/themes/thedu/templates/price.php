@@ -50,7 +50,7 @@
                 </p>
               </div>
               <div class="panel-body">
-                  
+
                 <ul>
                   <li>赠送点券<span class="badge">150点</span></li>
                   <li>获得点券3150点</li>
@@ -140,13 +140,13 @@
             <span class="spr40">企业培训?&nbsp;国际学校?&nbsp;国际交流?欢迎垂询～</span>
             <span class="i-phone spr40">
               <span class="glyphicon glyphicon-earphone"></span>
-              <a href="tel:+86 (010) 568-9834">+86 (010) 568-9834</a>
+              <a href="tel:+86 (010) 8283-9320">+86 (010) 8283-9320</a>
             </span>
             <span class="i-mail spr40">
               <span class="fa fa-send-o"></span>
               <a href="mailto:sales@abc-chinaedu.com">sales@abc-chinaedu.com</a>
             </span>
           </div>
-        </div>    
+        </div>
     </div>
   </div>
