@@ -3,7 +3,7 @@
 		<div class="row">
       <section class="col-sm-3 dale-tac first">
         <h3 class="dale-tac">ABC-ChinaEdu</h3>
-        <p>了解更多请致电?<br>4008 517 517</p>
+        <p>了解更多请致电?<br>(010) 8283-9320</p>
         <ul style='padding'>
           <li>©2015 ABC-ChinaEdu.</li>
         </ul>
