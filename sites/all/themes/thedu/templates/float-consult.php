@@ -8,6 +8,6 @@
 
   </div>
   <div class="qr hide">
-  	<img src="<?php drupal_get_path('theme','thedu');?>/img/2.pic.jpg">
+  	<img src="<?php echo drupal_get_path('theme','thedu');?>/img/2.pic.jpg">
   </div>
 </div>
