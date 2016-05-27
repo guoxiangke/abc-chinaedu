@@ -204,6 +204,9 @@ header.navbar-bigger{
     position: fixed;
     right: 35px;
 	}
+  #float-consult .qr img{
+    max-width: 200px;
+  }
 .block-title{
 	font-size: 20px;
 }

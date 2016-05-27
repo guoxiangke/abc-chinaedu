@@ -8,6 +8,6 @@
 
   </div>
   <div class="qr hide">
-  	<img src="http://combo.b.qq.com/store/src/themes/mpPortal/register/images/urCode.png">
+  	<img src="<?php drupal_get_path('theme','thedu');?>/img/2.pic.jpg">
   </div>
 </div>
