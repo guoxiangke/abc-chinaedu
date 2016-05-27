@@ -73,7 +73,7 @@
  * @ingroup themeable
  */
 global $base_url;
-?> 
+?>
 <?php include('special_header.php');?>
 <section id="hero1" data-img="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu'); ?>/img/hero0.jpg" class="hero herobackstretch main-content wrapper-dark text-center">
     <div class="hero-content">
@@ -85,7 +85,7 @@ global $base_url;
     			</div>
     		</div>
     	</div>
-        
+
     	<style type="text/css">
 	    	#user-register-form .form-group label{
 	    		display: none;
@@ -126,7 +126,7 @@ global $base_url;
 
     	</style>
 
-			
+
 				<!-- <p class="rw-sentence-IE">Wow you can learn English!</p> -->
 
 
@@ -151,7 +151,7 @@ global $base_url;
 	                <li class="renren tips" title="分享到人人"></li>
 	            </ul>
 							<span>成功企业</span>
-							<img   width="619" height="38" alt="" src="http://localhost/~dale.guo/projects/sohoedu/sites/all/themes/thedu/img/seen.png">
+							<img   width="619" height="38" alt="" src="/sites/all/themes/thedu/img/seen.png">
 	        </div>
 	        <hr>
 			</div>

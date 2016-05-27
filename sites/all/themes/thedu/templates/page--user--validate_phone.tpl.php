@@ -72,7 +72,7 @@
  *
  * @ingroup themeable
  */
- global $base_url; 
+ global $base_url;
  global $debug
 ?>
 <header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
@@ -112,7 +112,7 @@
             	echo l('课程体系','user/login');
             ?>
             </li>
-          	<li class="red-btn"> 
+          	<li class="red-btn">
           	<?php
             	echo l('立刻体验','student/register');
             ?>
@@ -135,7 +135,7 @@
     			</div>
     		</div>
     	</div>
-        
+
     	<style type="text/css">
 	    	#user-register-form .form-group label{
 	    		display: none;
@@ -176,7 +176,7 @@
 
     	</style>
 
-			
+
 				<!-- <p class="rw-sentence-IE">Wow you can learn English!</p> -->
 
 
@@ -202,7 +202,7 @@
 	                <li class="renren tips" title="分享到人人"></li>
 	            </ul>
 							<span>合作企业</span>
-							<img   width="619" height="38" alt="" src="http://localhost/~dale.guo/projects/sohoedu/sites/all/themes/thedu/img/seen.png">
+							<img   width="619" height="38" alt="" src="/sites/all/themes/thedu/img/seen.png">
 	        </div>
 	        <hr>
 			</div>
@@ -239,7 +239,7 @@
         <h1 class="page-header"><?php print $title; ?></h1>
       <?php endif; ?>
       <?php print render($title_suffix); ?>
-      
+
       <?php if (!empty($tabs)): ?>
         <?php print render($tabs); ?>
       <?php endif; ?>

@@ -73,7 +73,7 @@
  *
  * @ingroup themeable
  */
-?> 
+?>
 <?php include('special_header.php');?>
 
 <section id="hero0" class="hero main-content wrapper-dark text-center ng-scope">
@@ -111,7 +111,7 @@
 	                <li class="renren tips" title="分享到人人"></li>
 	            </ul>
 							<span>As seen ON</span>
-							<img   width="619" height="38" alt="" src="http://localhost/~dale.guo/projects/sohoedu/sites/all/themes/thedu/img/seen.png">
+							<img   width="619" height="38" alt="" src="/sites/all/themes/thedu/img/seen.png">
 	        </div>
 	        <hr>
 			</div>

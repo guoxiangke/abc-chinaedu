@@ -74,14 +74,14 @@
  * @ingroup themeable
  */
  global $base_url;
-?> 
+?>
 <?php include('special_header.php');?>
 
 <!-- Warming Up -->
- 
+
 <section id="videoBG" data-img="<?php echo $base_url.'/'.drupal_get_path('theme', 'thedu'); ?>/img/hero0.jpg" class="hero herob2ackstretch main-content wrapper-dark text-center">
 
-  <div class="hero-content">  
+  <div class="hero-content">
 
         <h1 class="ng-binding">Learn English online</h1>
         <h2 class="text-light ng-binding">With real teachers in live classes</h2>
@@ -139,7 +139,7 @@
 			</div>
 
       <h1 class="blue-heading">来自全球优秀教师</h1>
-      <h2>Analyze and share off your media wizardry!</h2>
+      <!-- <h2>Analyze and share off your media wizardry!</h2> -->
 <!-- http://www.linkedin.com/pub/aaron-webber ### -->
       <div class="face-wall hidden-phone">
         <img src="/sites/all/themes/thedu/img/avatar2/0007e45429a0c578bd7090a775f3b873.png">
@@ -257,7 +257,7 @@
 <div id="advanced-features">
       <div class="container">
         <h1 class="blue-heading">选择我们的理由</h1>
-        <h2>Analyze and share off your media wizardry!</h2>
+        <!-- <h2>Analyze and share off your media wizardry!</h2> -->
         <section class="row down">
           <section class="col-md-6 col-xs-12">
             <div class="col-md-2 col-xs-3">
@@ -295,8 +295,7 @@
               <h4>
                 ABC-China学校提供最优秀的外籍老师。
               </h4>
-              <p>
-                Get a snapshot of your mentions by source, language, and over a selected period of time. Generate reports and export data to compare yourself with your competitors.
+              <p>拥有超过6000名的专业外教，耐心，有责任心，师资力量领跑同行业，细致入微的教学服务，同时也更擅长激发学员英语学习的兴趣和积极性
               </p>
             </div>
           </section>
@@ -315,19 +314,19 @@
           </section>
         </section>
 
-        <h1 class="blue-heading">Collaborative Features</h1>
-        <h2>Involve your coworkers in social media monitoring</h2>
-        <section class="row down">
+        <!-- <h1 class="blue-heading">为什么选择我们的外教？</h1> -->
+        <!-- <h2>Involve your coworkers in social media monitoring</h2> -->
+<!--         <section class="row down">
           <section class="col-md-6">
             <div class="col-md-2 col-xs-3">
               <img src="<?php  echo $base_url.'/'.drupal_get_path('theme', 'thedu');?>/img/mention/share.svg">
             </div>
             <div class="col-md-10 col-xs-9">
               <h4>
-                黄金地段
+                资历筛选
               </h4>
               <p>
-                我们处在文化氛围极度浓厚的五道口；被清华、北大、体大、地大、北语、北林、农大、北科、矿大、石油、北航，供莘莘学子暂时娱乐的“操场”；是一个文化部落；是聚集来自100多个不同国家人民的小地球村。
+                资历筛选，只用顶尖的5%，选择其中最优秀的外教，不只是英语老师
               </p>
             </div>
           </section>
@@ -340,7 +339,7 @@
                 Assign Tasks to the right people
               </h4>
               <p>
-                Quickly share and react. Send a technical question to your Tech Team, a sales question to your Sales Team, and get everyone in on the Community Management game. 
+                最专业的面试，严格考核经过培训后，才能正式上岗，只为更优秀的外教
               </p>
             </div>
           </section>
@@ -353,7 +352,7 @@
                 Track your team's progress
               </h4>
               <p>
-                With Mention's Task List and Activity Feed, you'll never be in the dark when it comes to knowing who's done what. 
+                With Mention's Task List and Activity Feed, you'll never be in the dark when it comes to knowing who's done what.
               </p>
             </div>
           </section>
@@ -370,7 +369,7 @@
               </p>
             </div>
           </section>
-        </section>
+        </section> -->
       </div>
     </div>
 <!-- advanced-features -->
