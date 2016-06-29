@@ -93,16 +93,13 @@ $tid = 1;
 		<div class="category">
 			<?php print render($content['field_taxonomy']); ?>
 		</div>
-		<a href="<?php print $node_url; ?>">
 			<div class="library-video-thumbnail right" style="background-image: url(<?php echo $bg_url;?>);">
 				<div class="library-video-icon"></div>
 			</div>
-			<h2><?php echo truncate_utf8($title, '60', $wordsafe = FALSE, $add_ellipsis = TRUE, $min_wordsafe_length = 1); ?></h2>
+			<h2><?php echo $title; ?></h2>
 			<p class="snippet">
-				<?php 
-					$snippet = $node->body['und'][0]['value'];
-					if(strlen($node->body['und'][0]['summary']) >50 ) $snippet = $node->body['und'][0]['summary'];
-					echo truncate_utf8($snippet, '500', $wordsafe = FALSE, $add_ellipsis = TRUE, $min_wordsafe_length = 1);
+				<?php
+      		print render($content);
 					?>
 			</p>
 			<p class="by">
@@ -110,7 +107,6 @@ $tid = 1;
 				<span class="title">Design Partner</span></span>
 				<?php print render($content['links']); ?>
 			</p>
-		</a>
-		
+
 	</div>
 </div>

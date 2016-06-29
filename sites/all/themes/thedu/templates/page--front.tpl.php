@@ -334,7 +334,7 @@
 <?php endif;?>
 <?php include('special_footer.php');?>
 
-<?php if(!user_is_logged_in()): ?>
+<?php if(0&&!user_is_logged_in()): ?>
 <!-- begin olark code -->
 <script data-cfasync="false" type='text/javascript'>/*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){
 f[z]=function(){
