@@ -9,6 +9,13 @@ function edu_soho_menu() {
     'page callback' => '_ajax_create_class_record',
     'access callback' => TRUE,
   );
+  //orderID/today yesterday tomorrow AOL!
+  $items['flag/class_record_aol/%/%'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => '_ajax_flag_class_record_aol',
+    'page arguments' => array(2, 3),
+    'access callback' => TRUE,
+  );
   $items['user/dashboard'] = array(
     'title' => t('Dashboard'),
     'access callback' => 'user_is_logged_in',
@@ -25,6 +32,37 @@ function edu_soho_admin_paths_alter(&$paths) {
   $paths['node/add/study-record'] = FALSE;
   $paths['node/add/order'] = FALSE;
   $paths['node/%/edit'] = FALSE;
+}
+function _ajax_flag_class_record_aol($orderID,$dayIndex){
+  $time = time();
+  //今天或明天
+  //1.检查是否已经生成了节点？
+  //2.若无，则生成节点
+  //3.获取classroomID
+  //4.flag it AOL.
+  switch ($dayIndex) {
+    case 'tomorrow':
+      $time += 86400;
+      break;
+    case 'yesterday':
+      $time -= 86400;
+      break;
+
+    default:
+        $time = time();
+      break;
+  }
+  $class_record_node = edu_get_study_records_by_order($orderID,$time);
+  if($class_record_node){
+    $entity_id = $class_record_node[0]->nid;
+  }else{//若无，则生成节点 TODO
+    $entity_id = 582;
+  }
+  //then flag it!
+  $res = flag('flag', 'ask_for_leave', $entity_id);
+  // dvm($res,$entity_id); //TODO:ajax
+  if($res) return '请假操作成功！';
+  if($res) return '请假操作失败！';
 }
 /**
  * stu申请试听
@@ -138,6 +176,41 @@ function edu_get_orders($account,$field='field_student'){
   if(isset($res['node']))
     return $res['node'];
   // if($field=='field_agency') return views_get_view_result('nodes','page_agency_order');
+  return array();
+}
+
+// og group contents get programly
+/**
+ * [edu_get_study_records_by_order description]
+ * @param  [type]  $orderId [description]
+ * @param  [type]  $created [description]
+ * @param  integer $limited [description]
+ * @return [array(0=>stdClass('nid'=>1,'node_created'=>1469492995))]           [description]
+ */
+function edu_get_study_records_by_order($orderId,$created=NULL,$limited=1){
+  if($limited==0) $limited = 999999999;
+  // $created = time();
+  if($created){
+    $form = strtotime(date('Y-m-d',$created).' 00:00:00');
+    $to = strtotime(date('Y-m-d',$created).' 23:59:59');
+    $res = db_query("SELECT node.nid AS nid ,node.created AS node_created FROM
+            {node} node
+            LEFT JOIN {og_membership} og_membership ON node.nid = og_membership.etid AND og_membership.entity_type = 'node'
+            WHERE (( (og_membership.gid = '".$orderId."' ) )AND(( (node.type IN  ('study_record')) )))
+            AND (node.created BETWEEN ".$form." AND ".$to.")
+            ORDER BY node_created DESC
+            LIMIT ".$limited." OFFSET 0")->fetchAll();
+  }else{
+    $res = db_query("SELECT node.nid AS nid ,node.created AS node_created FROM
+            {node} node
+            LEFT JOIN {og_membership} og_membership ON node.nid = og_membership.etid AND og_membership.entity_type = 'node'
+            WHERE (( (og_membership.gid = '".$orderId."' ) )AND(( (node.type IN  ('study_record')) )))
+            ORDER BY node_created DESC
+            LIMIT ".$limited." OFFSET 0")->fetchAll();
+  }
+  if(isset($res['0']->nid))
+    return $res;
+  // if($field=='field_agency') return views_get_view_result('nodes','page_agency_record');
   return array();
 }
 /**
