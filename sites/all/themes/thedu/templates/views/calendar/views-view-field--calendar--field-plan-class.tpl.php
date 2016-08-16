@@ -47,8 +47,22 @@ if($records){
 		$class_end = date('H:i',strtotime($record->extraFields->field_class_time_end.' UTC+8'));
 		break;
 	}
+	//TODO: 如果标记了请假，即可打X号，如果老师未标记已上课，标黄色！
 	if(isset($nid)){
-		$tip .= '<span data-pclass="cc-done"></span>'.t('Finished').'： <a href="'.url('node/'.$nid).'">'.$class_begin.'-'.$class_end.'</span></a><br/>';
+    $flag = flag_get_flag('mark_finished_class');//teacher
+    $flag2 = flag_get_flag('ask_for_leave');//teacher
+		$class = 'cc-done';
+		if(!$flag->is_flagged($nid)){//如果老师未标记已上课，标黄色！
+			$class .= ' cc-tnff';//teacher-not-flag-finished
+			$tip_ico = '<span class="glyphicon glyphicon-question-sign"></span>Teacher Not Flagged';
+		}elseif($flag2->is_flagged($nid)){//如果标记了请假，即可打X号
+			$class .= ' cc-aol';//
+			$tip_ico = '<span class="glyphicon glyphicon-exclamation-sign"></span>Class marked AOL';
+		}else{
+			$tip_ico = '<span class="glyphicon glyphicon-ok-circle"></span>'.t('Finished').'：'.$class_begin.'-'.$class_end;
+		}
+		// $tip = .$tip;
+		$tip .= '<span data-pclass="'.$class.'"></span><a href="'.url('node/'.$nid).'">'.$tip_ico.'</span></a><br/>';
 	}else{
 		$tip .= '<span data-pclass="cc-done"></span>'.t('Finished').'：'.$class_begin.'-'.$class_end.'</span>(^o^)<br/>';
 	}

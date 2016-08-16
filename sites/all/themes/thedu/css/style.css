@@ -261,10 +261,30 @@ header.navbar-bigger{
 .calendar-calendar .week-view .full div.single-day div.weekview.cc-done a,
 .calendar-calendar .day-view .full div.single-day div.dayview.cc-done,
 .calendar-calendar .day-view .full div.single-day div.dayview.cc-done a{
-	color:#fff;
-  background-color:#98cb65;
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
 }
 
+.calendar-calendar .month-view .full td.single-day div.monthview.cc-tnff,
+.calendar-calendar .month-view .full td.single-day div.monthview.cc-tnff a,
+.calendar-calendar .week-view .full div.single-day div.weekview.cc-tnff,
+.calendar-calendar .week-view .full div.single-day div.weekview.cc-tnff a,
+.calendar-calendar .day-view .full div.single-day div.dayview.cc-tnff,
+.calendar-calendar .day-view .full div.single-day div.dayview.cc-tnff a{
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+.calendar-calendar .month-view .full td.single-day div.monthview.cc-aol,
+.calendar-calendar .month-view .full td.single-day div.monthview.cc-aol a,
+.calendar-calendar .week-view .full div.single-day div.weekview.cc-aol,
+.calendar-calendar .week-view .full div.single-day div.weekview.cc-aol a,
+.calendar-calendar .day-view .full div.single-day div.dayview.cc-aol,
+.calendar-calendar .day-view .full div.single-day div.dayview.cc-aol a{
+    color:#fff;
+  background-color:#666;
+}
 
 .calendar-calendar .month-view .full td.single-day div.monthview.cc-today,
 .calendar-calendar .month-view .full td.single-day div.monthview.cc-today a,
@@ -273,7 +293,7 @@ header.navbar-bigger{
 .calendar-calendar .day-view .full div.single-day div.dayview.cc-today,
 .calendar-calendar .day-view .full div.single-day div.dayview.cc-today a{
 	color:#fff;
-  background-color:#f06c53;
+  background-color:#ff5722;
 }
 .calendar-calendar .month-view .full td.single-day div.monthview.cc-coming,
 .calendar-calendar .month-view .full td.single-day div.monthview.cc-coming a,
@@ -282,7 +302,7 @@ header.navbar-bigger{
 .calendar-calendar .day-view .full div.single-day div.dayview.cc-coming,
 .calendar-calendar .day-view .full div.single-day div.dayview.cc-coming a{
 	color:#fff;
-  background-color:#9b61a7;
+  background-color:#999;
 }
 
 
