@@ -16,6 +16,13 @@ function edu_soho_menu() {
     'page arguments' => array(2, 3),
     'access callback' => TRUE,
   );
+  //orderID/today yesterday tomorrow AOL!
+  $items['order_aol/%/%'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => '_ajax_order_aol',
+    'page arguments' => array(2, 3),
+    'access callback' => TRUE,
+  );
   $items['user/dashboard'] = array(
     'title' => t('Dashboard'),
     'access callback' => 'user_is_logged_in',
@@ -33,6 +40,41 @@ function edu_soho_admin_paths_alter(&$paths) {
   $paths['node/add/order'] = FALSE;
   $paths['node/%/edit'] = FALSE;
 }
+function _ajax_order_aol($orderID,$dayIndex){
+  $time = time();
+  //今天或明天
+  //1.检查是否已经生成了节点？
+  //2.若无，=>update order datalist exclude this date
+  //3.若有，delete it! then 2.
+  switch ($dayIndex) {
+    case 'tomorrow':
+      $time += 86400;
+      break;
+    case 'yesterday':
+      $time -= 86400;
+      break;
+
+    default:
+        $time = time();
+      break;
+  }
+  $class_record_node = edu_get_study_records_by_order($orderID,$time);
+  if($class_record_node){
+    $entity_id = $class_record_node[0]->nid;
+    // node_delete($nid);
+    $res = flag('flag', 'ask_for_leave', $entity_id);
+    if($res) {
+      drupal_set_message('请假操作成功！', 'sucess', FALSE);
+    }else{
+      drupal_set_message('请假操作失败！', 'error', FALSE);
+    }
+    return '';
+  }
+  // update order datalist exclude this date
+  // $order_node = node_load($orderID);
+
+}
+
 function _ajax_flag_class_record_aol($orderID,$dayIndex){
   $time = time();
   //今天或明天
@@ -61,8 +103,12 @@ function _ajax_flag_class_record_aol($orderID,$dayIndex){
   //then flag it!
   $res = flag('flag', 'ask_for_leave', $entity_id);
   // dvm($res,$entity_id); //TODO:ajax
-  if($res) return '请假操作成功！';
-  if($res) return '请假操作失败！';
+  if($res) {
+    drupal_set_message('请假操作成功！', 'sucess', FALSE);
+  }else{
+    drupal_set_message('请假操作失败！', 'error', FALSE);
+  }
+  return '';
 }
 /**
  * stu申请试听
@@ -598,8 +644,8 @@ function auto_create_class_record($uid,$order_id){
         break;
       }
       continue;
-    }
-    if($donext && date('H') >= date('H',strtotime($field_class_time['value'].' '.$field_class_time['timezone_db']))){//如果在同一个小时内，则生成！必须提前1小时请假。否则会自动生成classrecord！
+    }// && date('H') >= date('H',strtotime($field_class_time['value'].' '.$field_class_time['timezone_db']))
+    if($donext){//如果在同一个小时内，则生成！必须提前1小时请假。否则会自动生成classrecord！
       $node = new stdClass(); // We create a new node object
       $node->type = $type; // Or any other content type you want
       // $account = user_load($uid);
