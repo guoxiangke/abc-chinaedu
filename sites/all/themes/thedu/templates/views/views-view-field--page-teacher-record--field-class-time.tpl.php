@@ -23,12 +23,11 @@
  */
  $field_class_time = strtotime($row->field_field_class_time[0]['raw']['value'])+8*3600;
  // dpm($row->field_field_class_time);
+$flag = flag_get_flag('mark_finished_class');
 ?>
-<?php print $output; ?>
-<?php if(!$row->flagging_flagged):?>
-<div class="progress">
-  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-    <span class="clock" data-countdown="<?php echo date('Y-m-d H:i:s',$field_class_time);?>">Coming...</span>
-  </div>
-</div>
+<?php if(!$flag->is_flagged($row->nid)):?>
+<span class="glyphicon glyphicon-time"></span>
+<?php else:?>
+<span class="glyphicon glyphicon-facetime-video"></span>
 <?php endif;?>
+<?php print $output; ?>
