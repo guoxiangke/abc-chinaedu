@@ -276,15 +276,6 @@ header.navbar-bigger{
     background-color: #f2dede;
     border-color: #ebccd1;
 }
-.calendar-calendar .month-view .full td.single-day div.monthview.cc-aol,
-.calendar-calendar .month-view .full td.single-day div.monthview.cc-aol a,
-.calendar-calendar .week-view .full div.single-day div.weekview.cc-aol,
-.calendar-calendar .week-view .full div.single-day div.weekview.cc-aol a,
-.calendar-calendar .day-view .full div.single-day div.dayview.cc-aol,
-.calendar-calendar .day-view .full div.single-day div.dayview.cc-aol a{
-    color:#fff;
-  background-color:#666;
-}
 
 .calendar-calendar .month-view .full td.single-day div.monthview.cc-today,
 .calendar-calendar .month-view .full td.single-day div.monthview.cc-today a,
@@ -305,6 +296,15 @@ header.navbar-bigger{
   background-color:#eeeeee;
 }
 
+.calendar-calendar .month-view .full td.single-day div.monthview.cc-aol,
+.calendar-calendar .month-view .full td.single-day div.monthview.cc-aol a,
+.calendar-calendar .week-view .full div.single-day div.weekview.cc-aol,
+.calendar-calendar .week-view .full div.single-day div.weekview.cc-aol a,
+.calendar-calendar .day-view .full div.single-day div.dayview.cc-aol,
+.calendar-calendar .day-view .full div.single-day div.dayview.cc-aol a{
+    color:#fff;
+  background-color:#666;
+}
 
 .calendar-calendar .month-view .full td.date-box.today,
 .calendar-calendar .month-view .full tr td.multi-day.ends-today,
