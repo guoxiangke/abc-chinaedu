@@ -113,7 +113,8 @@ function thedu_preprocess_node(&$variables, $hook) {
  */
 function thedu_preprocess_views_view_table(&$vars) {
 	$view = $vars['view'];
-	//http://dev.abc.com/recodersteacher
+	//flag完成和AOL
+  //http://dev.abc.com/recodersteacher
   if ($view->name == 'nodes' && in_array($view->current_display, array('page_teacher_record','ordersrecoders','ordersrecoder','ordersrecodersteacher'))) {
 	  $rows = $vars['rows'];
 	  foreach ($rows as $id => $row) {
@@ -122,11 +123,11 @@ function thedu_preprocess_views_view_table(&$vars) {
 	    $vars['row_classes'][$id][] = $event_class;
 	  }
   }
+  //订单的作废与完成
   if ($view->name == 'nodes' && in_array($view->current_display, array('page_orders'))) {
     $rows = $vars['rows'];
     foreach ($rows as $id => $row) {
       $data = $view->result[$id];
-      //$data->nid
       $query = db_select('node', 'n');
       $query->fields('n',array('sticky'));
       $query->condition('n.nid', $data->nid);
@@ -134,7 +135,18 @@ function thedu_preprocess_views_view_table(&$vars) {
       if(!$sticky) $vars['row_classes'][$id][] = 'bg-grey';
     }
   }
-
+  //published or not!!
+  if ($view->name == 'nodes' && in_array($view->current_display, array('ordersrecoder'))) {
+    $rows = $vars['rows'];
+    foreach ($rows as $id => $row) {
+      $data = $view->result[$id];
+      $query = db_select('node', 'n');
+      $query->fields('n',array('status'));
+      $query->condition('n.nid', $data->nid);
+      $published = $query->execute()->fetchField();
+      if(!$published) $vars['row_classes'][$id][] = 'bg-grey';
+    }
+  }
 }
 
 function get_aol_classes($nid) {
