@@ -122,6 +122,19 @@ function thedu_preprocess_views_view_table(&$vars) {
 	    $vars['row_classes'][$id][] = $event_class;
 	  }
   }
+  if ($view->name == 'nodes' && in_array($view->current_display, array('page_orders'))) {
+    $rows = $vars['rows'];
+    foreach ($rows as $id => $row) {
+      $data = $view->result[$id];
+      //$data->nid
+      $query = db_select('node', 'n');
+      $query->fields('n',array('sticky'));
+      $query->condition('n.nid', $data->nid);
+      $sticky = $query->execute()->fetchField();
+      if(!$sticky) $vars['row_classes'][$id][] = 'bg-grey';
+    }
+  }
+
 }
 
 function get_aol_classes($nid) {
