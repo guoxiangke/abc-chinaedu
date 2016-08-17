@@ -114,7 +114,7 @@ function thedu_preprocess_node(&$variables, $hook) {
 function thedu_preprocess_views_view_table(&$vars) {
 	$view = $vars['view'];
 	//http://dev.abc.com/recodersteacher
-  if ($view->name == 'nodes' && in_array($view->current_display, array('page_teacher_record','ordersrecoders','ordersrecoder'))) {
+  if ($view->name == 'nodes' && in_array($view->current_display, array('page_teacher_record','ordersrecoders','ordersrecoder','ordersrecodersteacher'))) {
 	  $rows = $vars['rows'];
 	  foreach ($rows as $id => $row) {
 	    $data = $view->result[$id];
