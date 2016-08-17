@@ -52,12 +52,12 @@ if($records){
     $flag = flag_get_flag('mark_finished_class');//teacher
     $flag2 = flag_get_flag('ask_for_leave');//teacher
 		$class = 'cc-done';
-		if(!$flag->is_flagged($nid)){//如果老师未标记已上课，标黄色！
-			$class .= ' cc-tnff';//teacher-not-flag-finished
-			$tip_ico = '<span class="glyphicon glyphicon-question-sign"></span>Teacher Not Flagged';
-		}elseif($flag2->is_flagged($nid)){//如果标记了请假，即可打X号
+		if($flag2->is_flagged($nid)){//如果标记了请假，即可打X号
 			$class .= ' cc-aol';//
 			$tip_ico = '<span class="glyphicon glyphicon-exclamation-sign"></span>Class marked AOL';
+		}elseif(!$flag->is_flagged($nid)){//如果老师未标记已上课，标黄色！
+			$class .= ' cc-tnff';//teacher-not-flag-finished
+			$tip_ico = '<span class="glyphicon glyphicon-question-sign"></span>Teacher Not Flagged';
 		}else{
 			$tip_ico = '<span class="glyphicon glyphicon-ok-circle"></span>'.t('Finished').'：'.$class_begin.'-'.$class_end;
 		}
@@ -91,16 +91,20 @@ if("$t" == "$b" ){
 		$class_end = date('H:i',$class_end);
 	}
 	// get 当天的记录节点！
+	if(isset($nid)){$cc_aol = '';
+    $flag2 = flag_get_flag('ask_for_leave');//teacher
+		if($flag2->is_flagged($nid)) $cc_aol .= ' cc-aol';
+  }
 	//从上课记录中获取 实际上课时间
 	if(isset($nid)){
-		$tip = '<a href="'.url('node/'.$nid).'"><span data-pclass="cc-today">'.t('Today Class').'：</span>'.$class_begin.'</a><br/>';
+		$tip = '<a href="'.url('node/'.$nid).'"><span data-pclass="cc-today'.$cc_aol.'">'.t('Today Class').'：</span>'.$class_begin.'</a><br/>';
 	}else{
 		$tip = '<span data-pclass="cc-today">'.t('Today Class').'：</span>'.$class_begin.'(^o^)<br/>';
 	}
 
 	if($now>=$temp_begin+25*60){
 		if(isset($nid)){
-			$tip = '<a href="'.url('node/'.$nid).'"><span data-pclass="cc-done">'.t('Today Class').'：</span>'.$class_begin.'-'.$class_end .'</a><br/>';
+			$tip = '<a href="'.url('node/'.$nid).'"><span data-pclass="cc-done'.$cc_aol.'">'.t('Today Class').'：</span>'.$class_begin.'-'.$class_end .'</a><br/>';
 		}else{
 			$tip = '<span data-pclass="cc-done">'.t('Today Class').'：</span>'.$class_begin.'-'.$class_end .'(^o^)<br/>';
 		}
