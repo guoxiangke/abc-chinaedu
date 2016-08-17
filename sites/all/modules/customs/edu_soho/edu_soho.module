@@ -98,7 +98,22 @@ function _ajax_flag_class_record_aol($orderID,$dayIndex){
   if($class_record_node){
     $entity_id = $class_record_node[0]->nid;
   }else{//若无，则生成节点 TODO
-    $entity_id = 582;
+    $content_type = 'study_record';
+    $order_node = node_load($orderID);
+    $node = new stdClass();
+    $node->type = $content_type;
+    node_object_prepare($node);
+    $node->uid = $order_node->field_student[LANGUAGE_NONE][0]['uid']; //uid of order student!.
+    $node->field_student[LANGUAGE_NONE][0]['uid'] = $node->uid;
+    $node->field_teacher[LANGUAGE_NONE][0]['uid'] =  $order_node->field_teacher[LANGUAGE_NONE][0]['uid'];
+    $node->og_group_ref[LANGUAGE_NONE][0]['target_id'] = $orderID;
+    $plan_hour = date('H:i:s',strtotime($order_node->field_plan_class[LANGUAGE_NONE][0]['value']));
+    $node->field_class_time[LANGUAGE_NONE][0]['value'] = date('Y-m-d',$time).' '.$plan_hour;
+    $node->field_class_time[LANGUAGE_NONE][0]['value2'] = date('Y-m-d',$time).' '.$plan_hour;
+    // dpm($node);
+    // return '';
+    node_save($node);
+    $entity_id = $node->nid;
   }
   //then flag it!
   $res = flag('flag', 'ask_for_leave', $entity_id);
