@@ -21,7 +21,8 @@
  * regardless of any changes in the aliasing that might happen if
  * the view is modified.
  */
- $field_class_time = strtotime($row->field_field_class_time[0]['raw']['value'])+8*3600;
+  //views-view-field--page-teacher-record--field-class-time.tpl.php
+ // $field_class_time = strtotime($row->field_field_class_time[0]['raw']['value'])+8*3600;
  // dpm($row->field_field_class_time);
 $flag = flag_get_flag('mark_finished_class');
 ?>

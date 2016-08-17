@@ -71,7 +71,7 @@ function thedu_preprocess_page(&$variables) {
 		// drupal_add_js(drupal_get_path('theme', 'thedu').'/js/jquery.backstretch.min.js','file');
 		// drupal_add_js(drupal_get_path('theme', 'thedu').'/js/shareTo.js','file');
 		// drupal_add_js(drupal_get_path('theme', 'thedu').'/js/page-front.js','file');
-		
+
 		drupal_add_js(drupal_get_path('module', 'edu_soho').'/js/open_classroom.js','file');
 		drupal_add_js(drupal_get_path('theme', 'thedu').'/js/calendar-custom.js','file');
 	}
@@ -91,18 +91,48 @@ function thedu_preprocess_page(&$variables) {
 
 
 function thedu_preprocess_node(&$variables, $hook) {
-  
+
   // Add $unpublished variable.
   $variables['unpublished'] = (!$variables['status']) ? TRUE : FALSE;
-  
+
   // Add a class for the view mode.
-  $variables['classes_array'][] = 'view-mode-' . $variables['view_mode']; 
-  
+  $variables['classes_array'][] = 'view-mode-' . $variables['view_mode'];
+
   //add view mode template files
   // $variables['theme_hook_suggestions'][] = 'node__' . $variables['view_mode'];
   // $variables['theme_hook_suggestions'][] = 'node__' . $variables['node']->nid;
   $variables['theme_hook_suggestions'][] = 'node__' . $variables['type'] . '__' . $variables['view_mode'];
-  
+
   //Might need this later.
   // $variables['title'] = htmlspecialchars_decode($variables['title']);
+}
+
+
+/**
+ * Implements template_preprocess_views_view().
+ */
+function thedu_preprocess_views_view_table(&$vars) {
+	$view = $vars['view'];
+	//http://dev.abc.com/recodersteacher
+  if ($view->name == 'nodes' && in_array($view->current_display, array('page_teacher_record','ordersrecoders'))) {
+	  $rows = $vars['rows'];
+	  foreach ($rows as $id => $row) {
+	    $data = $view->result[$id];
+	    $event_class = get_aol_classes($data->nid);
+	    $vars['row_classes'][$id][] = $event_class;
+	  }
+  }
+}
+
+function get_aol_classes($nid) {
+  $flag2 = flag_get_flag('mark_finished_class');
+  $event_class = 'bg-brown';
+  if($flag2->is_flagged($nid)){//如果标记
+  		$event_class = 'bg-green';
+  }
+  $flag = flag_get_flag('ask_for_leave');
+  if($flag->is_flagged($nid)){//如果标记
+      $event_class = 'bg-grey';
+  }
+  return $event_class;
 }
