@@ -65,5 +65,15 @@
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
+  <!-- Start of 51Chat.net Livechat Script -->
+  <script type="text/javascript">
+  (function(w, d, s, u) {
+    w.RocketChat = function(c) { w.RocketChat._.push(c) }; w.RocketChat._ = []; w.RocketChat.url = u;
+    var h = d.getElementsByTagName(s)[0], j = d.createElement(s);
+    j.async = true; j.src = 'https://abc.51chat.net/packages/rocketchat_livechat/assets/rocket-livechat.js';
+    h.parentNode.insertBefore(j, h);
+  })(window, document, 'script', 'https://abc.51chat.net/livechat');
+  </script>
+  <!-- End of 51Chat.net Livechat Script -->
 </body>
 </html>
