@@ -67,12 +67,14 @@
   <?php print $page_bottom; ?>
   <!-- Start of 51Chat.net Livechat Script -->
   <script type="text/javascript">
+  var domain = document.location.hostname;
+  domain = domain?domain:'www.51chat.com';
   (function(w, d, s, u) {
-    w.RocketChat = function(c) { w.RocketChat._.push(c) }; w.RocketChat._ = []; w.RocketChat.url = u;
+    w.liveChat = function(c) { w.liveChat._.push(c) }; w.liveChat._ = []; w.liveChat.url = u;
     var h = d.getElementsByTagName(s)[0], j = d.createElement(s);
-    j.async = true; j.src = 'https://abc.51chat.net/packages/rocketchat_livechat/assets/rocket-livechat.js';
+    j.async = true; j.src = 'https://wx.51chat.net/packages/rocketchat_livechat/assets/51chat.js';
     h.parentNode.insertBefore(j, h);
-  })(window, document, 'script', 'https://abc.51chat.net/livechat');
+  })(window, document, 'script', 'https://wx.51chat.net/livechat?domain='+domain);
   </script>
   <!-- End of 51Chat.net Livechat Script -->
 </body>
