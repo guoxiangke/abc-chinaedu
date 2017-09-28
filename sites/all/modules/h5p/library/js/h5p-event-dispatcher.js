@@ -7,7 +7,7 @@ var H5P = H5P || {};
  * @param {string} type
  * @param {*} data
  * @param {Object} [extras]
- * @param {boolean} [extras.bubbles] 
+ * @param {boolean} [extras.bubbles]
  * @param {boolean} [extras.external]
  */
 H5P.Event = function(type, data, extras) {
@@ -99,7 +99,7 @@ H5P.EventDispatcher = (function () {
      *   Event type
      * @param {H5P.EventCallback} listener
      *   Event listener
-     * @param {Object} thisArg
+     * @param {Object} [thisArg]
      *   Optionally specify the this value when calling listener.
      */
     this.on = function (type, listener, thisArg) {
@@ -139,8 +139,8 @@ H5P.EventDispatcher = (function () {
       }
 
       var once = function (event) {
-        self.off(event, once);
-        listener.apply(this, event);
+        self.off(event.type, once);
+        listener.call(this, event);
       };
 
       self.on(type, once, thisArg);
@@ -176,7 +176,7 @@ H5P.EventDispatcher = (function () {
       // Find specific listener
       for (var i = 0; i < triggers[type].length; i++) {
         if (triggers[type][i].listener === listener) {
-          triggers[type].unshift(i, 1);
+          triggers[type].splice(i, 1);
           self.trigger('removeListener', type, {'listener': listener});
           break;
         }
@@ -194,14 +194,17 @@ H5P.EventDispatcher = (function () {
      * @private
      * @param {string} Event type
      */
-    var call = function (type, event) {
+    var call = function (type, event) {
       if (triggers[type] === undefined) {
         return;
       }
 
+      // Clone array (prevents triggers from being modified during the event)
+      var handlers = triggers[type].slice();
+
       // Call all listeners
-      for (var i = 0; i < triggers[type].length; i++) {
-        var trigger = triggers[type][i];
+      for (var i = 0; i < handlers.length; i++) {
+        var trigger = handlers[i];
         var thisArg = (trigger.thisArg ? trigger.thisArg : this);
         trigger.listener.call(thisArg, event);
       }
@@ -216,14 +219,14 @@ H5P.EventDispatcher = (function () {
      *   Custom event data(used when event type as string is used as first
      *   argument).
      * @param {Object} [extras]
-     * @param {boolean} [extras.bubbles] 
+     * @param {boolean} [extras.bubbles]
      * @param {boolean} [extras.external]
      */
     this.trigger = function (event, eventData, extras) {
       if (event === undefined) {
         return;
       }
-      if (typeof event === 'string') { // TODO: Check instanceof String as well?
+      if (event instanceof String || typeof event === 'string') {
         event = new H5P.Event(event, eventData, extras);
       }
       else if (eventData !== undefined) {
