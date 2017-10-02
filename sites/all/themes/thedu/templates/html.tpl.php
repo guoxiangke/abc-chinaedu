@@ -65,7 +65,7 @@
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
-  <!-- Start of 51Chat.net Livechat Script -->
+  <!-- Start of 51Chat.net Livechat Script - - >
   <script type="text/javascript">
   var domain = document.location.hostname;
   domain = domain?domain:'www.51chat.com';
@@ -76,6 +76,6 @@
     h.parentNode.insertBefore(j, h);
   })(window, document, 'script', 'https://wx.51chat.net/livechat?domain='+domain);
   </script>
-  <!-- End of 51Chat.net Livechat Script -->
+  <!- - End of 51Chat.net Livechat Script -->
 </body>
 </html>

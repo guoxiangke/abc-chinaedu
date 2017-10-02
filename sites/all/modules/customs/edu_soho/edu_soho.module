@@ -719,8 +719,8 @@ function edu_soho_user_presave(&$edit, $account, $category) {
  * Implements hook_user_login().
  */
 function edu_soho_user_login(&$edit, $account) {
-  if(in_array('teacher', $account->roles)){
-    drupal_set_message(('Attention please! After 2016/08/20,if the ClassRecord wasn\'t marked finished,the class won\'t be count to pay!'), 'warning', FALSE);
+  if(date('z')<=281 && in_array('teacher', $account->roles)){
+    drupal_set_message(('Attention please! After 2017/10/01, if the ClassRecord wasn\'t marked finished, the class won\'t be count to pay! & Recods must be fullfilled after class,Upload Class recordes Mp3 will won you bonus!'), 'warning', FALSE);
     drupal_set_message(('Plz only mark it after the class finished! & we have AOL system for Admin to record,so don\'t mark finished if noticed AOL!'), 'status', FALSE);
   }
 }
