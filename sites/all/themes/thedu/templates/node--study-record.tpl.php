@@ -99,8 +99,10 @@
   <div class="content"<?php print $content_attributes; ?>>
 
     <?php
-    if(isset($node->field_file[LANGUAGE_NONE][0]))
+    if($node->nid<16142 && isset($node->field_file[LANGUAGE_NONE][0]))
         $url = file_create_url($node->field_file[LANGUAGE_NONE][0]['uri']);
+    if(isset($node->field_mp3[LANGUAGE_NONE][0]))
+        $url = str_replace('storage-field-mp3://', 'http://dstorage.b0.upaiyun.com/abc/', $node->field_mp3[LANGUAGE_NONE][0]['uri']);
     if(isset($url) && $view_mode=='full'){
     ?>
    <div class="audio-wrapper">
@@ -134,7 +136,7 @@
         $js_radio['artist'] = '';
         $js_radio['album'] = '';
         $js_radio['cover'] = '';
-        $js_radio['mp3'] = file_create_url($node->field_file[LANGUAGE_NONE][$key]['uri']);;
+        $js_radio['mp3'] = $url;
         $js_radio['ogg'] = '';
         $js_radios[]= $js_radio;
       }
