@@ -131,7 +131,7 @@
     </div>
     <script type="text/javascript">
     <?php
-      foreach ($node->field_file[LANGUAGE_NONE] as $key => $value) {
+      foreach ($node->field_mp3[LANGUAGE_NONE] as $key => $value) {
         $js_radio['title'] = 'Class Record-'.($key+1);
         $js_radio['artist'] = '';
         $js_radio['album'] = '';
