@@ -1,0 +1,168 @@
+<?php
+
+
+const STORAGE_STREAM_WRAPPER_LEGACY_SCHEME='storage-api';
+const STORAGE_STREAM_WRAPPER_LEGACY_SELECTOR='storage_stream_wrapper';
+
+/**
+ * @file
+ * Install file for Storage API stream wrapper.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function storage_stream_wrapper_schema() {
+  $schema = array();
+
+  $schema['storage_stream_wrapper'] = array(
+    'fields' => array(
+      'storage_id' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'uri' => array(
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('storage_id'),
+    'unique keys' => array(
+      'uri' => array('uri'),
+    ),
+  );
+
+  return $schema;
+}
+
+/**
+ * Implements hook_install().
+ */
+function storage_stream_wrapper_install() {
+  drupal_load('module', 'storage_stream_wrapper');
+
+  storage_stream_wrapper_selector(STORAGE_STREAM_WRAPPER_SCHEME_PUBLIC)->create();
+  storage_stream_wrapper_selector(STORAGE_STREAM_WRAPPER_SCHEME_PRIVATE)->create();
+
+  storage_stream_wrapper_public_schema_register(STORAGE_STREAM_WRAPPER_SCHEME_PUBLIC);
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function storage_stream_wrapper_uninstall() {
+  drupal_load('module', 'storage_stream_wrapper');
+
+  storage_stream_wrapper_selector(STORAGE_STREAM_WRAPPER_SCHEME_PUBLIC)->destroy();
+  storage_stream_wrapper_selector(STORAGE_STREAM_WRAPPER_SCHEME_PRIVATE)->destroy();
+
+  storage_stream_wrapper_public_schema_deregister(STORAGE_STREAM_WRAPPER_SCHEME_PUBLIC);
+}
+
+/**
+ * Register Storage API scheme in the public schema (introduced in Drupal 7.36)
+ */
+function storage_stream_wrapper_update_7000() {
+  drupal_load('module', 'storage_stream_wrapper');
+
+  storage_stream_wrapper_public_schema_register(STORAGE_STREAM_WRAPPER_LEGACY_SCHEME);
+}
+
+/**
+ * Update Storage API scheme name.
+ */
+function storage_stream_wrapper_update_7001() {
+  drupal_load('module', 'storage_stream_wrapper');
+
+  // Update the public schema.
+  storage_stream_wrapper_public_schema_deregister(STORAGE_STREAM_WRAPPER_LEGACY_SCHEME);
+  storage_stream_wrapper_public_schema_register(STORAGE_STREAM_WRAPPER_SCHEME_PUBLIC);
+
+  // Update files scheme.
+  storage_stream_wrapper_update_files_scheme(STORAGE_STREAM_WRAPPER_LEGACY_SCHEME, STORAGE_STREAM_WRAPPER_SCHEME_PUBLIC);
+
+  // Update configured fields.
+  $result = db_query("select field_name from field_config where data like :like", array(':like' => '%' . db_like('"uri_scheme";s:11:"storage-api"') . '%'));
+  while ($r = $result->fetchObject()) {
+    $field = field_read_field($r->field_name);
+    $field['settings']['uri_scheme'] = 'storage-api-public';
+    field_update_field($field);
+  }
+}
+
+/**
+ * Update Storage API selector name.
+ */
+function storage_stream_wrapper_update_7002() {
+  drupal_load('module', 'storage_stream_wrapper');
+
+  $selector_id = storage_stream_wrapper_selector(STORAGE_STREAM_WRAPPER_SCHEME_PUBLIC)->selector_id;
+
+  // Rename the selector.
+  db_update('storage_selector')
+    ->fields(array(
+      'selector_id' => $selector_id,
+    ))
+    ->condition('selector_id', STORAGE_STREAM_WRAPPER_LEGACY_SELECTOR)
+    ->execute();
+
+  // Reassign storage to the new selector.
+  db_update('storage')
+    ->fields(array(
+      'selector_id' => $selector_id,
+    ))
+    ->condition('selector_id', STORAGE_STREAM_WRAPPER_LEGACY_SELECTOR)
+    ->execute();
+}
+
+/**
+ * Create Storage API Private selector.
+ */
+function storage_stream_wrapper_update_7003() {
+  drupal_load('module', 'storage_stream_wrapper');
+
+  storage_stream_wrapper_selector(STORAGE_STREAM_WRAPPER_SCHEME_PRIVATE)->create();
+}
+
+/**
+ * Update field instances with media widget configured.
+ */
+function storage_stream_wrapper_update_7004() {
+  $result = db_query("select field_name, entity_type, bundle from field_config_instance where data like :like", array(':like' => '%' . db_like('"storage-api";s:11:"storage-api"') . '%' . db_like('"type";s:13:"media_generic"') . '%'));
+
+  while ($r = $result->fetchObject()) {
+    $instance = field_read_instance($r->entity_type, $r->field_name, $r->bundle);
+    if (!empty($instance['widget']['settings']['allowed_schemes']['storage-api'])) {
+      unset($instance['widget']['settings']['allowed_schemes']['storage-api']);
+      $instance['widget']['settings']['allowed_schemes']['storage-api-public'] = 'storage-api-public';
+    }
+    field_update_instance($instance);
+  }
+}
+
+/**
+ * Update file default scheme.
+ */
+function storage_stream_wrapper_update_7005() {
+  if (variable_get('file_default_scheme', 'public') == STORAGE_STREAM_WRAPPER_LEGACY_SCHEME) {
+    variable_set('file_default_scheme', STORAGE_STREAM_WRAPPER_SCHEME_PUBLIC);
+  }
+}
+
+/**
+ * Updates the scheme of files.
+ */
+function storage_stream_wrapper_update_files_scheme($scheme_old, $scheme_new) {
+  _storage_stream_wrapper_update_files_scheme($scheme_old, $scheme_new, 'file_managed');
+  _storage_stream_wrapper_update_files_scheme($scheme_old, $scheme_new, 'storage_stream_wrapper');
+}
+
+function _storage_stream_wrapper_update_files_scheme($scheme_old, $scheme_new, $table, $column = 'uri') {
+  db_update($table)
+    ->expression($column, 'replace('.$column.', :scheme_old, :scheme_new)', array(':scheme_old' => $scheme_old, ':scheme_new' => $scheme_new))
+    ->condition($column, db_like($scheme_old . '://') . '%', 'LIKE')
+    ->execute();
+}
+

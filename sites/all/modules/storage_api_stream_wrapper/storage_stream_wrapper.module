@@ -1,0 +1,232 @@
+<?php
+
+/**
+ * @file
+ * Storage API Stream Wrapper module file.
+ */
+
+const STORAGE_STREAM_WRAPPER_SCHEME_PUBLIC='storage-api-public';
+const STORAGE_STREAM_WRAPPER_SCHEME_PRIVATE='storage-api-private';
+
+/**
+ * Implements hook_menu().
+ */
+function storage_stream_wrapper_menu() {
+  // Add the default local task to enable our tasks.
+  $items['admin/structure/storage/list'] = array(
+    'title' => 'Classes and containers',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+  );
+  $items['admin/structure/storage/stream-wrappers'] = array(
+    'title' => 'Stream wrappers',
+    'access arguments' => array('administer storage'),
+    'description' => 'Manage stream wrappers for file storage and serving.',
+    'page callback' => 'storage_stream_wrapper_admin',
+    'file' => 'storage_stream_wrapper.admin.inc',
+    'type' => MENU_LOCAL_TASK,
+  );
+
+  $items['admin/structure/storage/stream-wrappers/%/edit'] = array(
+    'title' => 'Edit !stream_wrapper',
+    'title arguments' => array('!stream_wrapper' => 4),
+    'access arguments' => array('administer storage'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('storage_stream_wrapper_admin_edit_form', 4),
+    'file' => 'storage_stream_wrapper.admin.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_stream_wrappers().
+ */
+function storage_stream_wrapper_stream_wrappers() {
+  try {
+    $class_name = storage_stream_wrapper_selector(STORAGE_STREAM_WRAPPER_SCHEME_PUBLIC)->storageClass()->name;
+  }
+  catch (StorageException $e) {
+    $class_name = t('none');
+  }
+  $wrappers[STORAGE_STREAM_WRAPPER_SCHEME_PUBLIC] = array(
+    'name' => t('Storage API Public'),
+    'class' => 'StorageApiStreamWrapper',
+    'description' => t('Storage API Public (class: !class)', array('!class' => $class_name)),
+  );
+
+  try {
+    $class_name = storage_stream_wrapper_selector(STORAGE_STREAM_WRAPPER_SCHEME_PRIVATE)->storageClass()->name;
+  }
+  catch (StorageException $e) {
+    $class_name = t('none');
+  }
+  $wrappers[STORAGE_STREAM_WRAPPER_SCHEME_PRIVATE] = array(
+    'name' => t('Storage API Private'),
+    'class' => 'StorageApiStreamWrapper',
+    'description' => t('Storage API Private (class: !class)', array('!class' => $class_name)),
+    'private' => TRUE, // Compatibility with file_entity.
+  );
+
+  return $wrappers;
+}
+
+/**
+ * Registers a scheme in the public schema.
+ */
+function storage_stream_wrapper_public_schema_register($scheme) {
+  $public_schema = variable_get('file_public_schema', array('public'));
+  if (!in_array($scheme, $public_schema)) {
+    $public_schema[] = $scheme;
+  }
+  variable_set('file_public_schema', $public_schema);
+}
+
+/**
+ * Deregisters a scheme from the public schema.
+ */
+function storage_stream_wrapper_public_schema_deregister($scheme) {
+  $public_schema = variable_get('file_public_schema');
+  if (is_array($public_schema) && in_array($scheme, $public_schema)) {
+    $public_schema = array_diff($public_schema, array($scheme));
+    variable_set('file_public_schema', $public_schema);
+  }
+}
+
+/**
+ * Returns the selector for a stream wrapper.
+ */
+function storage_stream_wrapper_selector($scheme) {
+  return storage_selector('storage_stream_wrapper', $scheme);
+}
+
+/**
+ * Loads a storage from its URI.
+ *
+ * @param $uri
+ *   The URI of the storage to load.
+ *
+ * @return
+ *   The storage.
+ *
+ * @throws StorageException
+ *   When it isn't possible to load the storage.
+ */
+function storage_stream_wrapper_load($uri) {
+  $storage_id = db_select('storage_stream_wrapper', 'ssw')
+    ->fields('ssw', array('storage_id'))
+    ->condition('uri', $uri)
+    ->execute()
+    ->fetchField();
+
+  return storage_load($storage_id);
+}
+
+/**
+ * Checks if an uri corresponds to an image derivative and creates its storage.
+ *
+ * @param $uri
+ *   The URI of the storage to be created.
+ *
+ * @return
+ *   The storage of the styled image.
+ *
+ * @throws BadImageStyleStorageException()
+ *   When the image style is unknown
+ * @throws StorageException
+ *   When it isn't possible to create the storage.
+ */
+function storage_stream_wrapper_create_derivative_image($uri) {
+  // The uri has the form scheme://styles/thumbnail/scheme-original/path/to/image.png
+  $scheme = file_uri_scheme($uri);
+  $target = file_uri_target($uri);
+  $components = explode('/', $target);
+
+  // Check this is a styled image uri.
+  if ((count($components) < 3) || ($components[0] != 'styles')) {
+    // Not a styled image uri, or not one of our concern.
+    return FALSE;
+  }
+  // Check the style is valid.
+  $style_name = $components[1];
+  $style = image_style_load($style_name);
+  if (!$style) {
+    throw new BadImageStyleStorageException($style);
+  }
+  // Obtain the original image.
+  $original_scheme = $components[2];
+  $original_target = implode('/', array_slice($components, 3));
+  $original_uri = $original_scheme . '://' . $original_target;
+  try {
+    $parent = storage_stream_wrapper_load($original_uri);
+  }
+  catch (StorageException $e) {
+    throw new StorageException("Unable to load original image for $uri");
+  }
+
+  // Create the derivative image.
+  // TODO: use image_style_deliver().
+  if (!image_style_create_derivative($style, $original_uri, $uri)) {
+    throw new StorageException("Unable to create image derivative for $uri");
+  }
+
+  // Set the parent.
+  $storage = storage_stream_wrapper_load($uri);
+  $storage->parent_id = $parent->storage_id;
+  $storage->update();
+
+  return $storage;
+}
+
+/**
+ * Implements hook_image_style_flush().
+ */
+function storage_stream_wrapper_image_style_flush(array $style) {
+  $uri_like = db_like('://styles/' . $style['name'] . '/');
+  $storage_ids = db_select('storage_stream_wrapper')
+    ->fields('storage_stream_wrapper', array('storage_id'))
+    ->condition('uri', '%' . $uri_like . '%', 'LIKE')
+    ->execute()
+    ->fetchCol();
+
+  foreach ($storage_ids as $storage_id) {
+    try {
+      storage_load($storage_id)->remove();
+    }
+    catch (StorageException $e) {
+    }
+  }
+}
+
+/**
+ * Implements hook_storage_remove().
+ */
+function storage_stream_wrapper_storage_remove(Storage $storage) {
+  db_delete('storage_stream_wrapper')
+    ->condition('storage_id', $storage->storage_id)
+    ->execute();
+}
+
+/**
+ * Implements hook_storage_access().
+ */
+function storage_stream_wrapper_storage_access(Storage $storage) {
+  // Get the info in file_usage table for this storage.
+  $query = db_select('storage_stream_wrapper', 'ssw');
+  $query->join('file_managed', 'fm', 'ssw.uri = fm.uri');
+  $query->join('file_usage', 'fu', 'fm.fid = fu.fid');
+
+  $file_usage = $query->fields('fu')
+    ->fields('fm')
+    ->condition('ssw.storage_id', $storage->storage_id)
+    ->execute()
+    ->fetchAssoc();
+
+  // If this file isn't known, it's probably a styled image (they aren't
+  // recorded in file_managed). Access will be determined from the source image.
+  if (!$file_usage) {
+    return;
+  }
+
+  return file_download_access($file_usage['uri']);
+}
+
