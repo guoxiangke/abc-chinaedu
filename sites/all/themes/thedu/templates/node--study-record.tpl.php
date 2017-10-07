@@ -99,9 +99,9 @@
   <div class="content"<?php print $content_attributes; ?>>
 
     <?php
-    if($node->nid<16142 && isset($node->field_file[LANGUAGE_NONE][0]))
-        $url = file_create_url($node->field_file[LANGUAGE_NONE][0]['uri']);
-    if(isset($node->field_mp3[LANGUAGE_NONE][0]))
+    // if($node->nid<16142 && isset($node->field_file[LANGUAGE_NONE][0]))
+    //     $url = file_create_url($node->field_file[LANGUAGE_NONE][0]['uri']);
+    if($node->nid>=16142 && isset($node->field_mp3[LANGUAGE_NONE][0]))
         $url = str_replace('storage-field-mp3://', 'http://dstorage.b0.upaiyun.com/abc/', $node->field_mp3[LANGUAGE_NONE][0]['uri']);
     if(isset($url) && $view_mode=='full'){
     ?>
@@ -116,7 +116,7 @@
                     <div class="play-bar" style="width: 0%; overflow: hidden;">
                     </div>
                     <div class="details">
-                        <span class="title" aria-label="title">永不止息 - 需要有你</span>
+                        <span class="title" aria-label="title">ABC - ChinaEdu</span>
                     </div>
                     <div class="timing">
                         <span class="duration" role="timer" aria-label="duration">0:00</span>
